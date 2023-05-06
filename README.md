@@ -1,2 +1,14 @@
 # FavaApp
-Aplicación movil encargada del control del inventario y ventas del Kiosko Fava´s 
+Aplicación movil encargada del control del inventario y ventas del Kiosko Fava´s
+
+Manual
+
+Los issues son para que se indique en que parte del proceso esta, en el tambien se ESPECIFICA si todo funciona correctamente o presenta algun tipo de error.
+Asignar al gerente como responsable a revisar.
+Mencionar en el grupo cada vez que se haga un commit PERO QUE ESTE FUNCIONAL. Nada de hacer commit con partes incompletas o con errores que despues va a solucionar.
+PONER EL GRADLE EN AUTO-DESCARGABLE Y NO TOCAR EL SDK. EL SDK A TRABAJAR SERA EL OPEN JDK 18.
+Mencionar cualquier error en el grupo.
+Añadir en la carpeta Navigation los Fragment.
+Ponerle id claros y precisos para la navegacion.
+Utilizar nombres claros para cada componente del diseño, con su respectivo id.
+En cada clase de diseño, añadirle la palabra FRAGMENT al final.
