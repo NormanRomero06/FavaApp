@@ -12,6 +12,11 @@
         android:theme="@style/Theme.AppFavas"
         tools:targetApi="31">
         <activity
+            android:name=".LayoutDrawableActivity"
+            android:exported="false"
+            android:label="@string/title_activity_layout_drawable"
+            android:theme="@style/Theme.AppFavas.NoActionBar" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
