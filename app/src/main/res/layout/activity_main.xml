@@ -103,6 +103,19 @@
         android:textColor="@color/boton"
         android:layout_marginTop="70dp"/>
 
+    <TextView
+        android:id="@+id/TvRegistrarse"
+        android:layout_width="280dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/TvOlvidarPW"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Registrarse"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/boton"
+        android:layout_marginTop="40dp"/>
+
 
 
 

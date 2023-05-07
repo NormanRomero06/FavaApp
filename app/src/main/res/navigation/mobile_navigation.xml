@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_ventas"
-        android:name="com.example.appfavas.ui.home.HomeFragment"
+        android:name="com.example.appfavas.ui.Ventas.VentasFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 

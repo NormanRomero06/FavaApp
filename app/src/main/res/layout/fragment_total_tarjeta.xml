@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.Ventas.TotalTarjetaFragment">
+
+    <View
+        android:id="@+id/VwInicio"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/color_Primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/IvRegresar"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="@id/VwInicio"
+        app:layout_constraintStart_toStartOf="@id/VwInicio"
+        app:layout_constraintTop_toTopOf="@id/VwInicio" />
+
+    <View
+        android:id="@+id/VwCantidad"
+        android:layout_width="350dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/ic_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/VwInicio" />
+
+    <TextView
+        android:id="@+id/TvTotalPago"
+        android:layout_width="280dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:text="Cantidad Total A Pagar"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="@id/VwCantidad"
+        app:layout_constraintStart_toStartOf="@id/VwCantidad"
+        app:layout_constraintTop_toTopOf="@id/VwCantidad" />
+
+    <TextView
+        android:id="@+id/TvTotal"
+        android:layout_width="60dp"
+        android:layout_height="0dp"
+        android:text="@string/_0_00"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@id/VwCantidad"
+        app:layout_constraintEnd_toEndOf="@id/VwCantidad"
+        app:layout_constraintStart_toStartOf="@id/VwCantidad"
+        app:layout_constraintTop_toBottomOf="@id/TvTotalPago" />
+
+    <TextView
+        android:id="@+id/TvReferencia"
+        android:layout_width="180dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="50dp"
+        android:text="Tarjeta (Referencia)"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/VwCantidad"
+        app:layout_constraintBottom_toTopOf="@id/EtRefencia"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/EtRefencia"
+        android:layout_width="350dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/TvReferencia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnDólares"
+        android:layout_width="180dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_shape"
+        android:text="Nueva Venta"
+        android:textColor="@color/boton"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/EtRefencia"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
