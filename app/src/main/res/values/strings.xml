@@ -20,4 +20,8 @@
     <string name="configuraciones">Configuraciones</string>
     <string name="cierre">Cierre</string>
     <string name="pagos">Pagos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="buscar">Buscar</string>
+    <string name="fecha">Fecha</string>
 </resources>
