@@ -13,4 +13,11 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="login">Login</string>
     <string name="propietario">Propietario</string>
+    <string name="recibos">Recibos</string>
+    <string name="ventas">Ventas</string>
+    <string name="articulos">Artículos</string>
+    <string name="cocina">Cocina</string>
+    <string name="configuraciones">Configuraciones</string>
+    <string name="cierre">Cierre</string>
+    <string name="pagos">Pagos</string>
 </resources>
