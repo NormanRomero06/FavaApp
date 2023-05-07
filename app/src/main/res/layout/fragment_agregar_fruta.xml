@@ -70,7 +70,8 @@
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvNombreFruta" />
+        app:layout_constraintTop_toBottomOf="@id/tvNombreFruta"
+        android:minHeight="48sp"/>
 
     <TextView
         android:id="@+id/tvPrecioFruta"
@@ -94,7 +95,8 @@
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvPrecioFruta" />
+        app:layout_constraintTop_toBottomOf="@id/tvPrecioFruta"
+        android:minHeight="48sp"/>
 
     <TextView
         android:id="@+id/tvInventarioFruta"
