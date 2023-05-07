@@ -29,4 +29,13 @@
     <string name="hora">Hora</string>
     <string name="id">ID</string>
     <string name="img_tarjeta">img_tarjeta</string>
+    <string name="agregar_fruta">Agregar Fruta</string>
+    <string name="nombre">Nombre</string>
+    <string name="precio">Precio</string>
+    <string name="_0_00">0.00</string>
+    <string name="inventario">Inventario</string>
+    <string name="stock">Stock</string>
+    <string name="_0">0</string>
+    <string name="guardar">Guardar</string>
+    <string name="editar_frutas">Editar Frutas</string>
 </resources>
