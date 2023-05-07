@@ -5,9 +5,18 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="color">#C2F6C4</color>
+    <color name="back">#cff6c8</color>
+    <color name="boton">#426439</color>
+
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="fondo">#181C1A</color>
     <color name="gray">#494949</color>
+
 
     <color name="color_Primary">#65DB94</color>
     <color name="color_Primary_Dark">#23BC20</color>
