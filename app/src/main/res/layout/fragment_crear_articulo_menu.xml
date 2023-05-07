@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back"
+    tools:context=".ui.articulo.CrearArticuloMenuFragment">
+
+    <View
+        android:id="@+id/VwRegister"
+        android:layout_width="520dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ic_shape_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tlInicio" />
+
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tlInicio"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/color_Primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/IvRegresar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="@id/tlInicio"
+        app:layout_constraintStart_toStartOf="@id/tlInicio"
+        app:layout_constraintTop_toTopOf="@id/tlInicio" />
+
+    <TextView
+        android:id="@+id/tvTopName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear Artículo"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etNombreArticulo"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/gray"
+        android:hint="Nombre"
+        android:minHeight="48sp"
+        android:textColorHint="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tlInicio" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCategoria"
+        android:layout_width="500dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNombreArticulo" />
+
+    <EditText
+        android:id="@+id/etPrecioArticulo"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/gray"
+        android:hint="Precio"
+        android:inputType="number"
+        android:minHeight="48sp"
+        android:textColorHint="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvCategoria" />
+
+    <TextView
+        android:id="@+id/tvInventario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="220dp"
+        android:gravity="center"
+        android:text="Inventario"
+        android:textColor="@color/color_Primary"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etPrecioArticulo" />
+
+    <TextView
+        android:id="@+id/tvStock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="250dp"
+        android:text="En stock"
+        android:textColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInventario" />
+
+    <EditText
+        android:id="@+id/etStockArticulo"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/gray"
+        android:hint="0"
+        android:inputType="number"
+        android:minHeight="48sp"
+        android:textColorHint="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStock" />
+
+    <ImageView
+        android:id="@+id/ivArticulo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etStockArticulo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        android:drawableLeft="@drawable/folder_24"
+        android:text=" ELIJA UNA FOTO"
+        android:textColor="@color/gray"
+        app:layout_constraintStart_toEndOf="@id/ivArticulo"
+        app:layout_constraintTop_toBottomOf="@id/etStockArticulo" />
+
+    <Button
+        android:id="@+id/btnLimpiarArt"
+        android:layout_width="130dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/color_Primary"
+        android:drawableLeft="@drawable/cleaning_services_24"
+        android:hint="Limpiar"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivArticulo" />
+
+    <Button
+        android:id="@+id/btnCrearArt"
+        android:layout_width="130dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/color_Primary"
+        android:drawableLeft="@drawable/edit_24"
+        android:hint="Crear"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnLimpiarArt" />
+
+    <Button
+        android:id="@+id/btnCrearBatidos"
+        android:layout_width="180dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/color_Accent"
+        android:drawableLeft="@drawable/jugo"
+        android:hint="Crear Batido"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCrearArt" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
