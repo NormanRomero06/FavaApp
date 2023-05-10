@@ -47,4 +47,13 @@
     <string name="reembolsar">Reembolsar</string>
     <string name="totaln">Total</string>
     <string name="total">0.00</string>
+
+    <!--Spinner Roles-->
+    <string-array name="roles">
+        <item>Administrador</item>
+        <item>Cocina</item>
+        <item>Técnico</item>
+    </string-array>
+    <string name="prompt">Roles</string>
+    <!--Spinner Roles-->
 </resources>
