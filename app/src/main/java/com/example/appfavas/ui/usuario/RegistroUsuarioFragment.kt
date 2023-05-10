@@ -5,56 +5,95 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.example.appfavas.R
+import com.example.appfavas.databinding.FragmentRegistroUsuarioBinding
+import com.example.appfavas.modelos.Usuario
+import com.example.appfavas.modelos.viewModels.UsuarioViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [RegistroUsuarioFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class RegistroUsuarioFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentRegistroUsuarioBinding
+    private lateinit var usuarioViewModel: UsuarioViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_registro_usuario, container, false)
-    }
+        binding = FragmentRegistroUsuarioBinding.inflate(inflater, container, false)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment VistaCocinaFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RegistroUsuarioFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        val root: View = binding.root
+
+        // Inicializar ViewModel
+        usuarioViewModel = ViewModelProvider(this).get(UsuarioViewModel::class.java)
+
+        // Configurar botón de guardar
+        binding.btnRegister.setOnClickListener {
+            try {
+                val nombres = binding.etNombres.text.toString()
+                val apellidos = binding.etApellidos.text.toString()
+                val correo = binding.etCorreo.text.toString()
+                val usuario = binding.etUsuario.text.toString()
+                val contraseña = binding.etContraseA.text.toString()
+                val rol = binding.sRoles.selectedItem.toString().toInt()
+
+                // Validar que los campos no estén vacíos
+                if (nombres.isEmpty() || apellidos.isEmpty() || correo.isEmpty() || usuario.isEmpty() || contraseña.isEmpty()) {
+                    Toast.makeText(
+                        requireContext(),
+                        "Por favor complete todos los campos",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    return@setOnClickListener
                 }
+
+                // Crear objeto Usuario
+                val user = Usuario(
+                    nombres = nombres,
+                    apellidos = apellidos,
+                    correo = correo,
+                    usuario = usuario,
+                    contraseña = contraseña,
+                    rol = rol
+                )
+
+                // Insertar usuario en la base de datos
+                CoroutineScope(Dispatchers.IO).launch {
+                    usuarioViewModel.inserUs(user)
+                }
+
+                // Mostrar mensaje de éxito
+                Toast.makeText(
+                    requireContext(),
+                    "Usuario registrado exitosamente",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                // Limpiar campos
+                binding.etNombres.setText("")
+                binding.etApellidos.setText("")
+                binding.etCorreo.setText("")
+                binding.etUsuario.setText("")
+                binding.etContraseA.setText("")
+            } catch (ex: Exception) {
+                Toast.makeText(
+                    requireContext(), "Error al Insertar: ${ex.toString()}",
+                    Toast.LENGTH_LONG
+                ).show()
             }
+
+        }
+
+
+
+
+        return root
     }
 }

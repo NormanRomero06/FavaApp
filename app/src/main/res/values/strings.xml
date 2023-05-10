@@ -50,9 +50,8 @@
 
     <!--Spinner Roles-->
     <string-array name="roles">
-        <item>Administrador</item>
-        <item>Cocina</item>
-        <item>Técnico</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
     <string name="prompt">Roles</string>
     <!--Spinner Roles-->

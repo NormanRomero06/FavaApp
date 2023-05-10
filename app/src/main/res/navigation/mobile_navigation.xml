@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_ventas">
+    app:startDestination="@id/registroUsuarioFragment">
 
     <fragment
         android:id="@+id/nav_ventas"
@@ -21,5 +21,10 @@
         android:name="com.example.appfavas.ui.recibos.RecibosFragment"
         android:label="Recibos"
         tools:layout="@layout/fragment_recibos" />
+    <fragment
+        android:id="@+id/registroUsuarioFragment"
+        android:name="com.example.appfavas.ui.usuario.RegistroUsuarioFragment"
+        android:label="fragment_registro_usuario"
+        tools:layout="@layout/fragment_registro_usuario" />
 
 </navigation>
