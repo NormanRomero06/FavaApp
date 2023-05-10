@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.Categoria.EditarCategoriaFragment">
+
+    <View
+        android:id="@+id/VwInicio"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/color_Primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/IvRegresar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="@id/VwInicio"
+        app:layout_constraintStart_toStartOf="@id/VwInicio"
+        app:layout_constraintTop_toTopOf="@id/VwInicio" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:text="Editar Categoría"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/VwInicio" />
+
+    <EditText
+        android:id="@+id/etNombreCategoria"
+        android:layout_width="350dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="85dp"
+        android:backgroundTint="@color/black"
+        android:hint="Nombre de la Categoría"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/VwInicio" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="220dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:text="Imagen de la categoría"
+        android:textAlignment="center"
+        android:textColor="@color/boton"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etNombreCategoria" />
+
+    <ImageView
+        android:id="@+id/ivCrearCategoría"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnEditarCategoria"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_shape"
+        android:text="Editar Categoría"
+        android:textColor="@color/boton"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivCrearCategoría" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLimpiarCampos"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_shape"
+        android:text="Limpiar Campos"
+        android:textColor="@color/boton"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnEditarCategoria" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnEliminarCategoria"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_shape"
+        android:text="Eliminar Categoria"
+        android:textColor="@color/boton"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnLimpiarCampos" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
