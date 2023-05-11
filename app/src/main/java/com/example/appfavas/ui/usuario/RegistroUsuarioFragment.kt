@@ -1,13 +1,12 @@
 package com.example.appfavas.ui.usuario
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentRegistroUsuarioBinding
 import com.example.appfavas.modelos.Usuario
 import com.example.appfavas.modelos.viewModels.UsuarioViewModel
@@ -28,12 +27,15 @@ class RegistroUsuarioFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentRegistroUsuarioBinding.inflate(inflater, container, false)
-
         val root: View = binding.root
-
         // Inicializar ViewModel
         usuarioViewModel = ViewModelProvider(this).get(UsuarioViewModel::class.java)
+        registrarUsuario()
+        return root
 
+    }
+
+    fun registrarUsuario() {
         // Configurar botón de guardar
         binding.btnRegister.setOnClickListener {
             try {
@@ -42,17 +44,9 @@ class RegistroUsuarioFragment : Fragment() {
                 val correo = binding.etCorreo.text.toString()
                 val usuario = binding.etUsuario.text.toString()
                 val contraseña = binding.etContraseA.text.toString()
-                val rol = binding.sRoles.selectedItem.toString().toInt()
+                val rol = binding.sRoles.selectedItem.toString()
 
-                // Validar que los campos no estén vacíos
-                if (nombres.isEmpty() || apellidos.isEmpty() || correo.isEmpty() || usuario.isEmpty() || contraseña.isEmpty()) {
-                    Toast.makeText(
-                        requireContext(),
-                        "Por favor complete todos los campos",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                    return@setOnClickListener
-                }
+                validarCampos()
 
                 // Crear objeto Usuario
                 val user = Usuario(
@@ -68,6 +62,7 @@ class RegistroUsuarioFragment : Fragment() {
                 CoroutineScope(Dispatchers.IO).launch {
                     usuarioViewModel.inserUs(user)
                 }
+                limpiarCampos()
 
                 // Mostrar mensaje de éxito
                 Toast.makeText(
@@ -76,12 +71,6 @@ class RegistroUsuarioFragment : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
 
-                // Limpiar campos
-                binding.etNombres.setText("")
-                binding.etApellidos.setText("")
-                binding.etCorreo.setText("")
-                binding.etUsuario.setText("")
-                binding.etContraseA.setText("")
             } catch (ex: Exception) {
                 Toast.makeText(
                     requireContext(), "Error al Insertar: ${ex.toString()}",
@@ -90,10 +79,35 @@ class RegistroUsuarioFragment : Fragment() {
             }
 
         }
-
-
-
-
-        return root
     }
+
+    // Esta funcion setea los campos luego de una operacion
+    fun limpiarCampos() {
+        with(binding) {
+            etNombres.setText("")
+            etApellidos.setText("")
+            etCorreo.setText("")
+            etUsuario.setText("")
+            etContraseA.setText("")
+        }
+    }
+
+    fun validarCampos() {
+        val nombres = binding.etNombres.text.toString()
+        val apellidos = binding.etApellidos.text.toString()
+        val correo = binding.etCorreo.text.toString()
+        val usuario = binding.etUsuario.text.toString()
+        val contraseña = binding.etContraseA.text.toString()
+
+        // Validar que los campos no estén vacíos
+        if (nombres.isEmpty() || apellidos.isEmpty() || correo.isEmpty() || usuario.isEmpty() || contraseña.isEmpty()) {
+            Toast.makeText(
+                requireContext(),
+                "Por favor complete todos los campos",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
+
 }

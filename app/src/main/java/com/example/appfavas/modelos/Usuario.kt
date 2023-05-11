@@ -11,5 +11,5 @@ data class Usuario(
     val correo: String?,
     val usuario: String?,
     val contraseña: String?,
-    val rol: Int?
+    val rol: String?
 )

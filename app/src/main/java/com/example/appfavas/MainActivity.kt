@@ -16,7 +16,6 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val viewModel: UsuarioViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -27,21 +26,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(iniciar)
         }
 
+        binding.TvRegistrarse.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.registroUsuarioFragment)
+        }
 
-            val Nombres = "Pedro"
-            val Apellidos ="Sin vista"
-            val Correo = "NiIdea"
-            val User = "NIko"
-            val Pass = "123"
-            val Rol = 1
-            val usuario = Usuario(
-                nombres = Nombres, apellidos = Apellidos, correo = Correo,
-                usuario = User, contraseña = Pass, rol = Rol
-            )
 
-            CoroutineScope(Dispatchers.IO).launch {
-                viewModel.inserUs(usuario)
-            }
 
 
         }
