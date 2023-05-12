@@ -4,7 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Ventas.VentasFragment">
+    tools:context=".ui.Ventas.VentasFragment"
+    android:background="@color/back">
+
+    <View
+        android:id="@+id/VwContainer"
+        android:layout_width="720dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ic_shape_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvOrdenar"

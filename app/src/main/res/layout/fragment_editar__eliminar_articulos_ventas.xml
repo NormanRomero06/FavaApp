@@ -15,39 +15,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tlInicio" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <!-- TODO: Update blank fragment layout -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tlInicio"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@color/color_Primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/IvRegresar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="10dp"
-        android:src="@drawable/arrow_back_24"
-        app:layout_constraintBottom_toBottomOf="@id/tlInicio"
-        app:layout_constraintStart_toStartOf="@id/tlInicio"
-        app:layout_constraintTop_toTopOf="@id/tlInicio" />
 
-    <TextView
-        android:id="@+id/tvTopName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Editar Artículo"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etNombreArticulo"
@@ -59,7 +32,8 @@
         android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tlInicio" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCategoria"

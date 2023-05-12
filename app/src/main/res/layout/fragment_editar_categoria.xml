@@ -4,26 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.Categoria.EditarCategoriaFragment">
+    tools:context=".ui.Categoria.EditarCategoriaFragment"
+    android:background="@color/back">
+
+
 
     <View
-        android:id="@+id/VwInicio"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@color/color_Primary"
+        android:id="@+id/VwContainer"
+        android:layout_width="520dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ic_shape_login"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/IvRegresar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="10dp"
-        android:src="@drawable/baseline_arrow_back_24"
-        app:layout_constraintBottom_toBottomOf="@id/VwInicio"
-        app:layout_constraintStart_toStartOf="@id/VwInicio"
-        app:layout_constraintTop_toTopOf="@id/VwInicio" />
 
     <TextView
         android:id="@+id/textView4"
@@ -36,7 +31,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/VwInicio" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etNombreCategoria"
@@ -48,7 +43,7 @@
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/VwInicio" />
+        app:layout_constraintTop_toBottomOf="@id/textView4" />
 
     <TextView
         android:id="@+id/textView5"

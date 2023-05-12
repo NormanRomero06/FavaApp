@@ -72,7 +72,8 @@
             app:headerLayout="@layout/nav_header_layout_drawable"
             app:itemIconTint="@color/black"
             app:itemTextColor="@color/black"
-            app:menu="@menu/activity_layout_drawable_drawer" />
+            app:menu="@menu/activity_layout_drawable_drawer"
+            android:elevation="2dp"/>
 
 
 

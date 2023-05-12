@@ -6,32 +6,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.Categoria.ListaCategoriasFragment">
 
-    <View
-        android:id="@+id/VwInicio"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@color/color_Primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/IvRegresar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="10dp"
-        android:src="@drawable/baseline_arrow_back_24"
-        app:layout_constraintBottom_toBottomOf="@id/VwInicio"
-        app:layout_constraintStart_toStartOf="@id/VwInicio"
-        app:layout_constraintTop_toTopOf="@id/VwInicio" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="1000dp"
         android:layout_height="320dp"
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/VwInicio"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnNuevaCategoria"

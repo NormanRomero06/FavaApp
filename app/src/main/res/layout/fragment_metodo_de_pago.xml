@@ -1,41 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/back"
     tools:context=".ui.Ventas.MetodoDePagoFragment">
 
     <View
-        android:id="@+id/VwInicio"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@color/color_Primary"
-       app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/VwPagos"
+        android:layout_width="520dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_shape_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/IvRegresar"
-        android:layout_width="60dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="10dp"
-        android:src="@drawable/baseline_arrow_back_24"
-        app:layout_constraintBottom_toBottomOf="@id/VwInicio"
-        app:layout_constraintStart_toStartOf="@id/VwInicio"
-        app:layout_constraintTop_toTopOf="@id/VwInicio" />
-
-    <TextView
-        android:id="@+id/TvDividir"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="10dp"
-        android:text="Dividir"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="@id/VwInicio"
-        app:layout_constraintEnd_toEndOf="@id/VwInicio"
-        app:layout_constraintTop_toTopOf="@id/VwInicio" />
 
     <View
         android:id="@+id/VwCantidad"
@@ -45,7 +26,7 @@
         android:background="@drawable/ic_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/VwInicio" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/TvTotalPago"
@@ -81,21 +62,21 @@
         android:text="Efectivo Recibido"
         android:textColor="@color/black"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/EtEfectivoR"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/VwCantidad"
-        app:layout_constraintBottom_toTopOf="@id/EtEfectivoR"/>
+        app:layout_constraintTop_toBottomOf="@id/VwCantidad" />
 
     <EditText
         android:id="@+id/EtEfectivoR"
         android:layout_width="350dp"
         android:layout_height="0dp"
         android:backgroundTint="@color/black"
-        android:textColor="@color/black"
         android:hint="@string/_0_00"
+        android:textColor="@color/black"
         android:textColorHint="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/TvEfectivo"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/TvEfectivo" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnEfectivo"
@@ -107,10 +88,9 @@
         android:textColor="@color/boton"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/EtEfectivoR"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/EtEfectivoR" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnTarjeta"
@@ -122,10 +102,9 @@
         android:textColor="@color/boton"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/btnEfectivo"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnEfectivo" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnDólares"
@@ -137,9 +116,8 @@
         android:textColor="@color/boton"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/btnTarjeta"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnTarjeta" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
