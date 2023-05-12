@@ -12,7 +12,7 @@
         tools:context=".ui.articulo.CrearArticuloVentasFragment">
 
         <View
-            android:id="@+id/VwPagos"
+            android:id="@+id/VwArticulos"
             android:layout_width="520dp"
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
@@ -27,12 +27,13 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/gray"
+            android:layout_marginTop="10dp"
             android:hint="Nombre"
             android:minHeight="48sp"
             android:textColorHint="@color/gray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/VwPagos" />
+            app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
+            app:layout_constraintStart_toStartOf="@+id/VwArticulos"
+            app:layout_constraintTop_toTopOf="@+id/VwArticulos" />
 
         <EditText
             android:id="@+id/etPrecioArticulo"
@@ -44,8 +45,8 @@
             android:inputType="number"
             android:minHeight="48sp"
             android:textColorHint="@color/gray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
+            app:layout_constraintStart_toStartOf="@+id/VwArticulos"
             app:layout_constraintTop_toBottomOf="@id/etNombreArticulo" />
 
         <EditText
@@ -59,8 +60,8 @@
             android:lines="3"
             android:minHeight="48sp"
             android:textColorHint="@color/gray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
+            app:layout_constraintStart_toStartOf="@+id/VwArticulos"
             app:layout_constraintTop_toBottomOf="@id/etPrecioArticulo" />
 
         <TextView
@@ -68,15 +69,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="220dp"
+            android:layout_marginRight="250dp"
             android:text="Categoría"
             android:textColor="@color/color_Primary"
             android:textSize="20dp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@id/VwPagos"
-            app:layout_constraintStart_toStartOf="@id/VwPagos"
+            app:layout_constraintEnd_toEndOf="@id/VwArticulos"
+            app:layout_constraintStart_toStartOf="@id/VwArticulos"
             app:layout_constraintTop_toBottomOf="@+id/etDescripcion" />
 
+        <!--
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvCategoria"
             android:layout_width="350dp"
@@ -85,21 +87,30 @@
             app:layout_constraintEnd_toEndOf="@id/VwPagos"
             app:layout_constraintStart_toStartOf="@id/VwPagos"
             app:layout_constraintTop_toBottomOf="@+id/tvCategoria" />
+    -->
+        <Spinner
+            android:id="@+id/sCategoría"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
+            app:layout_constraintStart_toStartOf="@+id/VwArticulos"
+            app:layout_constraintTop_toBottomOf="@+id/tvCategoria" />
+
 
         <TextView
             android:id="@+id/tvInventario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="220dp"
+            android:layout_marginRight="250dp"
             android:gravity="center"
             android:text="Inventario"
             android:textColor="@color/color_Primary"
             android:textSize="20dp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rvCategoria" />
+            app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
+            app:layout_constraintStart_toStartOf="@+id/VwArticulos"
+            app:layout_constraintTop_toBottomOf="@+id/sCategoría" />
 
         <TextView
             android:id="@+id/tvStock"
@@ -109,8 +120,8 @@
             android:layout_marginRight="250dp"
             android:text="En stock"
             android:textColor="@color/gray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
+            app:layout_constraintStart_toStartOf="@+id/VwArticulos"
             app:layout_constraintTop_toBottomOf="@+id/tvInventario" />
 
         <EditText
@@ -122,8 +133,8 @@
             android:inputType="number"
             android:minHeight="48sp"
             android:textColorHint="@color/gray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
+            app:layout_constraintStart_toStartOf="@+id/VwArticulos"
             app:layout_constraintTop_toBottomOf="@+id/tvStock" />
 
         <ImageView
@@ -132,8 +143,8 @@
             android:layout_height="200dp"
             android:layout_marginTop="20dp"
             android:background="@color/gray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
+            app:layout_constraintStart_toStartOf="@+id/VwArticulos"
             app:layout_constraintTop_toBottomOf="@id/etStockArticulo" />
 
         <TextView
@@ -157,8 +168,8 @@
             android:hint="Limpiar"
             android:textSize="12sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
+            app:layout_constraintStart_toStartOf="@+id/VwArticulos"
             app:layout_constraintTop_toBottomOf="@id/ivArticulo" />
 
         <Button
@@ -171,8 +182,8 @@
             android:hint="Crear"
             android:textSize="12sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
+            app:layout_constraintStart_toStartOf="@+id/VwArticulos"
             app:layout_constraintTop_toBottomOf="@id/btnLimpiarArt" />
 
 

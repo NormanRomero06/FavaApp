@@ -8,17 +8,6 @@
     android:background="@color/back">
 
 
-    <!-- TODO: Update blank fragment layout -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/color_Primary"
-        app:popupTheme="@style/Theme.AppFavas.PopupOverlay"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
     <!-- Botones -->
     <Button
         android:id="@+id/btnArticuloVenta"
@@ -32,22 +21,7 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
-
-
-    <Button
-        android:id="@+id/btnArticuloMenu"
-        android:layout_width="500dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/color_Primary"
-        android:drawableLeft="@drawable/list_24"
-        android:text="Articulos Menu"
-        android:textAlignment="textStart"
-        android:layout_marginTop="50dp"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnArticuloVenta" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <Button
@@ -57,28 +31,12 @@
         android:backgroundTint="@color/color_Primary"
         android:drawableLeft="@drawable/folder_24"
         android:text="Categoría"
+        android:layout_marginTop="20dp"
         android:textAlignment="textStart"
-        android:layout_marginTop="50dp"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnArticuloMenu" />
-
-
-    <Button
-        android:id="@+id/btnPromociones"
-        android:layout_width="500dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/color_Primary"
-        android:drawableLeft="@drawable/cart_24"
-        android:text="Promociones"
-        android:textAlignment="textStart"
-        android:layout_marginTop="50dp"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnCategoria" />
-
+        app:layout_constraintTop_toBottomOf="@+id/btnArticuloVenta" />
 
 
 
@@ -89,6 +47,7 @@
         android:layout_height="match_parent"
         android:contentDescription="Menu Desplegable"
         android:fitsSystemWindows="false"
+        android:elevation="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
