@@ -1,84 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/back"
-    tools:context="ui.articulo.TotalArticulosVentasFragment">
+    android:layout_height="match_parent">
 
-
-    <!-- Barra Superior -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/color_Primary"
-        app:popupTheme="@style/Theme.AppFavas.PopupOverlay"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <View
-        android:id="@+id/VwRegister"
-        android:layout_width="800dp"
-        android:layout_height="0dp"
-        android:background="@drawable/ic_shape_login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvArticulos"
-        android:layout_width="800dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnNuevoArticulo"
-        android:layout_width="56dp"
-        android:layout_height="0dp"
-        android:background="@drawable/add_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="40dp"
-        android:layout_marginEnd="40dp"
-        android:contentDescription="Add"
-        />
-
-    <androidx.drawerlayout.widget.DrawerLayout
-        android:id="@+id/drawer_layout"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="Menu Desplegable"
-        android:fitsSystemWindows="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:openDrawer="start">
+        android:background="@color/back"
+        tools:context="ui.articulo.TotalArticulosVentasFragment">
 
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/nav_view"
+
+        <View
+            android:id="@+id/VwArticulos"
+            android:layout_width="800dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_shape_login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:background="@color/white"
-            app:headerLayout="@layout/nav_header_layout_drawable"
-            app:itemIconTint="@color/black"
-            app:itemTextColor="@color/black"
-            app:menu="@menu/activity_layout_drawable_drawer"
-            android:elevation="2dp"/>
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Inventario"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/rvArticulos"
+            app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
+            app:layout_constraintStart_toStartOf="@+id/VwArticulos"
+            app:layout_constraintTop_toTopOf="@+id/VwArticulos" />
 
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvArticulos"
+            android:layout_width="700dp"
+            android:layout_height="600dp"
+            app:layout_constraintBottom_toBottomOf="@+id/VwArticulos"
+            app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
+            app:layout_constraintStart_toStartOf="@+id/VwArticulos"
+            app:layout_constraintTop_toTopOf="@+id/VwArticulos" />
 
-    </androidx.drawerlayout.widget.DrawerLayout>
+        <Button
+            android:id="@+id/btnNuevoArticulo"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="400dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_shape"
+            android:contentDescription="Add"
+            android:text="Nuevo Artículo"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
+            app:layout_constraintStart_toStartOf="@+id/VwArticulos"
+            app:layout_constraintTop_toBottomOf="@+id/rvArticulos" />
 
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

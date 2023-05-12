@@ -6,26 +6,24 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_ventas"
-            android:icon="@drawable/ventas"
-            android:title="@string/ventas" />
-        <item
-            android:id="@+id/nav_recibos"
-            android:icon="@drawable/factura"
-            android:title="@string/recibos" />
+            android:icon="@drawable/home"
+            android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_articulos"
             android:icon="@drawable/articulos"
             android:title="@string/articulos" />
         <item
-            android:id="@+id/nav_cocina"
-            android:icon="@drawable/cocina"
-            android:title="@string/cocina"
-            />
+            android:id="@+id/nav_categorias"
+            android:icon="@drawable/category"
+            android:title="Categorías" />
         <item
-            android:id="@+id/nav_configuraciones"
-            android:icon="@drawable/configuraciones"
-            android:title="@string/configuraciones"
-            />
+            android:id="@+id/nav_historialVentas"
+            android:icon="@drawable/ventas"
+            android:title="Historial de Ventas"/>
+        <item
+            android:id="@+id/nav_recibos"
+            android:icon="@drawable/factura"
+            android:title="@string/recibos" />
         <item
             android:id="@+id/nav_cierre"
             android:icon="@drawable/cierre"
@@ -34,5 +32,10 @@
             android:id="@+id/nav_pagos"
             android:icon="@drawable/pago"
             android:title="@string/pagos"/>
+        <item
+            android:id="@+id/nav_configuraciones"
+            android:icon="@drawable/configuraciones"
+            android:title="@string/configuraciones"
+            />
     </group>
 </menu>

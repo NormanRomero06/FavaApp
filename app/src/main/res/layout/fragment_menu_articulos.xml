@@ -11,9 +11,8 @@
     <!-- Botones -->
     <Button
         android:id="@+id/btnArticuloVenta"
-        android:layout_width="500dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/color_Primary"
         android:drawableLeft="@drawable/list_24"
         android:text="Articulos Venta"
         android:textAlignment="textStart"
@@ -26,9 +25,8 @@
 
     <Button
         android:id="@+id/btnCategoria"
-        android:layout_width="500dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/color_Primary"
         android:drawableLeft="@drawable/folder_24"
         android:text="Categoría"
         android:layout_marginTop="20dp"
@@ -37,7 +35,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnArticuloVenta" />
-
 
 
 
@@ -52,7 +49,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:openDrawer="start">
+        tools:openDrawer="start"
+        android:clickable="true"
+        android:focusableInTouchMode="true">
+
 
 
 

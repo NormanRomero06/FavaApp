@@ -4,52 +4,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/back"
     tools:context=".ui.recibos.RecibosFragment">
 
-    <EditText
-        android:id="@+id/etBuscar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <View
+        android:id="@+id/VwRecibos"
+        android:layout_width="800dp"
+        android:layout_height="0dp"
         android:layout_marginTop="20dp"
-        android:drawableStart="@drawable/baseline_search_24"
-        android:hint="@string/buscar"
-        android:minHeight="48sp"
+        android:background="@drawable/ic_shape_login"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/etBuscar"
+        android:layout_width="620dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_shape_inputs"
+        android:drawableLeft="@drawable/search_24"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/VwRecibos"
+        app:layout_constraintStart_toStartOf="@+id/VwRecibos"
+        app:layout_constraintTop_toTopOf="@+id/VwRecibos" />
+
     <TextView
-        android:id="@+id/tv_fecha"
-        android:layout_width="match_parent"
+        android:id="@+id/tvFecha"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/fecha"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etBuscar" />
+        android:text="Fecha"
+        android:layout_marginStart="50dp"
+        android:textColor="@color/boton"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/rvEfectivo"
+        app:layout_constraintStart_toStartOf="@+id/VwRecibos"
+        app:layout_constraintTop_toBottomOf="@+id/etBuscar" />
+
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_billetes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_fecha" />
+        android:id="@+id/rvEfectivo"
+        android:layout_width="700dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/VwRecibos"
+        app:layout_constraintStart_toStartOf="@+id/VwRecibos"
+        app:layout_constraintTop_toBottomOf="@id/tvFecha" />
+
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_tarjetas"
+        android:id="@+id/rvTarjetas"
+        android:layout_width="700dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/VwRecibos"
+        app:layout_constraintStart_toStartOf="@+id/VwRecibos"
+        app:layout_constraintTop_toBottomOf="@id/rvEfectivo" />
+
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="match_parent"
+        android:contentDescription="Menu Desplegable"
+        android:elevation="4dp"
+        android:fitsSystemWindows="false"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rv_billetes" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:openDrawer="start">
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/white"
+            app:headerLayout="@layout/nav_header_layout_drawable"
+            app:itemIconTint="@color/black"
+            app:itemTextColor="@color/black"
+            app:menu="@menu/activity_layout_drawable_drawer" />
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,10 +26,6 @@ class LayoutDrawableActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarLayoutDrawable.toolbar)
 
-        binding.appBarLayoutDrawable.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_layout_drawable)
@@ -40,10 +36,11 @@ class LayoutDrawableActivity : AppCompatActivity() {
                 R.id.nav_ventas,
                 R.id.nav_recibos,
                 R.id.nav_articulos,
-                R.id.nav_cocina,
-                R.id.nav_configuraciones,
                 R.id.nav_cierre,
-                R.id.nav_pagos
+                R.id.nav_pagos,
+                R.id.nav_configuraciones,
+                R.id.nav_historialVentas,
+                R.id.nav_categorias
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

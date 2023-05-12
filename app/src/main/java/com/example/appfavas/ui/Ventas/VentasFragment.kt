@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.appfavas.databinding.FragmentHomeBinding
+import androidx.navigation.Navigation
+import com.example.appfavas.R
+import com.example.appfavas.databinding.FragmentVentasHomeBinding
 
 class VentasFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentVentasHomeBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -20,12 +22,19 @@ class VentasFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentVentasHomeBinding.inflate(inflater, container, false)
 
         val root: View = binding.root
-
+        navigation()
 
         return root
+    }
+
+    fun navigation()
+    {
+        binding.btnComprar.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.cobroFragment)
+        }
     }
 
     override fun onDestroyView() {
