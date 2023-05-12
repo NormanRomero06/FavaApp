@@ -54,5 +54,9 @@
         <item>Cocina</item>
     </string-array>
     <string name="prompt">Roles</string>
+    <string name="nueva_venta">Nueva Venta</string>
+    <string name="cambio">CAMBIO</string>
+    <string name="total_pagado">TOTAL PAGADO</string>
+    <string name="total_tarjeta">TOTAL TARJETA</string>
     <!--Spinner Roles-->
 </resources>

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/back"
-    tools:context=".ui.pagos.TotalDividirPagosFragment">
+    tools:context=".ui.pagos.TotalCambioYNuevaVentaFragment">
 
     <View
         android:id="@+id/VwPago"
@@ -13,11 +13,11 @@
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/ic_shape_login"
-        app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-       />
+        />
 
     <View
         android:id="@+id/VwCantidad"
@@ -87,39 +87,6 @@
         app:layout_constraintEnd_toEndOf="@id/VwCambio"
         app:layout_constraintStart_toStartOf="@id/VwCambio"
         app:layout_constraintTop_toBottomOf="@id/tv_cambio" />
-    <View
-        android:id="@+id/VwTarjeta"
-        android:layout_width="350dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="80dp"
-        android:background="@drawable/ic_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/VwCambio" />
-    <TextView
-        android:id="@+id/tv_totalTarj"
-        android:layout_width="280dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/_0_00"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="@id/VwTarjeta"
-        app:layout_constraintStart_toStartOf="@id/VwTarjeta"
-        app:layout_constraintTop_toTopOf="@id/VwTarjeta" />
-
-    <TextView
-        android:id="@+id/tv_TotalTarjeta"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:text="@string/total_tarjeta"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="@id/VwTarjeta"
-        app:layout_constraintEnd_toEndOf="@id/VwTarjeta"
-        app:layout_constraintStart_toStartOf="@id/VwTarjeta"
-        app:layout_constraintTop_toBottomOf="@id/tv_totalTarj" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_venta"
@@ -133,8 +100,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@id/VwPago"
         app:layout_constraintStart_toStartOf="@id/VwPago"
-        app:layout_constraintTop_toBottomOf="@id/VwTarjeta" />
-
+        app:layout_constraintTop_toBottomOf="@id/VwCambio" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
