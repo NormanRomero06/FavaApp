@@ -58,5 +58,9 @@
     <string name="cambio">CAMBIO</string>
     <string name="total_pagado">TOTAL PAGADO</string>
     <string name="total_tarjeta">TOTAL TARJETA</string>
+    <string name="pagosMays">PAGOS</string>
+    <string name="monto">Monto</string>
+    <string name="referencia">Referencia</string>
+    <string name="menu_desplegable">Menu Desplegable</string>
     <!--Spinner Roles-->
 </resources>

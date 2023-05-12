@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+
+    <View
+        android:id="@+id/VwListaPagos"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_view"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/gray_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+ />
+    <ImageView
+        android:id="@+id/ivMoney"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/dolar"
+        android:contentDescription="@string/pagos"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="@id/VwListaPagos"
+        app:layout_constraintTop_toTopOf="@id/VwListaPagos"
+        app:layout_constraintBottom_toBottomOf="@id/VwListaPagos"/>
+
+    <TextView
+        android:id="@+id/tvReferencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:text="@string/referencia"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/ivMoney"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="60dp"
+        android:textSize="18sp"
+        android:layout_marginStart="60dp"
+        />
+
+
+    <TextView
+        android:id="@+id/tvMonto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/monto"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@id/ivMoney"
+        app:layout_constraintTop_toBottomOf="@id/tvReferencia"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="10dp"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
