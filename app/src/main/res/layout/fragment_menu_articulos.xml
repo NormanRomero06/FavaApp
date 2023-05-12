@@ -79,19 +79,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnCategoria" />
 
-    <Button
-        android:id="@+id/btnControlFrutas"
-        android:layout_width="500dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/color_Primary"
-        android:drawableLeft="@drawable/naranjas"
-        android:text="Control De Frutas"
-        android:textAlignment="textStart"
-        android:layout_marginTop="50dp"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnPromociones" />
+
 
 
 
