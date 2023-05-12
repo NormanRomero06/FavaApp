@@ -1,8 +1,6 @@
 # FavaApp
 Aplicación movil encargada del control del inventario y ventas del Kiosko Fava´s 
 
-
-
 Manual
 
 1. Los issues son para que se indique en que parte del proceso esta, en el tambien se ESPECIFICA si todo funciona correctamente o presenta algun tipo de error.
@@ -14,4 +12,8 @@ Manual
 7. Ponerle id claros y precisos para la navegacion.
 8. Utilizar nombres claros para cada componente del diseño, con su respectivo id.
 9. En cada clase de diseño, añadirle la palabra FRAGMENT al final.
+
+Aqui un respaldo de la app hecha con ROOM
+
+https://github.com/JorgeCh1/FavasProjectBackUp.git
 
