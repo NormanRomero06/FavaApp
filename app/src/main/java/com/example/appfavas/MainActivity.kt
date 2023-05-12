@@ -7,8 +7,6 @@ import androidx.activity.viewModels
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.example.appfavas.databinding.ActivityMainBinding
-import com.example.appfavas.modelos.Usuario
-import com.example.appfavas.modelos.viewModels.UsuarioViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
