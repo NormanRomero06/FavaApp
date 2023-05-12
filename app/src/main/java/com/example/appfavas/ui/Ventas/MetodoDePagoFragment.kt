@@ -42,6 +42,9 @@ class MetodoDePagoFragment : Fragment() {
         binding.btnDLares.setOnClickListener {
             Navigation.findNavController(binding.root).navigate(R.id.metodoDePagoFragment)
         }
+        binding.btnDividir.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.dividirPagoFragment)
+        }
     }
 
     override fun onDestroyView() {

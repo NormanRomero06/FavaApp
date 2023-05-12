@@ -45,6 +45,9 @@
         <action
             android:id="@+id/action_metodoDePagoFragment_to_totalTarjetaFragment"
             app:destination="@id/totalTarjetaFragment" />
+        <action
+            android:id="@+id/action_metodoDePagoFragment_to_dividirPagoFragment"
+            app:destination="@id/dividirPagoFragment" />
     </fragment>
     <fragment
         android:id="@+id/totalTarjetaFragment"
@@ -118,6 +121,19 @@
         android:id="@+id/layoutDrawableActivity"
         android:name="com.example.appfavas.LayoutDrawableActivity"
         tools:layout="@layout/app_bar_layout_drawable" />
+    <fragment
+        android:id="@+id/dividirPagoFragment"
+        android:name="com.example.appfavas.ui.pagos.DividirPagoFragment"
+        tools:layout="@layout/fragment_dividir_pago" >
+        <action
+            android:id="@+id/action_dividirPagoFragment_to_totalDividirPagosFragment"
+            app:destination="@id/totalDividirPagosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/totalDividirPagosFragment"
+        android:name="com.example.appfavas.ui.pagos.TotalDividirPagosFragment"
+        android:label="fragment_total_dividir_pagos"
+        tools:layout="@layout/fragment_total_dividir_pagos" />
 
 
 </navigation>
