@@ -4,20 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.activity.viewModels
-import androidx.core.view.isVisible
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import com.example.appfavas.databinding.ActivityMainBinding
-import com.example.appfavas.databinding.FragmentRegistroUsuarioBinding
-import com.example.appfavas.modelos.Usuario
-import com.example.appfavas.modelos.viewModels.UsuarioViewModel
 import com.example.appfavas.ui.usuario.RegistroUsuarioFragment
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
