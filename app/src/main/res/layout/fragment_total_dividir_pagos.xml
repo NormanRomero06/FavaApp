@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/back"
+    tools:context=".ui.pagos.TotalDividirPagosFragment">
+
+    <View
+        android:id="@+id/VwPago"
+        android:layout_width="520dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_shape_login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+       />
+
+    <View
+        android:id="@+id/VwCantidad"
+        android:layout_width="350dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/ic_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TvTotal"
+        android:layout_width="280dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/_0_00"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="@id/VwCantidad"
+        app:layout_constraintStart_toStartOf="@id/VwCantidad"
+        app:layout_constraintTop_toTopOf="@id/VwCantidad" />
+
+    <TextView
+        android:id="@+id/TvTotalPago"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="TOTAL PAGADO"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@id/VwCantidad"
+        app:layout_constraintEnd_toEndOf="@id/VwCantidad"
+        app:layout_constraintStart_toStartOf="@id/VwCantidad"
+        app:layout_constraintTop_toBottomOf="@id/TvTotal" />
+
+    <View
+        android:id="@+id/VwCambio"
+        android:layout_width="350dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/ic_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/VwCantidad" />
+    <TextView
+        android:id="@+id/tv_cambio"
+        android:layout_width="280dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/_0_00"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="@id/VwCambio"
+        app:layout_constraintStart_toStartOf="@id/VwCambio"
+        app:layout_constraintTop_toTopOf="@id/VwCambio" />
+
+    <TextView
+        android:id="@+id/tvCambio"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="CAMBIO"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@id/VwCambio"
+        app:layout_constraintEnd_toEndOf="@id/VwCambio"
+        app:layout_constraintStart_toStartOf="@id/VwCambio"
+        app:layout_constraintTop_toBottomOf="@id/tv_cambio" />
+    <View
+        android:id="@+id/VwTarjeta"
+        android:layout_width="350dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/ic_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/VwCambio" />
+    <TextView
+        android:id="@+id/tv_totalTarj"
+        android:layout_width="280dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/_0_00"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="@id/VwTarjeta"
+        app:layout_constraintStart_toStartOf="@id/VwTarjeta"
+        app:layout_constraintTop_toTopOf="@id/VwTarjeta" />
+
+    <TextView
+        android:id="@+id/tv_TotalTarjeta"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="TOTAL TARJETA"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@id/VwTarjeta"
+        app:layout_constraintEnd_toEndOf="@id/VwTarjeta"
+        app:layout_constraintStart_toStartOf="@id/VwTarjeta"
+        app:layout_constraintTop_toBottomOf="@id/tv_totalTarj" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_venta"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/btn_shape"
+        android:textColor="@color/teal_700"
+        android:backgroundTint="@color/color_Primary"
+        android:text="Nueva Venta"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/VwPago"
+        app:layout_constraintStart_toStartOf="@id/VwPago"
+        app:layout_constraintTop_toBottomOf="@id/VwTarjeta" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
