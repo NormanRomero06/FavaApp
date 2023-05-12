@@ -87,5 +87,4 @@
         app:layout_constraintStart_toEndOf="@id/monto_Transaccion"
         app:layout_constraintTop_toTopOf="parent" />
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

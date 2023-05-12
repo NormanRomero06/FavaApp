@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.example.appfavas.databinding.ActivityMainBinding
+import com.example.appfavas.ui.usuario.RecuperarPWFragment
 import com.example.appfavas.ui.usuario.RegistroUsuarioFragment
 
 class MainActivity : AppCompatActivity() {
@@ -28,6 +29,15 @@ class MainActivity : AppCompatActivity() {
                 .addToBackStack(null).commit()
 
             binding.btnLogin.visibility = View.GONE
+        }
+
+        binding.TvOlvidarPW.setOnClickListener {
+            val fragmentR = RecuperarPWFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container,fragmentR)
+                .addToBackStack(null).commit()
+
+            binding.btnLogin.visibility =View.GONE
         }
 
     }
