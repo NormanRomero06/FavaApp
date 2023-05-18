@@ -14,6 +14,7 @@ Manual
 9. En cada clase de diseño, añadirle la palabra FRAGMENT al final.
 
 Aqui un respaldo de la app hecha con ROOM
-
 https://github.com/JorgeCh1/FavasProjectBackUp.git
 
+Metodos en PHP para consumo de API
+https://github.com/NormanRomero06/PHP_METODOS.git
