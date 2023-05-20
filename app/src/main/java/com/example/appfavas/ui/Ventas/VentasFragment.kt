@@ -33,7 +33,7 @@ class VentasFragment : Fragment() {
     fun navigation()
     {
         binding.btnComprar.setOnClickListener {
-           // Navigation.findNavController(binding.root).navigate(R.id.cobroFragmen)
+            Navigation.findNavController(binding.root).navigate(R.id.cobroFragment)
         }
     }
 
