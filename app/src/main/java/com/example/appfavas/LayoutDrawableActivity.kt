@@ -57,4 +57,5 @@ class LayoutDrawableActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_layout_drawable)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
 }
