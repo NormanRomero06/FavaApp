@@ -29,7 +29,7 @@ class UsuarioViewModel(application: Application) : AndroidViewModel(application)
     }
 
     //Acá se define un objeto LiveData llamado todos el cual es obtenido medinate la funcion obtenerTodos
-    //de estudianteDao, utilizado para observar y obtener la lista de todos los estudiantes almacenados
+    //de usuarioDao, utilizado para observar y obtener la lista de todos los usuarios almacenados
     //en la base de datos en tiempo real
 
     val todos: LiveData<List<Usuario>> = usuarioDao.obtenerTodos()
