@@ -3,7 +3,7 @@ package com.example.appfavas.modelos
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "usuarios")
 data class Usuario(
     @PrimaryKey(autoGenerate = true)
     val idUsuario: Int =0,

@@ -1,10 +1,12 @@
 package com.example.appfavas.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.appfavas.modelos.Usuario
 
 @Dao
 interface UsuarioDao {
+
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun inserUs(usuario: Usuario):Long
@@ -15,5 +17,9 @@ interface UsuarioDao {
     @Delete
     fun eliminarUs(usuario: Usuario): Int
 
+    //Acá especificamos una consulta personalizada para obtener los registros de la tabla
+    //y devuelve un LiveData
+    @Query("SELECT * FROM usuarios")
+    fun obtenerTodos(): LiveData<List<Usuario>>
 
 }

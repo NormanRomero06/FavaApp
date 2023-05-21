@@ -2,6 +2,7 @@ package com.example.appfavas.modelos.viewModels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import com.example.appfavas.dao.AppDatabase
 import com.example.appfavas.dao.UsuarioDao
 import com.example.appfavas.modelos.Usuario
@@ -26,6 +27,12 @@ class UsuarioViewModel(application: Application) : AndroidViewModel(application)
     suspend fun eliminarUs(usuario: Usuario) = withContext(Dispatchers.IO){
         usuarioDao.eliminarUs(usuario)
     }
+
+    //Acá se define un objeto LiveData llamado todos el cual es obtenido medinate la funcion obtenerTodos
+    //de estudianteDao, utilizado para observar y obtener la lista de todos los estudiantes almacenados
+    //en la base de datos en tiempo real
+
+    val todos: LiveData<List<Usuario>> = usuarioDao.obtenerTodos()
 
 
 }
