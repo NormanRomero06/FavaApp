@@ -1,9 +1,65 @@
 package com.example.appfavas.modelos
 
+import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.appfavas.R
 import com.example.appfavas.databinding.ItemUsuariosBinding
+
+/*
+class UsuarioAdapter(usuario:List<Usuario>, ctx: Context): RecyclerView.Adapter<UsuarioAdapter.ViewHolder>(){
+    var usuario:List<Usuario>?=null
+    var ctx:Context?=null
+
+    init {
+        this.usuario = usuario
+        this.ctx = ctx
+    }
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val vistaUsuario:View = LayoutInflater
+            .from(ctx)
+            .inflate(R.layout.item_usuarios, parent, false)
+
+        val usuarioVH = ViewHolder(vistaUsuario)
+
+        vistaUsuario.tag = usuarioVH
+        return usuarioVH
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val usuario = usuario!!.get(position)
+        holder.tvNombres!!.text = usuario.nombres
+        holder.tvApellidos!!.text = usuario.apellidos
+        holder.tvEmail!!.text = usuario.correo
+        holder.tvRol!!.text = usuario.rol
+    }
+
+    override fun getItemCount(): Int {
+        return usuario!!.size
+    }
+
+    class ViewHolder(vista: View):RecyclerView.ViewHolder(vista){
+        var tvNombres: TextView?=null
+        var tvApellidos: TextView?=null
+        var tvEmail: TextView?=null
+        var tvRol: TextView?=null
+
+        init {
+            tvNombres = vista.findViewById(R.id.tvNombres)
+            tvApellidos = vista.findViewById(R.id.tvApellidos)
+            tvEmail = vista.findViewById(R.id.tvEmail)
+            tvRol = vista.findViewById(R.id.tvRol)
+
+        }
+    }*/
+
+
+
 
 
 class UsuarioAdapter(private val onItemClick: (Usuario) -> Unit) :

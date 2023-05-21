@@ -9,7 +9,7 @@
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:src="@drawable/cooricon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,24 +35,14 @@
         app:layout_constraintStart_toStartOf="@+id/tvidC"
         app:layout_constraintTop_toBottomOf="@+id/tvidC" />
 
-
-    <TextView
-        android:id="@+id/tvApellidos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Apellidos"
-        app:layout_constraintStart_toStartOf="@+id/tvNombres"
-        app:layout_constraintTop_toBottomOf="@+id/tvNombres" />
-
     <TextView
         android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Email"
-        app:layout_constraintStart_toStartOf="@+id/tvApellidos"
-        app:layout_constraintTop_toBottomOf="@+id/tvApellidos" />
+        app:layout_constraintStart_toStartOf="@+id/tvNombres"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombres" />
 
     <TextView
         android:id="@+id/tvRol"
