@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/back"
+        tools:context=".ui.usuario.UsuariosFragment">
+
+        <View
+            android:id="@+id/VwUsuarios"
+            android:layout_width="800dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_shape_login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Usuarios existentes"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/rvUsuarios"
+            app:layout_constraintEnd_toEndOf="@+id/VwUsuarios"
+            app:layout_constraintStart_toStartOf="@+id/VwUsuarios"
+            app:layout_constraintTop_toTopOf="@+id/VwUsuarios" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvUsuarios"
+            android:layout_width="700dp"
+            android:layout_height="400dp"
+            app:layout_constraintBottom_toBottomOf="@+id/VwUsuarios"
+            app:layout_constraintEnd_toEndOf="@+id/VwUsuarios"
+            app:layout_constraintStart_toStartOf="@+id/VwUsuarios"
+            app:layout_constraintTop_toTopOf="@+id/VwUsuarios" />
+
+        <Button
+            android:id="@+id/btnNuevoUsuario"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="400dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_shape"
+            android:contentDescription="Add"
+            android:text="Nuevo Usuario"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/VwUsuarios"
+            app:layout_constraintStart_toStartOf="@+id/VwUsuarios"
+            app:layout_constraintTop_toBottomOf="@+id/rvUsuarios" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -38,9 +38,10 @@ class LayoutDrawableActivity : AppCompatActivity() {
                 R.id.nav_articulos,
                 R.id.nav_cierre,
                 R.id.nav_pagos,
-                R.id.nav_configuraciones,
+                //R.id.nav_configuraciones,
                 R.id.nav_historialVentas,
-                R.id.nav_categorias
+                R.id.nav_categorias,
+                R.id.nav_usuarios
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

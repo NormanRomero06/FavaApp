@@ -132,8 +132,16 @@
     <fragment
         android:id="@+id/totalDividirPagosFragment"
         android:name="com.example.appfavas.ui.pagos.TotalDividirPagosFragment"
-        android:label="fragment_total_dividir_pagos"
+        android:label="Divir Pagos"
         tools:layout="@layout/fragment_total_dividir_pagos" />
+    <fragment
+        android:id="@+id/nav_usuarios"
+        android:name="com.example.appfavas.ui.usuario.UsuariosFragment"
+        tools:layout="@layout/fragment_usuarios">
+        <action
+            android:id="@+id/UsuariosToRegistroUsuario"
+            app:destination="@id/registroUsuarioFragment" />
+    </fragment>
 
 
 </navigation>

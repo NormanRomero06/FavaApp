@@ -33,9 +33,16 @@
             android:icon="@drawable/pago"
             android:title="@string/pagos"/>
         <item
+            android:id="@+id/nav_usuarios"
+            android:icon="@drawable/user_24"
+            android:title="Usuarios"
+            />
+        <!--
+        <item
             android:id="@+id/nav_configuraciones"
             android:icon="@drawable/configuraciones"
             android:title="@string/configuraciones"
             />
+            -->
     </group>
 </menu>
