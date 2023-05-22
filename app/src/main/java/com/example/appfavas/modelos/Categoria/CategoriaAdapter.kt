@@ -10,7 +10,7 @@ class CategoriaAdapter(private val catList: ArrayList<Categoria>): RecyclerView.
     class ViewHolder(private val binding: ItemCategoriaBinding): RecyclerView.ViewHolder(binding.root){
         fun load(item: Categoria){
             with(binding){
-                tvIdCat.text = item.id
+                tvIdCat.text = item.id.toString()
                 tvNombreCategoria.text = item.nombre
             }
         }
