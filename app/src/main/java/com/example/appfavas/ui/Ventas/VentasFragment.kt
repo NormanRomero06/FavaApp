@@ -49,30 +49,25 @@ class VentasFragment : Fragment() {
         val reqQueue: RequestQueue = Volley.newRequestQueue(getActivity())
         val request = JsonObjectRequest(Request.Method.GET, uri, null, { res ->
             val jsonArray = res.getJSONArray("data")
-            Log.d("Volley Sample",jsonArray.toString())
 
             for (i in 0 until jsonArray.length()){
                 val jsonObj = jsonArray.getJSONObject(i)
-                Log.d("Volley Sample",jsonObj.toString())
                 val user = Categoria(
                     jsonObj.getString("idCategoria"),
                     jsonObj.getString("nombre"),
                 )
-                Log.d("Perfecto", catList.toString())
                 catList.add(user)
             }
-            Log.d("Ideal", catList.toString())
             println(catList.toString())
 
             recyclerView?.layoutManager = LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false)
             recyclerView?.adapter = CategoriaAdapter(catList)
 
-        },{err ->
-            Log.d("Volley fail", err.message.toString())
+        },{
+
         })
 
         reqQueue.add(request)
-
     }
 
     fun navigation()

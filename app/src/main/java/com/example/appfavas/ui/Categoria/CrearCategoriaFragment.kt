@@ -2,18 +2,15 @@ package com.example.appfavas.ui.Categoria
 
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.navigation.Navigation
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentCrearCategoriaBinding
 
 class CrearCategoriaFragment : Fragment() {
@@ -46,9 +43,7 @@ class CrearCategoriaFragment : Fragment() {
                             Toast.LENGTH_LONG
                         ).show()
                     }, Response.ErrorListener { error ->
-                        Log.d("ERROR","$error")
                         Toast.makeText(getActivity(), "Error: $error", Toast.LENGTH_LONG).show()
-                        Log.d("ERROR","$error")
                     }) {
                     override fun getParams(): MutableMap<String, String> {
                         val parametros = HashMap<String, String>()
@@ -63,7 +58,6 @@ class CrearCategoriaFragment : Fragment() {
             }
         }
     }
-
     private fun limpiarCampos() {
         with(binding) {
             btnGuardarCategoria.setOnClickListener {
@@ -71,8 +65,6 @@ class CrearCategoriaFragment : Fragment() {
             }
         }
     }
-
-
     override fun onDestroyView() {
         super.onDestroyView()
         binding
