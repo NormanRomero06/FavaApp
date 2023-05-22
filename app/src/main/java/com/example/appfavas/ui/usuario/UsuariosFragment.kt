@@ -6,21 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentUsuariosBinding
-import com.example.appfavas.modelos.Usuario
-import com.example.appfavas.dao.AppDatabase
-import com.example.appfavas.databinding.ActivityMainBinding
-import com.example.appfavas.modelos.UsuarioAdapter
+import com.example.appfavas.modelos.Usuario.Usuario
+import com.example.appfavas.modelos.Usuario.UsuarioAdapter
 import com.example.appfavas.modelos.viewModels.UsuarioViewModel
-import kotlinx.coroutines.launch
 
 class UsuariosFragment : Fragment() {
     //private var _binding: FragmentUsuariosBinding? = null

@@ -2,7 +2,7 @@ package com.example.appfavas.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.appfavas.modelos.Usuario
+import com.example.appfavas.modelos.Usuario.Usuario
 
 @Dao
 interface UsuarioDao {

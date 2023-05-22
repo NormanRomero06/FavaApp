@@ -15,8 +15,8 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentVentasHomeBinding
-import com.example.appfavas.modelos.Categoria
-import com.example.appfavas.modelos.CategoriaAdapter
+import com.example.appfavas.modelos.Categoria.Categoria
+import com.example.appfavas.modelos.Categoria.CategoriaAdapter
 
 class VentasFragment : Fragment() {
 

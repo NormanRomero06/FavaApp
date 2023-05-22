@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -16,8 +15,8 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.example.appfavas.databinding.FragmentListaCategoriasBinding
 import com.android.volley.toolbox.Volley
 import com.example.appfavas.R
-import com.example.appfavas.modelos.Categoria
-import com.example.appfavas.modelos.CategoriaAdapter
+import com.example.appfavas.modelos.Categoria.Categoria
+import com.example.appfavas.modelos.Categoria.CategoriaAdapter
 
 
 class ListaCategoriasFragment : Fragment() {

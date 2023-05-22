@@ -5,7 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import com.example.appfavas.dao.AppDatabase
 import com.example.appfavas.dao.UsuarioDao
-import com.example.appfavas.modelos.Usuario
+import com.example.appfavas.modelos.Usuario.Usuario
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
