@@ -1,4 +1,4 @@
-package com.example.appfavas.modelos
+package com.example.appfavas.modelos.Usuario
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

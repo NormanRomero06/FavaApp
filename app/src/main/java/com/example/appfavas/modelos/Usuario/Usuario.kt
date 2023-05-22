@@ -1,4 +1,4 @@
-package com.example.appfavas.modelos
+package com.example.appfavas.modelos.Usuario
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

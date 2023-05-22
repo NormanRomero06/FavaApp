@@ -1,4 +1,4 @@
-package com.example.appfavas.modelos
+package com.example.appfavas.modelos.Categoria
 
 data class Categoria(var id: String,
                      var nombre: String,

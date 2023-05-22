@@ -1,4 +1,4 @@
-package com.example.appfavas.modelos
+package com.example.appfavas.modelos.Categoria
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
