@@ -1,13 +1,23 @@
 package com.example.appfavas.ui.Categoria
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
-import com.example.appfavas.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
+import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.toolbox.JsonObjectRequest
 import com.example.appfavas.databinding.FragmentListaCategoriasBinding
+import com.android.volley.toolbox.Volley
+import com.example.appfavas.R
+import com.example.appfavas.modelos.Categoria
+import com.example.appfavas.modelos.CategoriaAdapter
 
 
 class ListaCategoriasFragment : Fragment() {
@@ -16,6 +26,9 @@ class ListaCategoriasFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    val catList = arrayListOf<Categoria>()
+    val uri ="http://localfavas.online/Categoria/ReadCategoria.php"
+    var recyclerView: RecyclerView? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,6 +41,39 @@ class ListaCategoriasFragment : Fragment() {
         navigation()
 
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        recyclerView = binding.rvCategoria
+        val reqQueue: RequestQueue = Volley.newRequestQueue(getActivity())
+        val request =JsonObjectRequest(Request.Method.GET, uri, null, {res ->
+            val jsonArray = res.getJSONArray("data")
+            Log.d("Volley Sample",jsonArray.toString())
+
+            for (i in 0 until jsonArray.length()){
+                val jsonObj = jsonArray.getJSONObject(i)
+                Log.d("Volley Sample",jsonObj.toString())
+                val user = Categoria(
+                    jsonObj.getString("idCategoria"),
+                    jsonObj.getString("nombre"),
+                )
+                Log.d("Perfecto", catList.toString())
+                catList.add(user)
+            }
+            Log.d("Ideal", catList.toString())
+            println(catList.toString())
+
+            recyclerView?.layoutManager = LinearLayoutManager(getActivity())
+            recyclerView?.adapter = CategoriaAdapter(catList)
+
+
+        },{err ->
+            Log.d("Volley fail", err.message.toString())
+        })
+
+        reqQueue.add(request)
     }
 
     fun navigation()

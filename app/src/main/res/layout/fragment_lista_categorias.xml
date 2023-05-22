@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.Categoria.ListaCategoriasFragment"
+    android:background="@color/back">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/back"
-        tools:context=".ui.Categoria.ListaCategoriasFragment">
 
         <View
             android:id="@+id/VwCategoria"
@@ -36,6 +33,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvCategoria"
+            app:layout_constraintVertical_bias="0.5"
             android:layout_width="700dp"
             android:layout_height="400dp"
             app:layout_constraintBottom_toBottomOf="@+id/VwCategoria"
@@ -43,12 +41,11 @@
             app:layout_constraintStart_toStartOf="@+id/VwCategoria"
             app:layout_constraintTop_toTopOf="@+id/VwCategoria" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnNuevaCategoria"
             android:layout_width="200dp"
             android:layout_height="0dp"
-            android:layout_marginStart="400dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/btn_shape"
             android:contentDescription="Add"
             android:text="Nueva Categoría"
@@ -57,7 +54,4 @@
             app:layout_constraintStart_toStartOf="@+id/VwCategoria"
             app:layout_constraintTop_toBottomOf="@+id/rvCategoria" />
 
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
