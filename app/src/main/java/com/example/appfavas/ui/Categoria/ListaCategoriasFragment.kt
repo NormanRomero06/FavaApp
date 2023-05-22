@@ -49,6 +49,9 @@ class ListaCategoriasFragment : Fragment() {
         val reqQueue: RequestQueue = Volley.newRequestQueue(getActivity())
         val request =JsonObjectRequest(Request.Method.GET, uri, null, {res ->
             val jsonArray = res.getJSONArray("data")
+
+            //Limpia la lista para evitar items duplicados
+            catList.clear()
             for (i in 0 until jsonArray.length()){
                 val jsonObj = jsonArray.getJSONObject(i)
                 val user = Categoria(
