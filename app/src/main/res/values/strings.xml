@@ -38,7 +38,7 @@
     <string name="_0">0</string>
     <string name="guardar">Guardar</string>
     <string name="editar_frutas">Editar Frutas</string>
-    <string name="referencia_del_pago">Referencia del pago</string>
+    <string name="descripcion_egresos">Descripción</string>
     <string name="cantidad">Cantidad</string>
     <string name="realizar_pago">Realizar Pago</string>
     <string name="editar_pago">Editar Pago</string>

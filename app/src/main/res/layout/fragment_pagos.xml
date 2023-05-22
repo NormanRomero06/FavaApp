@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/VwPagos"
+        android:id="@+id/vwPagos"
         android:layout_width="520dp"
         android:layout_height="700dp"
         android:layout_marginTop="20dp"
@@ -33,15 +33,16 @@
 
 
     <EditText
-        android:id="@+id/etProveedor"
+        android:id="@+id/etDescripcion"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:hint="@string/referencia_del_pago"
+        android:hint="@string/descripcion_egresos"
         android:minHeight="48sp"
+        android:inputType="text"
         android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@id/VwPagos"
-        app:layout_constraintStart_toStartOf="@id/VwPagos"
-        app:layout_constraintTop_toTopOf="@+id/VwPagos" />
+        app:layout_constraintEnd_toEndOf="@id/vwPagos"
+        app:layout_constraintStart_toStartOf="@id/vwPagos"
+        app:layout_constraintTop_toTopOf="@+id/vwPagos" />
 
     <EditText
         android:id="@+id/etCantidad"
@@ -53,7 +54,7 @@
         android:minHeight="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etProveedor" />
+        app:layout_constraintTop_toBottomOf="@+id/etDescripcion" />
 
     <Button
         android:id="@+id/btnRealizarPago"
@@ -67,17 +68,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etCantidad" />
 
-    <Button
-        android:id="@+id/btnEditarPago"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/back"
-        android:text="@string/editar_pago"
-        android:textColor="@color/boton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnRealizarPago" />
 
     <Button
         android:id="@+id/btnEliminarPago"
@@ -89,7 +79,7 @@
         android:textColor="@color/boton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnEditarPago" />
+        app:layout_constraintTop_toBottomOf="@id/btnRealizarPago" />
 
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawer_layout"
