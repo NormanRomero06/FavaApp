@@ -53,7 +53,7 @@ class VentasFragment : Fragment() {
             for (i in 0 until jsonArray.length()){
                 val jsonObj = jsonArray.getJSONObject(i)
                 val user = Categoria(
-                    jsonObj.getString("idCategoria"),
+                    jsonObj.getInt("idCategoria"),
                     jsonObj.getString("nombre"),
                 )
                 catList.add(user)

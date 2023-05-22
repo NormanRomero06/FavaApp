@@ -53,6 +53,12 @@
         <item>Administrador</item>
         <item>Cocina</item>
     </string-array>
+    <integer-array name="cat">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </integer-array>
     <string name="prompt">Roles</string>
     <string name="nueva_venta">Nueva Venta</string>
     <string name="cambio">CAMBIO</string>
