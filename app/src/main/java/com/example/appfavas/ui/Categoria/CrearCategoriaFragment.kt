@@ -11,7 +11,9 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentCrearCategoriaBinding
+import com.example.appfavas.modelos.Categoria.CategoriaAdapter
 
 class CrearCategoriaFragment : Fragment() {
 
@@ -21,12 +23,13 @@ class CrearCategoriaFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentCrearCategoriaBinding.inflate(inflater, container, false)
         val root: View = binding.root
         crearCategoria()
         return root
+
     }
     fun crearCategoria(){
         binding.btnGuardarCategoria.setOnClickListener {
@@ -34,7 +37,7 @@ class CrearCategoriaFragment : Fragment() {
                 val nombre = binding.etNombreCategoria.text.toString()
                 val url = "http://localfavas.online/Categoria/InsertCategoria.php"
                 val queue = Volley.newRequestQueue(activity)
-                var resultadoPost = object : StringRequest(
+                val resultadoPost = object : StringRequest(
                     Request.Method.POST, url,
                     Response.Listener<String>{ response ->
                         Toast.makeText(
@@ -61,7 +64,7 @@ class CrearCategoriaFragment : Fragment() {
     private fun limpiarCampos() {
         with(binding) {
             btnGuardarCategoria.setOnClickListener {
-                etNombreCategoria?.setText("")
+                etNombreCategoria.setText("")
             }
         }
     }
@@ -69,6 +72,5 @@ class CrearCategoriaFragment : Fragment() {
         super.onDestroyView()
         binding
     }
-
 
 }

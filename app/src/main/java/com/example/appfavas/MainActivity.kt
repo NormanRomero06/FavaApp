@@ -15,38 +15,44 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        login()
+        registrarse()
+        recuperarUser()
+    }
 
-
+    private fun login() {
         binding.btnLogin.setOnClickListener {
             val iniciar = Intent(this, LayoutDrawableActivity::class.java)
             startActivity(iniciar)
         }
+    }
 
+    private fun registrarse() {
         binding.TvRegistrarse.setOnClickListener {
-           val fragment = RegistroUsuarioFragment()
+            val fragment = RegistroUsuarioFragment()
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container,  fragment)
+                .replace(R.id.fragment_container, fragment)
                 .addToBackStack(null).commit()
 
             binding.btnLogin.visibility = View.GONE
         }
+    }
 
+    private fun recuperarUser(){
         binding.TvOlvidarPW.setOnClickListener {
             val fragmentR = RecuperarPWFragment()
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container,fragmentR)
+                .replace(R.id.fragment_container, fragmentR)
                 .addToBackStack(null).commit()
 
-            binding.btnLogin.visibility =View.GONE
+            binding.btnLogin.visibility = View.GONE
         }
-
     }
 
     override fun onBackPressed() {
         binding.btnLogin.visibility = View.VISIBLE
         super.onBackPressed()
     }
-
 
 
 }
