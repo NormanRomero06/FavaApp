@@ -7,7 +7,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/back"
         tools:context=".ui.articulo.CrearArticuloVentasFragment">
 
@@ -78,22 +78,11 @@
             app:layout_constraintStart_toStartOf="@id/VwArticulos"
             app:layout_constraintTop_toBottomOf="@+id/etDescripcion" />
 
-        <!--
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvCategoria"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="@id/VwPagos"
-            app:layout_constraintStart_toStartOf="@id/VwPagos"
-            app:layout_constraintTop_toBottomOf="@+id/tvCategoria" />
-    -->
         <Spinner
             android:id="@+id/sCategoría"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:entries="@array/cat"
             app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
             app:layout_constraintStart_toStartOf="@+id/VwArticulos"
             app:layout_constraintTop_toBottomOf="@+id/tvCategoria" />
@@ -103,11 +92,11 @@
             android:id="@+id/tvInventario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="250dp"
+            android:layout_marginEnd="250dp"
             android:gravity="center"
             android:text="Inventario"
             android:textColor="@color/color_Primary"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
             app:layout_constraintStart_toStartOf="@+id/VwArticulos"
@@ -118,7 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="250dp"
+            android:layout_marginEnd="250dp"
             android:text="En stock"
             android:textColor="@color/gray"
             app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
@@ -147,18 +136,19 @@
             android:background="@color/gray"
             app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
             app:layout_constraintStart_toStartOf="@+id/VwArticulos"
-            app:layout_constraintTop_toBottomOf="@id/etStockArticulo" />
+            app:layout_constraintTop_toBottomOf="@id/etStockArticulo"
+            android:contentDescription="ProductIMG" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="100dp"
-            android:drawableLeft="@drawable/folder_24"
             android:text=" ELIJA UNA FOTO"
             android:textColor="@color/gray"
             app:layout_constraintStart_toEndOf="@id/ivArticulo"
-            app:layout_constraintTop_toBottomOf="@id/etStockArticulo" />
+            app:layout_constraintTop_toBottomOf="@id/etStockArticulo"
+            app:drawableLeftCompat="@drawable/folder_24" />
 
         <Button
             android:id="@+id/btnLimpiarArt"
