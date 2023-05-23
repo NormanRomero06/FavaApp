@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         login()
         registrarse()
         recuperarUser()
+
     }
 
     private fun login() {
