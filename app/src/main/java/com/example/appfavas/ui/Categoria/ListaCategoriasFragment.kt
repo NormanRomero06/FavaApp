@@ -1,7 +1,6 @@
 package com.example.appfavas.ui.Categoria
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -62,16 +61,14 @@ class ListaCategoriasFragment : Fragment() {
             }
             println(catList.toString())
 
-            recyclerView?.layoutManager = LinearLayoutManager(getActivity())
+            recyclerView?.layoutManager = LinearLayoutManager(requireActivity())
             recyclerView?.adapter = CategoriaAdapter(catList)
-
 
         },{
         })
 
         reqQueue.add(request)
     }
-
     fun navigation()
     {
         binding.btnNuevaCategoria.setOnClickListener {
