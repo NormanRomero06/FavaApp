@@ -1,5 +1,6 @@
 package com.example.appfavas.modelos.Categoria
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
@@ -18,7 +19,11 @@ class CategoriaAdapter(private val catList: ArrayList<Categoria>): RecyclerView.
                     Navigation.findNavController(binding.root).navigate(R.id.nav_articulos)
                 }
                 ivEditar.setOnClickListener {
-                    Navigation.findNavController(binding.root).navigate(R.id.editarCategoriaFragment)
+                    val bundle = Bundle()
+                    bundle.putString("idCategoria", item.id.toString())
+                    bundle.putString("nombre", item.nombre)
+                    val navController = Navigation.findNavController(binding.root)
+                    navController.navigate(R.id.editarCategoriaFragment, bundle)
                 }
 
             }

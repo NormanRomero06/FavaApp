@@ -1,28 +1,147 @@
 package com.example.appfavas.ui.Categoria
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.example.appfavas.R
+import com.example.appfavas.databinding.FragmentEditarCategoriaBinding
 
 class EditarCategoriaFragment : Fragment() {
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-
-        }
-    }
+    private var _binding: FragmentEditarCategoriaBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_editar_categoria, container, false)
+        _binding = FragmentEditarCategoriaBinding.inflate(inflater, container, false)
+        val rootView = binding.root
+
+
+        // Utiliza los datos según sea necesario
+
+        editarCategoria()
+        btnLimpiar()
+        eliminarCategoria()
+        return rootView
     }
 
+
+    fun editarCategoria() {
+        val idCategoria = arguments?.getString("idCategoria")
+        val nombre = arguments?.getString("nombre")
+        binding.etId.setText(idCategoria)
+        binding.etNombreCategoria.setText(nombre)
+        with(binding) {
+            btnEditarCategoria.setOnClickListener {
+                try {
+                    val url = "http://localfavas.online/Categoria/UpdateCategoria.php"
+                    val queue = Volley.newRequestQueue(activity)
+                    val resultadoPost = object : StringRequest(
+                        Request.Method.POST, url,
+                        Response.Listener<String> { response ->
+                            Toast.makeText(
+                                context,
+                                "Modificado existosamente",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }, Response.ErrorListener { error ->
+                            Toast.makeText(context, "Error: $error", Toast.LENGTH_LONG).show()
+                        }) {
+                        override fun getParams(): MutableMap<String, String>? {
+                            val parametros = HashMap<String, String>()
+                            parametros.put("idCategoria", binding.etId.text.toString())
+                            parametros.put("nombre", binding.etNombreCategoria.text.toString())
+                            parametros.put("imagen", "")
+                            Log.d("Prueba4", "Parametros:$parametros")//Prueba
+                            return parametros
+                        }
+                    }
+
+                    queue.add(resultadoPost)
+
+
+                } catch (ex: Exception) {
+                    Toast.makeText(
+                        requireContext(),
+                        "Error al editar: ${ex.toString()}",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+
+            }
+
+        }
+
+    }
+
+    fun btnLimpiar() {
+        binding.btnLimpiarCampos.setOnClickListener {
+            limpiar()
+        }
+    }
+
+    fun limpiar() {
+        with(binding) {
+            etId.setText("")
+            etNombreCategoria.setText("")
+        }
+    }
+
+    fun eliminarCategoria() {
+        with(binding) {
+            val idCategoria = arguments?.getString("idCategoria")
+            binding.etId.setText(idCategoria)
+            btnEliminarCategoria.setOnClickListener {
+                try {
+                    val url = "http://localfavas.online/Categoria/DeleteCategoria.php"
+                    val queue = Volley.newRequestQueue(activity)
+                    val resultadoPost = object : StringRequest(
+                        Request.Method.POST, url,
+                        Response.Listener<String> { response ->
+                            Toast.makeText(
+                                context,
+                                "Eliminado existosamente",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }, Response.ErrorListener { error ->
+                            Toast.makeText(context, "Error: $error", Toast.LENGTH_LONG).show()
+                        }) {
+                        override fun getParams(): MutableMap<String, String>? {
+                            val parametros = HashMap<String, String>()
+                            parametros.put("idCategoria", binding.etId.text.toString())
+                            return parametros
+                        }
+                    }
+                    queue.add(resultadoPost)
+
+
+                } catch (ex: Exception) {
+                    Toast.makeText(
+                        requireContext(),
+                        "Error al Eliminar: ${ex.toString()}",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+        }
+
+
+    }
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    // ...
 }

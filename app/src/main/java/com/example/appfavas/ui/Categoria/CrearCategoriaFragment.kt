@@ -11,9 +11,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentCrearCategoriaBinding
-import com.example.appfavas.modelos.Categoria.CategoriaAdapter
 
 class CrearCategoriaFragment : Fragment() {
 
