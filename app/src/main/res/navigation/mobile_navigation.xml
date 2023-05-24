@@ -27,11 +27,7 @@
         android:id="@+id/nav_pagos"
         android:name="com.example.appfavas.ui.pagos.PagosFragment"
         android:label="Pagos"
-        tools:layout="@layout/fragment_pagos" >
-        <action
-            android:id="@+id/action_nav_pagos_to_listaPagosFragment"
-            app:destination="@id/listaPagosFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_pagos" />
     <fragment
         android:id="@+id/cobroFragment"
         android:name="com.example.appfavas.ui.Ventas.CobroFragment"
@@ -147,9 +143,9 @@
             app:destination="@id/registroUsuarioFragment" />
     </fragment>
     <fragment
-        android:id="@+id/listaPagosFragment"
+        android:id="@+id/nav_historialPagos"
         android:name="com.example.appfavas.ui.pagos.ListaPagosFragment"
-        android:label="fragment_lista_pagos"
+        android:label="Historial de Pagos"
         tools:layout="@layout/fragment_lista_pagos" />
 
 
