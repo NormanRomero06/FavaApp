@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -14,6 +15,8 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.example.appfavas.databinding.FragmentListaCategoriasBinding
 import com.android.volley.toolbox.Volley
 import com.example.appfavas.R
+import com.example.appfavas.decoration.SpaceItemDecoration
+import com.example.appfavas.modelos.Articulo.ArticuloAdapter
 import com.example.appfavas.modelos.Categoria.Categoria
 import com.example.appfavas.modelos.Categoria.CategoriaAdapter
 
@@ -61,7 +64,13 @@ class ListaCategoriasFragment : Fragment() {
             }
             println(catList.toString())
 
-            recyclerView?.layoutManager = LinearLayoutManager(requireActivity())
+            val spanCount = 2 // Número de columnas en la cuadrícula
+            val spaceHorizontal = resources.getDimensionPixelSize(R.dimen.item_space_horizontal)
+            val spaceVertical = resources.getDimensionPixelSize(R.dimen.item_space_vertical)
+            val gridLayoutManager = GridLayoutManager(requireContext(), spanCount)
+            val space = resources.getDimensionPixelSize(R.dimen.item_space) // Define el tamaño del espacio
+            recyclerView?.addItemDecoration(SpaceItemDecoration(spaceHorizontal, spaceVertical))
+            recyclerView?.layoutManager = gridLayoutManager
             recyclerView?.adapter = CategoriaAdapter(catList)
 
         },{
