@@ -21,6 +21,28 @@
                 android:src="@drawable/favaslogo" />
 
             <TextView
+                android:id="@+id/tvIdProducto"
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="30dp"
+                android:text="ID"
+                android:visibility="invisible"
+                android:textColor="@color/boton"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvCantidadMinima"
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="30dp"
+                android:text="ID"
+                android:visibility="invisible"
+                android:textColor="@color/boton"
+                android:textSize="15sp" />
+
+            <TextView
                 android:id="@+id/tvNombreArticulo"
                 android:layout_width="150dp"
                 android:layout_height="20dp"
@@ -51,6 +73,31 @@
                 android:textAlignment="center"
                 android:textColor="@color/gray"
                 android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvDescripcion"
+                android:layout_width="75dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="190dp"
+                android:layout_marginTop="5dp"
+                android:text="0.00"
+                android:visibility="invisible"
+                android:textAlignment="center"
+                android:textColor="@color/gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvCategoria"
+                android:layout_width="75dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="190dp"
+                android:layout_marginTop="5dp"
+                android:text="0.00"
+                android:visibility="invisible"
+                android:textAlignment="center"
+                android:textColor="@color/gray"
+                android:textSize="15sp" />
+
         </RelativeLayout>
 
 
