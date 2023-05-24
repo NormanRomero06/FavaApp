@@ -1,7 +1,5 @@
 package com.example.appfavas.modelos.Articulo
 
-import android.graphics.Bitmap
-
 data class Articulo(
     var idProducto: Int,
     var nombre: String,

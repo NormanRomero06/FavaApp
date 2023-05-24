@@ -15,7 +15,7 @@
         <item
             android:id="@+id/nav_historialArticulos"
             android:icon="@drawable/list"
-            android:title="Historial de Articulos"/>
+            android:title="Informes"/>
         <item
             android:id="@+id/nav_categorias"
             android:icon="@drawable/category"

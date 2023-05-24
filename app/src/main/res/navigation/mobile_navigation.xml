@@ -61,9 +61,9 @@
         tools:layout="@layout/fragment_historial_ventas" />
     <fragment
         android:id="@+id/nav_articulos"
-        android:name="com.example.appfavas.ui.articulo.TotalArticulosVentasFragment"
+        android:name="com.example.appfavas.modelos.Informes.InformeVentasFragment"
         android:label="Productos en Inventario"
-        tools:layout="@layout/fragment_total_articulos_ventas">
+        tools:layout="@layout/fragment_informe_articulos">
         <action
             android:id="@+id/action_totalArticulosVentasFragment_to_crearArticuloVentasFragment"
             app:destination="@id/crearArticuloVentasFragment" />
@@ -153,9 +153,9 @@
     </fragment>
     <fragment
         android:id="@+id/nav_historialArticulos"
-        android:name="com.example.appfavas.ui.articulo.HistorialArticulosFragment"
+        android:name="com.example.appfavas.ui.articulo.ListaArticulosFragment"
         android:label="Historial de Articulos"
-        tools:layout="@layout/fragment_historial_articulos"/>
+        tools:layout="@layout/fragment_lista_articulos"/>
     <fragment
         android:id="@+id/PantallaEliminarPago"
         android:name="com.example.appfavas.ui.pagos.Eliminar_pago"

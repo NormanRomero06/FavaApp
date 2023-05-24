@@ -14,16 +14,13 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.appfavas.R
 import com.example.appfavas.decoration.SpaceItemDecoration
-import com.example.appfavas.modelos.Articulo.Articulo
-import com.example.appfavas.modelos.Articulo.ArticuloAdapter
 import com.example.appfavas.modelos.Articulo.ArticuloVista
 import com.example.appfavas.modelos.Articulo.ArticuloVistaAdapter
-import org.json.JSONObject
-import com.example.appfavas.databinding.FragmentHistorialArticulosBinding
+import com.example.appfavas.databinding.FragmentListaArticulosBinding
 
 
-class HistorialArticulosFragment : Fragment() {
-    private lateinit var binding: FragmentHistorialArticulosBinding
+class ListaArticulosFragment : Fragment() {
+    private lateinit var binding: FragmentListaArticulosBinding
     val artVList = arrayListOf<ArticuloVista>()
     var recyclerView: RecyclerView? = null
 
@@ -32,7 +29,7 @@ class HistorialArticulosFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentHistorialArticulosBinding.inflate(inflater, container, false)
+        binding = FragmentListaArticulosBinding.inflate(inflater, container, false)
 
         val root: View = binding.root
         navigation()

@@ -1,11 +1,8 @@
 package com.example.appfavas.modelos.Articulo
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.example.appfavas.R
 import com.example.appfavas.databinding.ItemTotalArticulosVentasBinding
 
 class ArticuloVistaAdapter(private val artVList: ArrayList<ArticuloVista>): RecyclerView.Adapter<ArticuloVistaAdapter.ViewHolder>() {

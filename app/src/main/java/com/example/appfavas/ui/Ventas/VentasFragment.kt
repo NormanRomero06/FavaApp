@@ -16,7 +16,6 @@ import com.android.volley.toolbox.Volley
 import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentVentasHomeBinding
 import com.example.appfavas.modelos.Articulo.Articulo
-import com.example.appfavas.modelos.Articulo.ArticuloAdapter
 import com.example.appfavas.modelos.Categoria.Categoria
 import com.example.appfavas.modelos.Categoria.CategoriaAdapter
 

@@ -1,4 +1,4 @@
-package com.example.appfavas.ui.articulo
+package com.example.appfavas.modelos.Informes
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,16 +13,14 @@ import com.android.volley.RequestQueue
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.appfavas.R
-import com.example.appfavas.databinding.FragmentTotalArticulosVentasBinding
+import com.example.appfavas.databinding.FragmentInformeArticulosBinding
+
 import com.example.appfavas.decoration.SpaceItemDecoration
 import com.example.appfavas.modelos.Articulo.Articulo
 import com.example.appfavas.modelos.Articulo.ArticuloAdapter
-import com.example.appfavas.modelos.Articulo.ArticuloVista
-import com.example.appfavas.modelos.Articulo.ArticuloVistaAdapter
-import org.json.JSONObject
 
-class TotalArticulosVentasFragment : Fragment() {
-    private lateinit var binding: FragmentTotalArticulosVentasBinding
+class InformeVentasFragment : Fragment() {
+    private lateinit var binding: FragmentInformeArticulosBinding
     val artList = arrayListOf<Articulo>()
     var recyclerView: RecyclerView? = null
 
@@ -31,7 +29,7 @@ class TotalArticulosVentasFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentTotalArticulosVentasBinding.inflate(inflater, container, false)
+        binding = FragmentInformeArticulosBinding.inflate(inflater, container, false)
 
         val root: View = binding.root
         navigation()
