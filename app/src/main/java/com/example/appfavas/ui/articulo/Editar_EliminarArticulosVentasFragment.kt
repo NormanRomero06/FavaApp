@@ -1,64 +1,211 @@
 package com.example.appfavas.ui.articulo
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.Toast
+import androidx.navigation.Navigation
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.example.appfavas.R
+import com.example.appfavas.databinding.FragmentEditarEliminarArticulosVentasBinding
+import com.example.appfavas.modelos.Categoria.Categoria
+import org.json.JSONException
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Editar_EliminarArticulosVentasFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Editar_EliminarArticulosVentasFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding: FragmentEditarEliminarArticulosVentasBinding
+    private lateinit var categorias: MutableList<Categoria>
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(
-            R.layout.fragment_editar__eliminar_articulos_ventas,
-            container,
-            false
-        )
+        binding = FragmentEditarEliminarArticulosVentasBinding.inflate(inflater, container, false)
+        val root: View = binding.root
+        categorias = mutableListOf()
+        obtenerDatosSpinner()
+        editarProducto()
+        eliminarCategoria()
+        btnLimpiar()
+        return root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Editar_EliminarArticulosVentasFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Editar_EliminarArticulosVentasFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    fun editarProducto() {
+        val idProducto = arguments?.getString("idProducto")
+        val nombre = arguments?.getString("nombre")
+        val descripcion = arguments?.getString("descripcion")
+        val precio = arguments?.getString("precio")
+        val cantidad = arguments?.getString("cantidad")
+        //val categoria = arguments?.getInt("Categoria_Nombre")
+        binding.etId.setText(idProducto)
+        binding.etNombreArticulo.setText(nombre)
+        binding.etDescripcion.setText(descripcion)
+        binding.etPrecioArticulo.setText(precio)
+        binding.etStockArticulo.setText(cantidad)
+        /*if (categoria != null) {
+            binding.sCategorA.setSelection(categoria)
+        }*/
+
+        with(binding) {
+            btnEditarArt.setOnClickListener {
+                try {
+                    val cantMin = 1
+                    val selectedCategoryIndex = binding.sCategorA.selectedItemPosition
+                    val selectedCategory = categorias[selectedCategoryIndex]
+
+                    val url = "http://localfavas.online/Producto/UpdateProducto.php"
+                    val queue = Volley.newRequestQueue(activity)
+                    val resultadoPost = object : StringRequest(
+                        Request.Method.POST, url,
+                        Response.Listener<String> { response ->
+                            Toast.makeText(
+                                context,
+                                "Modificado existosamente",
+                                Toast.LENGTH_LONG
+                            ).show()
+                            limpiarCampos()
+                            Navigation.findNavController(binding.root).navigate(R.id.nav_articulos)
+                        }, Response.ErrorListener { error ->
+                            Toast.makeText(context, "Error: $error", Toast.LENGTH_LONG).show()
+                        }) {
+                        override fun getParams(): MutableMap<String, String> {
+                            val parametros = HashMap<String, String>()
+                            parametros.put("idProducto", binding.etId.text.toString())
+                            parametros.put("nombre", binding.etNombreArticulo.text.toString())
+                            parametros.put("precio", binding.etPrecioArticulo.text.toString())
+                            parametros.put("descripcion", binding.etDescripcion.text.toString())
+                            parametros.put("cantidad", binding.etStockArticulo.text.toString())
+                            parametros.put("cantidadMinima", cantMin.toString())
+                            //parametros.put("imagen", imgen)
+                            parametros.put("Categoria_idCategoria", selectedCategory.id.toString())
+                            return parametros
+                        }
+                    }
+                    queue.add(resultadoPost)
+
+                } catch (ex: Exception) {
+                    Toast.makeText(
+                        requireContext(),
+                        "Error al editar: ${ex.toString()}",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+
+            }
+
+        }
+
+    }
+
+    private fun obtenerDatosSpinner() {
+        val url = "http://localfavas.online/Categoria/ReadCategoria.php"
+
+        val request = JsonObjectRequest(
+            Request.Method.GET, url, null,
+            { response ->
+                categorias.clear()
+
+                try {
+                    val dataArray = response.getJSONArray("data")
+
+                    for (i in 0 until dataArray.length()) {
+                        val categoriaJson = dataArray.getJSONObject(i)
+                        val id = categoriaJson.getInt("idCategoria")
+                        val nombre = categoriaJson.getString("nombre")
+                        //val imagen = categoriaJson.getString("imagen")
+                        val categoria = Categoria(id, nombre)
+                        categorias.add(categoria)
+                    }
+
+                    // Crear el ArrayAdapter con la lista de nombres de categorías
+                    val nombresCategorias = categorias.map { it.nombre }
+                    val adapter = ArrayAdapter(
+                        requireContext(),
+                        android.R.layout.simple_spinner_item,
+                        nombresCategorias
+                    )
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                    binding.sCategorA.adapter = adapter
+                } catch (e: JSONException) {
+                    e.printStackTrace()
+                }
+            },
+            { error ->
+                error.printStackTrace()
+            })
+
+        val queue = Volley.newRequestQueue(requireContext())
+        queue.add(request)
+    }
+
+    fun eliminarCategoria() {
+        with(binding) {
+            val idProducto = arguments?.getString("idProducto")
+            binding.etId.setText(idProducto)
+            btnEliminarArt.setOnClickListener {
+                try {
+                    val url = "http://localfavas.online/Producto/DeleteProducto.php"
+                    val queue = Volley.newRequestQueue(activity)
+                    val resultadoPost = object : StringRequest(
+                        Request.Method.POST, url,
+                        Response.Listener<String> { response ->
+                            Toast.makeText(
+                                context,
+                                "Eliminado existosamente",
+                                Toast.LENGTH_LONG
+                            ).show()
+                            limpiarCampos()
+                            Navigation.findNavController(binding.root).navigate(R.id.nav_articulos)
+                        }, Response.ErrorListener { error ->
+                            Toast.makeText(context, "Error: $error", Toast.LENGTH_LONG).show()
+                        }) {
+                        override fun getParams(): MutableMap<String, String>? {
+                            val parametros = HashMap<String, String>()
+                            parametros.put("idProducto", binding.etId.text.toString())
+                            return parametros
+                        }
+                    }
+                    queue.add(resultadoPost)
+
+
+                } catch (ex: Exception) {
+                    Toast.makeText(
+                        requireContext(),
+                        "Error al Eliminar: ${ex.toString()}",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
             }
+        }
+    }
+
+    fun btnLimpiar() {
+        binding.btnLimpiarArt.setOnClickListener {
+            limpiarCampos()
+        }
+    }
+
+    private fun limpiarCampos() {
+        with(binding) {
+            etNombreArticulo.text.clear()
+            etDescripcion.text.clear()
+            etPrecioArticulo.text.clear()
+            etStockArticulo.text.clear()
+            sCategorA.setSelection(0)
+        }
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding
     }
 }

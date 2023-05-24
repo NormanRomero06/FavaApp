@@ -8,11 +8,13 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.navigation.Navigation
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentCrearArticuloVentasBinding
 import com.example.appfavas.modelos.Categoria.Categoria
 import org.json.JSONException
@@ -60,6 +62,7 @@ class CrearArticuloVentasFragment : Fragment() {
                             Toast.LENGTH_LONG
                         ).show()
                         limpiarCampos()
+                        Navigation.findNavController(binding.root).navigate(R.id.nav_articulos)
                     }, Response.ErrorListener { error ->
                         Toast.makeText(context, "Error: $error", Toast.LENGTH_LONG).show()
                     }) {

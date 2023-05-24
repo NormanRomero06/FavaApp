@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -18,6 +17,9 @@ import com.example.appfavas.databinding.FragmentTotalArticulosVentasBinding
 import com.example.appfavas.decoration.SpaceItemDecoration
 import com.example.appfavas.modelos.Articulo.Articulo
 import com.example.appfavas.modelos.Articulo.ArticuloAdapter
+import com.example.appfavas.modelos.Articulo.ArticuloVista
+import com.example.appfavas.modelos.Articulo.ArticuloVistaAdapter
+import org.json.JSONObject
 
 class TotalArticulosVentasFragment : Fragment() {
     private lateinit var binding: FragmentTotalArticulosVentasBinding
@@ -34,26 +36,31 @@ class TotalArticulosVentasFragment : Fragment() {
         val root: View = binding.root
         navigation()
         cargarProductos()
-
         return root
     }
 
      fun cargarProductos(){
 
-            val uri ="http://localfavas.online/Producto/ReadProducto.php"
+            val uri ="http://localfavas.online/Producto/ReadData.php"
 
             recyclerView = binding.rvArticulos
             val reqQueue: RequestQueue = Volley.newRequestQueue(getActivity())
             val request = JsonObjectRequest(Request.Method.GET, uri, null, { res ->
                 val jsonArray = res.getJSONArray("data")
 
+                //Limpia la lista para evitar items duplicados
+                artList.clear()
                 for (i in 0 until jsonArray.length()){
                     val jsonObj = jsonArray.getJSONObject(i)
                     val user = Articulo(
                         jsonObj.getInt("idProducto"),
                         jsonObj.getString("nombre"),
+                        jsonObj.getString("descripcion"),
                         jsonObj.getDouble("precio").toFloat(),
-                        jsonObj.getInt("cantidad")
+                        jsonObj.getInt("cantidad"),
+                        //jsonObj.getString("imagen")
+                        //jsonObj.getString("Categoria_Nombre")
+
                     )
                     artList.add(user)
                 }
@@ -76,6 +83,7 @@ class TotalArticulosVentasFragment : Fragment() {
 
             reqQueue.add(request)
         }
+
     fun navigation()
     {
         binding.btnNuevoArticulo.setOnClickListener {
