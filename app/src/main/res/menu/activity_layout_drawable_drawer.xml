@@ -13,6 +13,10 @@
             android:icon="@drawable/articulos"
             android:title="@string/articulos" />
         <item
+            android:id="@+id/nav_historialArticulos"
+            android:icon="@drawable/list"
+            android:title="Historial de Articulos"/>
+        <item
             android:id="@+id/nav_categorias"
             android:icon="@drawable/category"
             android:title="Categorías" />
