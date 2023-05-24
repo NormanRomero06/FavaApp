@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -15,7 +14,6 @@ import com.android.volley.toolbox.Volley
 import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentListaPagosBinding
 import com.example.appfavas.decoration.SpaceItemDecoration
-import com.example.appfavas.modelos.Categoria.CategoriaAdapter
 import com.example.appfavas.modelos.Pago.Pago
 import com.example.appfavas.modelos.Pago.PagoAdapter
 
@@ -73,6 +71,8 @@ class ListaPagosFragment : Fragment() {
         }, {
         })
         reqQueue.add(request)
+
     }
+
 
 }

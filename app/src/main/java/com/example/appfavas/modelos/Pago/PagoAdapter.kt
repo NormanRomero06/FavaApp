@@ -22,10 +22,9 @@ class PagoAdapter(private val pagoList: ArrayList<Pago>): RecyclerView.Adapter<P
                     bundle.putString("idPagos", item.idPagos.toString())
                     bundle.putString("descripcion", item.descripcion)
                     bundle.putString("monto", item.monto.toString())
-                    bundle.putString("fechaHora", item.fechaPago)
+                    bundle.putString("fechaPago", item.fechaPago)
                     val navController = Navigation.findNavController(binding.root)
-                    navController.navigate(R.id.nav_pagos)
-
+                    navController.navigate(R.id.PantallaEliminarPago, bundle)
                 }
 
             }

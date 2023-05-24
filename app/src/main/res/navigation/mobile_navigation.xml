@@ -146,12 +146,21 @@
         android:id="@+id/nav_historialPagos"
         android:name="com.example.appfavas.ui.pagos.ListaPagosFragment"
         android:label="Historial de Pagos"
-        tools:layout="@layout/fragment_lista_pagos" />
+        tools:layout="@layout/fragment_lista_pagos" >
+        <action
+            android:id="@+id/action_nav_historialPagos_to_eliminar_pago"
+            app:destination="@id/PantallaEliminarPago" />
+    </fragment>
     <fragment
         android:id="@+id/nav_historialArticulos"
         android:name="com.example.appfavas.ui.articulo.HistorialArticulosFragment"
         android:label="Historial de Articulos"
         tools:layout="@layout/fragment_historial_articulos"/>
+    <fragment
+        android:id="@+id/PantallaEliminarPago"
+        android:name="com.example.appfavas.ui.pagos.Eliminar_pago"
+        android:label="fragment_eliminar_pago"
+        tools:layout="@layout/fragment_eliminar_pago" />
 
 
 </navigation>
