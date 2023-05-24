@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/back"
     tools:context=".ui.pagos.ListaPagosFragment">
 
     <View
         android:id="@+id/VwPagos"
-        android:layout_width="820dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/ic_shape_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/tv_Pagos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pagosMays"
         android:textSize="60sp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@id/VwPagos"
         app:layout_constraintEnd_toEndOf="@id/VwPagos"
@@ -37,7 +42,7 @@
         android:hint="@string/buscar"
         android:textSize="20sp"
         android:drawableEnd="@drawable/search_24"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/ic_shape_inputs"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/tv_Pagos"
@@ -46,8 +51,8 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="800dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
         android:id="@+id/rv_pagos"
         android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="@id/VwPagos"
@@ -56,3 +61,4 @@
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
