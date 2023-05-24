@@ -15,35 +15,35 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentVentasHomeBinding
+import com.example.appfavas.modelos.Articulo.Articulo
+import com.example.appfavas.modelos.Articulo.ArticuloAdapter
 import com.example.appfavas.modelos.Categoria.Categoria
 import com.example.appfavas.modelos.Categoria.CategoriaAdapter
 
 class VentasFragment : Fragment() {
 
-    private var _binding: FragmentVentasHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-    val catList = arrayListOf<Categoria>()
-    val uri ="http://localfavas.online/Categoria/ReadCategoria.php"
+    private lateinit var binding: FragmentVentasHomeBinding
     var recyclerView: RecyclerView? = null
+    val catList = arrayListOf<Categoria>()
+    val artList = arrayListOf<Articulo>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentVentasHomeBinding.inflate(inflater, container, false)
-
+        binding = FragmentVentasHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
         navigation()
+        cargarCategoria()
+        //cargarProductos()
 
         return root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    fun cargarCategoria(){
+
+        val uri ="http://localfavas.online/Categoria/ReadCategoria.php"
 
         recyclerView = binding.rvCategoria
         val reqQueue: RequestQueue = Volley.newRequestQueue(getActivity())
@@ -72,15 +72,17 @@ class VentasFragment : Fragment() {
         reqQueue.add(request)
     }
 
+
     fun navigation()
     {
         binding.btnComprar.setOnClickListener {
-            Navigation.findNavController(binding.root).navigate(R.id.listaPagosFragment)
+            Navigation.findNavController(binding.root).navigate(R.id.nav_historialPagos)
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+        binding
     }
+
 }

@@ -33,6 +33,10 @@
             android:icon="@drawable/pago"
             android:title="@string/pagos"/>
         <item
+            android:id="@+id/nav_historialPagos"
+            android:icon="@drawable/payments"
+            android:title="Historial de Pagos"/>
+        <item
             android:id="@+id/nav_usuarios"
             android:icon="@drawable/user_24"
             android:title="Usuarios"
