@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cwCategoria"
+        android:id="@+id/cwPagos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="7dp">
@@ -86,6 +86,17 @@
                 android:layout_marginStart="240dp"
                 android:layout_marginTop="140dp"
                 />
+
+            <TextView
+                android:id="@+id/idPago"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="540dp"
+                android:layout_marginTop="80dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
 
         </RelativeLayout>
 

@@ -38,12 +38,13 @@ class ListaPagosFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerView = binding.rvPagos
-        val reqQueue: RequestQueue = Volley.newRequestQueue(getActivity())
+        val reqQueue: RequestQueue = Volley.newRequestQueue(context)
         val request = JsonObjectRequest(Request.Method.GET, uri, null, { res ->
             val jsonArray = res.getJSONArray("data")
             for (i in 0 until jsonArray.length()){
                 val jsonObj = jsonArray.getJSONObject(i)
                 val user = Pago(
+                    jsonObj.getInt("idPagos"),
                     jsonObj.getString("descripcion"),
                     jsonObj.getString("monto").toFloat(),
                     jsonObj.getString("fechaHora")
@@ -52,7 +53,7 @@ class ListaPagosFragment : Fragment() {
             }
             println(pagoList.toString())
 
-            recyclerView?.layoutManager = LinearLayoutManager(getActivity())
+            recyclerView?.layoutManager = LinearLayoutManager(context)
             recyclerView?.adapter = PagoAdapter(pagoList)
 
 

@@ -1,8 +1,11 @@
 package com.example.appfavas.modelos.Pago
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.example.appfavas.R
 import com.example.appfavas.databinding.ItemListaPagosBinding
 
 class PagoAdapter(private val pagoList: ArrayList<Pago>): RecyclerView.Adapter<PagoAdapter.ViewHolder>(){
@@ -10,10 +13,21 @@ class PagoAdapter(private val pagoList: ArrayList<Pago>): RecyclerView.Adapter<P
     class ViewHolder(private val binding: ItemListaPagosBinding): RecyclerView.ViewHolder(binding.root){
         fun load(item: Pago){
             with(binding){
-
+                idPago.text = item.idPagos.toString()
                 tvDescripcion.text = item.descripcion
                 tvMonto0.text = item.monto.toString()
                 tvFecha.text = item.fechaPago
+                cwPagos.setOnClickListener {
+                    val bundle = Bundle()
+                    bundle.putString("idPagos", item.idPagos.toString())
+                    bundle.putString("descripcion", item.descripcion)
+                    bundle.putString("monto", item.monto.toString())
+                    bundle.putString("fechaHora", item.fechaPago)
+                    val navController = Navigation.findNavController(binding.root)
+                    navController.navigate(R.id.nav_pagos)
+
+                }
+
             }
         }
     }
