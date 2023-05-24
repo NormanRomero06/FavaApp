@@ -2,16 +2,15 @@ package com.example.appfavas.ui.Categoria
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentEditarCategoriaBinding
 
 class EditarCategoriaFragment : Fragment() {
@@ -53,6 +52,7 @@ class EditarCategoriaFragment : Fragment() {
                                 "Modificado existosamente",
                                 Toast.LENGTH_LONG
                             ).show()
+                            limpiar()
                         }, Response.ErrorListener { error ->
                             Toast.makeText(context, "Error: $error", Toast.LENGTH_LONG).show()
                         }) {
@@ -112,6 +112,7 @@ class EditarCategoriaFragment : Fragment() {
                                 "Eliminado existosamente",
                                 Toast.LENGTH_LONG
                             ).show()
+                            limpiar()
                         }, Response.ErrorListener { error ->
                             Toast.makeText(context, "Error: $error", Toast.LENGTH_LONG).show()
                         }) {
