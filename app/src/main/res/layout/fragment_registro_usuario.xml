@@ -41,7 +41,6 @@
             android:text="Registro de usuarios"
             android:textAlignment="center"
             android:fontFamily="@font/crimson_text_bold"
-            android:textColor="@color/boton"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="@id/VwRegister"
             app:layout_constraintStart_toStartOf="@id/VwRegister"

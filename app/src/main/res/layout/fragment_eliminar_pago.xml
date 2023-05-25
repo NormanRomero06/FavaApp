@@ -26,7 +26,6 @@
         android:layout_marginTop="40dp"
         android:text="@string/pagos"
         android:fontFamily="@font/crimson_text_bold"
-        android:textColor="@color/black"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="@id/vwPagos"
         app:layout_constraintStart_toStartOf="@id/vwPagos"
@@ -86,7 +85,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnEliminarPago"
-        android:layout_width="250dp"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:background="@drawable/btn_shape"

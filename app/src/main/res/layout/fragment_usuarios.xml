@@ -28,7 +28,7 @@
             android:gravity="center"
             android:text="Usuarios existentes"
             android:layout_marginTop="30dp"
-            android:fontFamily="@font/crimson_text_regular"
+            android:fontFamily="@font/crimson_text_bold"
             android:textSize="30sp"
             app:layout_constraintBottom_toTopOf="@+id/rvUsuarios"
             app:layout_constraintEnd_toEndOf="@+id/VwUsuarios"

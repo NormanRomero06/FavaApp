@@ -26,7 +26,6 @@
         android:gravity="center"
         android:text="@string/ordenar"
         android:fontFamily="@font/crimson_text_semibold"
-        android:textColor="@color/boton"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="@+id/VwContainer"
         app:layout_constraintStart_toStartOf="@+id/VwContainer"

@@ -22,50 +22,75 @@
         android:id="@+id/tvPagos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/pagos"
-        android:textColor="@color/black"
-        android:textSize="40dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/crimson_text_bold"
+        android:text="@string/pagos"
+        android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="@id/VwPagos"
         app:layout_constraintStart_toStartOf="@id/VwPagos"
         app:layout_constraintTop_toTopOf="@id/VwPagos" />
+
+    <TextView
+        android:id="@+id/tvDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:fontFamily="@font/crimson_text_bold"
+        android:text="@string/descripcion_egresos"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/VwPagos"
+        app:layout_constraintTop_toBottomOf="@id/tvPagos" />
+
 
     <EditText
         android:id="@+id/etDescripcion"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:hint="@string/descripcion_egresos"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/black"
+        android:hint="@string/cantidad"
         android:inputType="text"
         android:minHeight="48sp"
-        android:layout_marginTop="20dp"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="@id/VwPagos"
         app:layout_constraintStart_toStartOf="@id/VwPagos"
-        app:layout_constraintTop_toBottomOf="@id/tvPagos"
-     />
+        app:layout_constraintTop_toBottomOf="@+id/tvDescripcion" />
+
+    <TextView
+        android:id="@+id/tvCantidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:fontFamily="@font/crimson_text_bold"
+        android:text="@string/cantidad"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/VwPagos"
+        app:layout_constraintTop_toBottomOf="@id/etDescripcion" />
 
     <EditText
         android:id="@+id/etCantidad"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:backgroundTint="@color/black"
         android:hint="@string/cantidad"
         android:inputType="numberDecimal"
         android:minHeight="48sp"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="@id/VwPagos"
         app:layout_constraintStart_toStartOf="@id/VwPagos"
-        app:layout_constraintTop_toBottomOf="@+id/etDescripcion" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCantidad" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRealizarPago"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:textSize="16sp"
-        android:fontFamily="@font/crimson_text_regular"
         android:background="@drawable/btn_shape"
+        android:fontFamily="@font/crimson_text_regular"
         android:text="@string/realizar_pago"
         android:textColor="@color/boton"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@id/VwPagos"
         app:layout_constraintStart_toStartOf="@id/VwPagos"
         app:layout_constraintTop_toBottomOf="@id/etCantidad" />

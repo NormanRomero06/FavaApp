@@ -27,7 +27,6 @@
         android:textSize="25sp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/crimson_text_bold"
-        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@id/VwHVentas"
         app:layout_constraintStart_toStartOf="@id/VwHVentas"
         app:layout_constraintTop_toTopOf="@id/VwHVentas" />

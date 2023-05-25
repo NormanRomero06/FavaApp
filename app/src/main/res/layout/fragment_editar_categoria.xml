@@ -27,7 +27,6 @@
         android:fontFamily="@font/crimson_text_bold"
         android:text="@string/editar_categoria"
         android:textAlignment="center"
-        android:textColor="@color/black"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -19,12 +19,11 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tv_CrearCategoria"
         android:layout_width="300dp"
         android:layout_height="0dp"
         android:text="Crear Categoría"
         android:textAlignment="center"
-        android:textColor="@color/black"
         android:fontFamily="@font/crimson_text_bold"
         android:textSize="40dp"
         android:layout_marginTop="40dp"
@@ -45,7 +44,7 @@
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView4" />
+        app:layout_constraintTop_toBottomOf="@id/tv_CrearCategoria" />
 
     <TextView
         android:id="@+id/img_categoria"
