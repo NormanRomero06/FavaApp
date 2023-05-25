@@ -25,11 +25,12 @@
                 android:layout_width="150dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="120dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/crimson_text_regular"
                 android:text="ID"
-                android:visibility="invisible"
                 android:textColor="@color/boton"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/tvCantidadMinima"
@@ -37,10 +38,11 @@
                 android:layout_height="20dp"
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="30dp"
-                android:text="ID"
-                android:visibility="invisible"
+                android:fontFamily="@font/crimson_text_regular"
+                android:text="@string/id"
                 android:textColor="@color/boton"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/tvNombreArticulo"
@@ -48,7 +50,7 @@
                 android:layout_height="20dp"
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="30dp"
-                android:text="Nombre"
+                android:text="@string/nombre"
                 android:textColor="@color/boton"
                 android:textSize="15sp" />
 
@@ -58,7 +60,8 @@
                 android:layout_height="20dp"
                 android:layout_marginStart="110dp"
                 android:layout_marginTop="50dp"
-                android:text="0"
+                android:fontFamily="@font/crimson_text_regular"
+                android:text="@string/_0"
                 android:textAlignment="center"
                 android:textColor="@color/gray"
                 android:textSize="15sp" />
@@ -69,7 +72,8 @@
                 android:layout_height="20dp"
                 android:layout_marginStart="190dp"
                 android:layout_marginTop="5dp"
-                android:text="0.00"
+                android:fontFamily="@font/crimson_text_regular"
+                android:text="@string/_0_00"
                 android:textAlignment="center"
                 android:textColor="@color/gray"
                 android:textSize="15sp" />
@@ -80,11 +84,12 @@
                 android:layout_height="20dp"
                 android:layout_marginStart="190dp"
                 android:layout_marginTop="5dp"
-                android:text="0.00"
-                android:visibility="invisible"
+                android:fontFamily="@font/crimson_text_regular"
+                android:text="@string/_0_00"
                 android:textAlignment="center"
                 android:textColor="@color/gray"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/tvCategoria"
@@ -92,11 +97,12 @@
                 android:layout_height="20dp"
                 android:layout_marginStart="190dp"
                 android:layout_marginTop="5dp"
+                android:fontFamily="@font/crimson_text_regular"
                 android:text="0.00"
-                android:visibility="invisible"
                 android:textAlignment="center"
                 android:textColor="@color/gray"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:visibility="invisible" />
 
         </RelativeLayout>
 
