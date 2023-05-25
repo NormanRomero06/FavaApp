@@ -20,7 +20,7 @@ class ArticuloAdapter(private val artList: ArrayList<Articulo>) :
                 tvDescripcion.text = item.descripcion
                 tvPrecioArticulo.text = item.precio.toString()
                 tvExistencia.text = item.cantidad.toString()
-                //tvCategoria.text = item.Categoria_Nombre
+                tvCategoria.text = item.Categoria_idCategoria.toString()
                 cwArticulo.setOnClickListener {
                     val bundle = Bundle()
                     bundle.putString("idProducto", item.idProducto.toString())
@@ -28,7 +28,7 @@ class ArticuloAdapter(private val artList: ArrayList<Articulo>) :
                     bundle.putString("descripcion", item.descripcion)
                     bundle.putString("precio", item.precio.toString())
                     bundle.putString("cantidad", item.cantidad.toString())
-                   //bundle.putString("Categoria_Nombre", item.Categoria_Nombre)
+                    //bundle.putString("Categoria_Nombre", item.Categoria_Nombre)
                     Navigation.findNavController(binding.root)
                         .navigate(R.id.editar_EliminarArticulosVentasFragment, bundle)
                 }

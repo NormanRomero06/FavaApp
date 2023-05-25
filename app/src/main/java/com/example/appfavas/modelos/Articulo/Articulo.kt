@@ -8,5 +8,5 @@ data class Articulo(
     var cantidad: Int,
     //var cantidaMinima: Int,
     //var imagen: Bitmap,
-    //var Categoria_Nombre: String
+    var Categoria_idCategoria: Int
 )

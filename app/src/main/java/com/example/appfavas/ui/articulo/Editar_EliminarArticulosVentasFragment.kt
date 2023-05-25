@@ -1,13 +1,12 @@
 package com.example.appfavas.ui.articulo
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.android.volley.Request
 import com.android.volley.Response
@@ -74,7 +73,6 @@ class Editar_EliminarArticulosVentasFragment : Fragment() {
                                 Toast.LENGTH_LONG
                             ).show()
                             limpiarCampos()
-                            Navigation.findNavController(binding.root).navigate(R.id.nav_articulos)
                         }, Response.ErrorListener { error ->
                             Toast.makeText(context, "Error: $error", Toast.LENGTH_LONG).show()
                         }) {
@@ -165,7 +163,6 @@ class Editar_EliminarArticulosVentasFragment : Fragment() {
                                 Toast.LENGTH_LONG
                             ).show()
                             limpiarCampos()
-                            Navigation.findNavController(binding.root).navigate(R.id.nav_articulos)
                         }, Response.ErrorListener { error ->
                             Toast.makeText(context, "Error: $error", Toast.LENGTH_LONG).show()
                         }) {
@@ -204,6 +201,7 @@ class Editar_EliminarArticulosVentasFragment : Fragment() {
             sCategorA.setSelection(0)
         }
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         binding

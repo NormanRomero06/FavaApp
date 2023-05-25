@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Inventario"
+            android:text="Historial de Articulos"
             android:textSize="30sp"
             app:layout_constraintBottom_toTopOf="@+id/rvArticulos"
             app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
@@ -43,22 +43,6 @@
             app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
             app:layout_constraintStart_toStartOf="@+id/VwArticulos"
             app:layout_constraintTop_toTopOf="@+id/VwArticulos" />
-
-        <Button
-            android:id="@+id/btnNuevoArticulo"
-            android:layout_width="200dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="400dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="40dp"
-            android:background="@drawable/btn_shape"
-            android:contentDescription="Add"
-            android:text="Nuevo Artículo"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
-            app:layout_constraintStart_toStartOf="@+id/VwArticulos"
-            app:layout_constraintTop_toBottomOf="@+id/rvArticulos" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

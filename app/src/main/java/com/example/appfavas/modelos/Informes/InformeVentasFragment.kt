@@ -18,10 +18,12 @@ import com.example.appfavas.databinding.FragmentInformeArticulosBinding
 import com.example.appfavas.decoration.SpaceItemDecoration
 import com.example.appfavas.modelos.Articulo.Articulo
 import com.example.appfavas.modelos.Articulo.ArticuloAdapter
+import com.example.appfavas.modelos.Articulo.ArticuloInforme
+import com.example.appfavas.modelos.Articulo.ArticuloInformeAdapter
 
 class InformeVentasFragment : Fragment() {
     private lateinit var binding: FragmentInformeArticulosBinding
-    val artList = arrayListOf<Articulo>()
+    val artList = arrayListOf<ArticuloInforme>()
     var recyclerView: RecyclerView? = null
 
     override fun onCreateView(
@@ -32,7 +34,6 @@ class InformeVentasFragment : Fragment() {
         binding = FragmentInformeArticulosBinding.inflate(inflater, container, false)
 
         val root: View = binding.root
-        navigation()
         cargarProductos()
         return root
     }
@@ -50,14 +51,15 @@ class InformeVentasFragment : Fragment() {
                 artList.clear()
                 for (i in 0 until jsonArray.length()){
                     val jsonObj = jsonArray.getJSONObject(i)
-                    val user = Articulo(
+                    val user = ArticuloInforme(
                         jsonObj.getInt("idProducto"),
                         jsonObj.getString("nombre"),
-                        jsonObj.getString("descripcion"),
                         jsonObj.getDouble("precio").toFloat(),
+                        jsonObj.getString("descripcion"),
                         jsonObj.getInt("cantidad"),
+                        jsonObj.getInt("cantidadMinima"),
                         //jsonObj.getString("imagen")
-                        //jsonObj.getString("Categoria_Nombre")
+                        jsonObj.getString("Categoria_Nombre")
 
                     )
                     artList.add(user)
@@ -71,7 +73,7 @@ class InformeVentasFragment : Fragment() {
                 val space = resources.getDimensionPixelSize(R.dimen.item_space) // Define el tamaño del espacio
                 recyclerView?.addItemDecoration(SpaceItemDecoration(spaceHorizontal, spaceVertical))
                 recyclerView?.layoutManager = gridLayoutManager
-                recyclerView?.adapter = ArticuloAdapter(artList)
+                recyclerView?.adapter = ArticuloInformeAdapter(artList)
 
 
 
@@ -82,17 +84,7 @@ class InformeVentasFragment : Fragment() {
             reqQueue.add(request)
         }
 
-    fun navigation()
-    {
-        binding.btnNuevoArticulo.setOnClickListener {
-            Navigation.findNavController(binding.root).navigate(R.id.crearArticuloVentasFragment)
-        }
-        /*Este en teoría debería ser un click a una card para que abra
-        * el editar articulos*/
-        binding.rvArticulos.setOnClickListener {
-            Navigation.findNavController(binding.root).navigate(R.id.editar_EliminarArticulosVentasFragment)
-        }
-    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

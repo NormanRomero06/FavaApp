@@ -9,13 +9,13 @@
             android:icon="@drawable/home"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_articulos"
-            android:icon="@drawable/articulos"
-            android:title="@string/articulos" />
-        <item
             android:id="@+id/nav_historialArticulos"
             android:icon="@drawable/list"
-            android:title="Informes"/>
+            android:title="@string/articulos"/>
+        <item
+            android:id="@+id/nav_articulos"
+            android:icon="@drawable/articulos"
+            android:title="Informes" />
         <item
             android:id="@+id/nav_categorias"
             android:icon="@drawable/category"
