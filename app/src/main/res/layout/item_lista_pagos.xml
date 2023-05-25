@@ -27,7 +27,8 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="30dp"
-                android:text="Descripcion:"
+                android:text="@string/descripcion_egresos"
+                android:fontFamily="@font/crimson_text_regular"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -37,7 +38,8 @@
                 android:layout_height="40dp"
                 android:layout_marginStart="240dp"
                 android:layout_marginTop="35dp"
-                android:text="Descripcion"
+                android:text="@string/descripcion_egresos"
+                android:fontFamily="@font/crimson_text_regular"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
@@ -46,7 +48,8 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="80dp"
-                android:text="Monto:"
+                android:text="@string/montoitem"
+                android:fontFamily="@font/crimson_text_regular"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
@@ -57,7 +60,8 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="190dp"
                 android:layout_marginTop="80dp"
-                android:text="0"
+                android:text="@string/_0"
+                android:fontFamily="@font/crimson_text_regular"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
@@ -68,6 +72,7 @@
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="130dp"
                 android:text="Fecha:"
+                android:fontFamily="@font/crimson_text_regular"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
@@ -79,6 +84,7 @@
                 android:layout_marginStart="200dp"
                 android:layout_marginTop="130dp"
                 android:text="0000/00/00 22:22:22"
+                android:fontFamily="@font/crimson_text_regular"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
@@ -89,7 +95,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="380dp"
                 android:layout_marginTop="75dp"
-                android:text="0"
+                android:text="@string/_0"
+                android:fontFamily="@font/crimson_text_regular"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="30sp" />
