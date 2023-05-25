@@ -39,8 +39,8 @@ class Eliminar_pago : Fragment() {
 
         with(binding) {
             tvIdPago.setText(idPagos)
-            etDescripcion.setText(descripcion)
-            etCantidad.setText(monto)
+            tvDescripcion.setText(descripcion)
+            tvCantidad.setText(monto)
             etFechaPago.setText(fechaPago)
         }
     }
@@ -87,8 +87,8 @@ class Eliminar_pago : Fragment() {
     fun limpiarCampos() {
         with(binding) {
             tvIdPago.setText("")
-            etDescripcion.setText("")
-            etCantidad.setText("")
+            tvDescripcion.setText("")
+            tvCantidad.setText("")
             etFechaPago.setText("")
 
 
