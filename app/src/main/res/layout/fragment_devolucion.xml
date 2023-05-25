@@ -4,87 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/back"
     tools:context=".ui.devolucion.DevolucionFragment">
 
-    <TextView
-        android:id="@+id/id_Transaccion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
-        android:hint="ID de Transacción"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gray"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/fecha_Transaccion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:hint="Fecha de Transaccion"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gray"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/id_Transaccion" />
-
-    <TextView
-        android:id="@+id/fecha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="30dp"
-        android:text="Viernes, 18 de mayo de 2023"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gray"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fecha_Transaccion" />
-
-    <TextView
-        android:id="@+id/tipo_Transaccion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:hint="Tipo de Transaccion"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gray"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fecha" />
-
-    <TextView
-        android:id="@+id/monto_Transaccion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="30dp"
-        android:hint="Monto"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gray"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tipo_Transaccion" />
-
-    <TextView
-        android:id="@+id/monto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="268dp"
-        android:hint="C$0.00"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gray"
-        android:textSize="20sp"
+    <View
+        android:id="@+id/VwDevolucion"
+        android:layout_width="520dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_shape_login"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
-        app:layout_constraintStart_toEndOf="@id/monto_Transaccion"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvDevolucion"
+        android:layout_width="450dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="@id/VwDevolucion"
+        app:layout_constraintStart_toStartOf="@id/VwDevolucion"
+        app:layout_constraintTop_toTopOf="@id/VwDevolucion" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
