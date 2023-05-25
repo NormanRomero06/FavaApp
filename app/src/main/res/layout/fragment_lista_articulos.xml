@@ -28,6 +28,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Historial de Articulos"
+            android:fontFamily="@font/crimson_text_bold"
+            android:layout_marginTop="30dp"
             android:textSize="30sp"
             app:layout_constraintBottom_toTopOf="@+id/rvArticulos"
             app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
