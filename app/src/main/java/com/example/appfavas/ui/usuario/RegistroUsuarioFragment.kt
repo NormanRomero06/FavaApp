@@ -138,4 +138,4 @@ class RegistroUsuarioFragment : Fragment() {
             ).show()
         }
     }
-   }
+}

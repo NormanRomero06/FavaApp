@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.Categoria.EditarCategoriaFragment"
-    android:background="@color/back">
-
+    android:background="@color/back"
+    tools:context=".ui.Categoria.EditarCategoriaFragment">
 
 
     <View
@@ -21,14 +20,15 @@
 
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tv_Categoria"
         android:layout_width="300dp"
         android:layout_height="0dp"
-        android:text="Editar Categoría"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/crimson_text_bold"
+        android:text="@string/editar_categoria"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="40dp"
-        android:textStyle="bold"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,36 +39,40 @@
         android:layout_height="0dp"
         android:layout_marginTop="15dp"
         android:backgroundTint="@color/black"
+        android:fontFamily="@font/crimson_text_regular"
         android:visibility="invisible"
-        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView4" />
+        app:layout_constraintTop_toBottomOf="@id/tv_Categoria" />
 
     <EditText
         android:id="@+id/etNombreCategoria"
         android:layout_width="350dp"
         android:layout_height="0dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/black"
-        android:hint="Nombre de la Categoría"
+        android:fontFamily="@font/crimson_text_regular"
+        android:hint="@string/nombre_de_la_categoria"
         android:textColorHint="@color/black"
+        android:minHeight="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView4" />
+        app:layout_constraintTop_toBottomOf="@id/etId"
+        android:autofillHints=""
+        android:inputType="text" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/img_categoria"
         android:layout_width="220dp"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
-        android:text="Imagen de la categoría"
+        android:fontFamily="@font/crimson_text_bold"
+        android:text="@string/imagen_de_la_categoria"
         android:textAlignment="center"
         android:textColor="@color/boton"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/VwContainer"
+        app:layout_constraintStart_toStartOf="@id/VwContainer"
         app:layout_constraintTop_toBottomOf="@id/etNombreCategoria" />
 
     <ImageView
@@ -77,47 +81,51 @@
         android:layout_height="200dp"
         android:layout_marginTop="20dp"
         android:background="@color/gray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        android:contentDescription="@string/editar_categoria"
+        app:layout_constraintEnd_toEndOf="@id/VwContainer"
+        app:layout_constraintStart_toStartOf="@id/VwContainer"
+        app:layout_constraintTop_toBottomOf="@+id/img_categoria" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnEditarCategoria"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/btn_shape"
-        android:text="Editar Categoría"
+        android:drawableEnd="@drawable/agregar"
+        android:fontFamily="@font/crimson_text_bold"
+        android:text="@string/editar_categoria"
         android:textColor="@color/boton"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/VwContainer"
+        app:layout_constraintStart_toStartOf="@id/VwContainer"
         app:layout_constraintTop_toBottomOf="@id/ivCrearCategoría" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnLimpiarCampos"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/btn_shape"
-        android:text="Limpiar Campos"
+        android:drawableEnd="@drawable/limpieza"
+        android:fontFamily="@font/crimson_text_bold"
+        android:text="@string/limpiar_campos"
         android:textColor="@color/boton"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/VwContainer"
+        app:layout_constraintStart_toStartOf="@id/VwContainer"
         app:layout_constraintTop_toBottomOf="@id/btnEditarCategoria" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnEliminarCategoria"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/btn_shape"
-        android:text="Eliminar Categoria"
+        android:drawableEnd="@drawable/eliminar"
+        android:fontFamily="@font/crimson_text_bold"
+        android:text="@string/eliminar_categoria"
         android:textColor="@color/boton"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/VwContainer"
+        app:layout_constraintStart_toStartOf="@id/VwContainer"
         app:layout_constraintTop_toBottomOf="@id/btnLimpiarCampos" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

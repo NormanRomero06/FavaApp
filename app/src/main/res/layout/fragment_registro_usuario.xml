@@ -40,6 +40,7 @@
             android:layout_marginTop="20dp"
             android:text="Registro de usuarios"
             android:textAlignment="center"
+            android:fontFamily="@font/crimson_text_bold"
             android:textColor="@color/boton"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="@id/VwRegister"
@@ -69,6 +70,7 @@
                 android:background="@drawable/ic_shape_inputs"
                 android:inputType="text"
                 android:minHeight="48sp"
+                android:fontFamily="@font/crimson_text_regular"
                 />
 
 
@@ -95,6 +97,7 @@
                 android:background="@drawable/ic_shape_inputs"
                 android:inputType="text"
                 android:minHeight="48sp"
+                android:fontFamily="@font/crimson_text_regular"
                 />
 
 
@@ -120,6 +123,7 @@
                 android:background="@drawable/ic_shape_inputs"
                 android:inputType="textEmailAddress"
                 android:minHeight="48sp"
+                android:fontFamily="@font/crimson_text_regular"
                 />
 
 
@@ -145,6 +149,7 @@
                 android:background="@drawable/ic_shape_inputs"
                 android:inputType="text"
                 android:minHeight="48sp"
+                android:fontFamily="@font/crimson_text_regular"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -167,6 +172,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_shape_inputs"
                 android:inputType="textPassword"
+                android:fontFamily="@font/crimson_text_regular"
                 android:minHeight="48sp"
                 />
         </com.google.android.material.textfield.TextInputLayout>
@@ -191,6 +197,7 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/btn_shape"
             android:text="Registrarse"
+            android:fontFamily="@font/crimson_text_regular"
             android:textColor="@color/boton"
             android:textSize="18sp"
             android:textStyle="bold"

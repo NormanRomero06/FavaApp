@@ -26,6 +26,7 @@
         android:textAlignment="center"
         android:textSize="25sp"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/crimson_text_bold"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@id/VwHVentas"
         app:layout_constraintStart_toStartOf="@id/VwHVentas"
@@ -40,34 +41,5 @@
         app:layout_constraintStart_toStartOf="@id/VwHVentas"
         app:layout_constraintTop_toBottomOf="@id/tvHVentas"
         app:layout_constraintBottom_toBottomOf="@id/VwHVentas"/>
-
-    <androidx.drawerlayout.widget.DrawerLayout
-        android:id="@+id/drawer_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="Menu Desplegable"
-        android:fitsSystemWindows="false"
-        android:elevation="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:openDrawer="start">
-
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/nav_view"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:background="@color/white"
-            app:headerLayout="@layout/nav_header_layout_drawable"
-            app:itemIconTint="@color/black"
-            app:itemTextColor="@color/black"
-            app:menu="@menu/activity_layout_drawable_drawer"
-            />
-
-    </androidx.drawerlayout.widget.DrawerLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

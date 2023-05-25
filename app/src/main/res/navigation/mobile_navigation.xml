@@ -57,7 +57,7 @@
     <fragment
         android:id="@+id/nav_historialVentas"
         android:name="com.example.appfavas.ui.Ventas.HistorialVentasFragment"
-        android:label="Historial de las Ventas"
+        android:label="Historial de Ventas"
         tools:layout="@layout/fragment_historial_ventas" />
     <fragment
         android:id="@+id/nav_articulos"
@@ -132,7 +132,7 @@
     <fragment
         android:id="@+id/totalDividirPagosFragment"
         android:name="com.example.appfavas.ui.pagos.TotalDividirPagosFragment"
-        android:label="Divir Pagos"
+        android:label="Dividir Pagos"
         tools:layout="@layout/fragment_total_dividir_pagos" />
     <fragment
         android:id="@+id/nav_usuarios"
@@ -159,7 +159,7 @@
     <fragment
         android:id="@+id/PantallaEliminarPago"
         android:name="com.example.appfavas.ui.pagos.Eliminar_pago"
-        android:label="fragment_eliminar_pago"
+        android:label="Eliminar Pago"
         tools:layout="@layout/fragment_eliminar_pago" />
 
 

@@ -20,7 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:text="ID"
+        android:text="@string/id"
+        android:fontFamily="@font/crimson_text_regular"
         android:visibility="invisible"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -31,7 +32,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Nombres"
+        android:text="@string/nombres"
+        android:fontFamily="@font/crimson_text_regular"
         app:layout_constraintStart_toStartOf="@+id/tvidC"
         app:layout_constraintTop_toBottomOf="@+id/tvidC" />
 
@@ -40,7 +42,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Email"
+        android:text="@string/email"
+        android:fontFamily="@font/crimson_text_regular"
         app:layout_constraintStart_toStartOf="@+id/tvNombres"
         app:layout_constraintTop_toBottomOf="@+id/tvNombres" />
 
@@ -49,7 +52,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Rol"
+        android:text="@string/rol"
+        android:fontFamily="@font/crimson_text_regular"
         app:layout_constraintStart_toStartOf="@+id/tvEmail"
         app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 

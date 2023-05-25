@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="380dp"
+    android:layout_height="220dp"
+    android:background="@drawable/ic_view">
+
+    <TextView
+        android:id="@+id/id_Transaccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:text="ID de Transacción"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fecha_Transaccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:text="Fecha de Transaccion"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_Transaccion" />
+
+    <TextView
+        android:id="@+id/fecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:text="Viernes, 18 de mayo de 2023"
+        android:textColor="@color/color_Primary"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fecha_Transaccion" />
+
+    <TextView
+        android:id="@+id/tipo_Transaccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:text="Tipo de Transaccion"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fecha" />
+
+    <TextView
+        android:id="@+id/monto_Transaccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:text="Monto"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tipo_Transaccion" />
+
+    <TextView
+        android:id="@+id/monto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/crimson_text_semibold"
+        android:text="C$0.00"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/monto_Transaccion"
+        app:layout_constraintTop_toBottomOf="@id/tipo_Transaccion" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

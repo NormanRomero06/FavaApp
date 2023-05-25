@@ -27,6 +27,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Usuarios existentes"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/crimson_text_regular"
             android:textSize="30sp"
             app:layout_constraintBottom_toTopOf="@+id/rvUsuarios"
             app:layout_constraintEnd_toEndOf="@+id/VwUsuarios"
@@ -43,13 +45,14 @@
             app:layout_constraintStart_toStartOf="@+id/VwUsuarios"
             app:layout_constraintTop_toTopOf="@+id/VwUsuarios" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnNuevoUsuario"
             android:layout_width="200dp"
             android:layout_height="0dp"
             android:layout_marginStart="400dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/btn_shape"
+            android:fontFamily="@font/crimson_text_regular"
             android:contentDescription="Add"
             android:text="Nuevo Usuario"
             android:textColor="@color/black"
