@@ -1,11 +1,10 @@
 package com.example.appfavas.ui.pagos
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentDividirPagoBinding
@@ -30,8 +29,7 @@ class DividirPagoFragment : Fragment() {
         return root
     }
 
-    fun navigation()
-    {
+    fun navigation() {
         binding.btnCobrar.setOnClickListener {
             Navigation.findNavController(binding.root).navigate(R.id.totalDividirPagosFragment)
         }

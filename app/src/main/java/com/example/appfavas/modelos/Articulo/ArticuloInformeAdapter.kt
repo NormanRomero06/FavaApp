@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appfavas.databinding.ItemInformeArticuloBinding
 
-class ArticuloInformeAdapter( val articulosList: List<ArticuloInforme>) : RecyclerView.Adapter<ArticuloInformeAdapter.ArticuloViewHolder>()
-{
+class ArticuloInformeAdapter(val articulosList: List<ArticuloInforme>) :
+    RecyclerView.Adapter<ArticuloInformeAdapter.ArticuloViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticuloViewHolder {
         val binding =
