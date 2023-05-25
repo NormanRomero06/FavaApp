@@ -7,6 +7,17 @@
     android:background="@color/back"
     tools:context=".ui.pagos.PagosFragment">
 
+    <View
+        android:id="@+id/VwPagos"
+        android:layout_width="800dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_shape_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tvPagos"
         android:layout_width="wrap_content"
@@ -14,35 +25,24 @@
         android:layout_marginTop="10dp"
         android:text="@string/pagos"
         android:textColor="@color/black"
-        android:textSize="50dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/vwPagos"
-        android:layout_width="520dp"
-        android:layout_height="700dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/ic_shape_login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPagos" />
-
+        android:textSize="40dp"
+        android:fontFamily="@font/crimson_text_bold"
+        app:layout_constraintEnd_toEndOf="@id/VwPagos"
+        app:layout_constraintStart_toStartOf="@id/VwPagos"
+        app:layout_constraintTop_toTopOf="@id/VwPagos" />
 
     <EditText
         android:id="@+id/etDescripcion"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:hint="@string/descripcion_egresos"
-        android:minHeight="48sp"
         android:inputType="text"
+        android:minHeight="48sp"
         android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@id/vwPagos"
-        app:layout_constraintStart_toStartOf="@id/vwPagos"
-        app:layout_constraintTop_toTopOf="@+id/vwPagos" />
+        app:layout_constraintEnd_toEndOf="@id/VwPagos"
+        app:layout_constraintStart_toStartOf="@id/VwPagos"
+        app:layout_constraintTop_toBottomOf="@id/tvPagos"
+     />
 
     <EditText
         android:id="@+id/etCantidad"
@@ -52,20 +52,22 @@
         android:hint="@string/cantidad"
         android:inputType="numberDecimal"
         android:minHeight="48sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/VwPagos"
+        app:layout_constraintStart_toStartOf="@id/VwPagos"
         app:layout_constraintTop_toBottomOf="@+id/etDescripcion" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRealizarPago"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:backgroundTint="@color/back"
+        android:textSize="16sp"
+        android:fontFamily="@font/crimson_text_regular"
+        android:background="@drawable/btn_shape"
         android:text="@string/realizar_pago"
         android:textColor="@color/boton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/VwPagos"
+        app:layout_constraintStart_toStartOf="@id/VwPagos"
         app:layout_constraintTop_toBottomOf="@id/etCantidad" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
