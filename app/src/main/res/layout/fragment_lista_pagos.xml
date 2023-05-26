@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/back">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.pagos.ListaPagosFragment">
-
-        <View
-            android:id="@+id/VwPagos"
-            android:layout_width="800dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/ic_shape_login"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        tools:context=".ui.pagos.ListaPagosFragment"
+        android:background="@color/white">
 
         <TextView
             android:id="@+id/tv_Pagos"
@@ -30,9 +20,9 @@
             android:fontFamily="@font/crimson_text_bold"
             android:text="@string/pagosMays"
             android:textSize="40sp"
-            app:layout_constraintEnd_toEndOf="@id/VwPagos"
-            app:layout_constraintStart_toStartOf="@id/VwPagos"
-            app:layout_constraintTop_toTopOf="@id/VwPagos" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/etBuscar"
@@ -45,17 +35,17 @@
             android:minHeight="48sp"
             android:textColor="@color/black"
             android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="@id/VwPagos"
-            app:layout_constraintStart_toStartOf="@id/VwPagos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_Pagos" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_pagos"
-            android:layout_width="750dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
             android:layout_marginTop="30dp"
-            app:layout_constraintStart_toStartOf="@id/VwPagos"
-            app:layout_constraintEnd_toEndOf="@id/VwPagos"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etBuscar"
             />
 

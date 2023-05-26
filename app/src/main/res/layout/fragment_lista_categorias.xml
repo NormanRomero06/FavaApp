@@ -35,7 +35,6 @@
             app:layout_constraintStart_toStartOf="@+id/VwCategoria"
             app:layout_constraintTop_toTopOf="@+id/VwCategoria" />
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvCategoria"
             android:layout_width="700dp"

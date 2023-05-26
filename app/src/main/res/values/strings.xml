@@ -111,5 +111,8 @@
     <string name="informe_ventas">Informe Ventas</string>
     <string name="usuarios">Usuarios</string>
     <string name="categor_as">Categorías</string>
+    <string name="historial_de_ventas">Historial Ventas</string>
+    <string name="totala">Total:</string>
+    <string name="informe_articulos">Informe Articulos</string>
     <!--Spinner Roles-->
 </resources>

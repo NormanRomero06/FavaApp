@@ -7,10 +7,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/back"
         tools:context=".ui.Informes.InformeArticulosFragment">
-
 
         <View
             android:id="@+id/VwArticulos"
@@ -27,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Informe de Artículos"
+            android:text="@string/informe_articulos"
             android:textSize="30sp"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/crimson_text_bold"
@@ -36,11 +35,11 @@
             app:layout_constraintStart_toStartOf="@+id/VwArticulos"
             app:layout_constraintTop_toTopOf="@+id/VwArticulos" />
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvArticulos"
             android:layout_width="700dp"
-            android:layout_height="500dp"
+            android:layout_height="600dp"
+            android:layout_marginTop="50dp"
             app:layout_constraintBottom_toBottomOf="@+id/VwArticulos"
             app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
             app:layout_constraintStart_toStartOf="@+id/VwArticulos"

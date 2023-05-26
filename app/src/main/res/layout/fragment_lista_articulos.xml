@@ -11,7 +11,6 @@
         android:background="@color/back"
         tools:context=".ui.Informes.InformeArticulosFragment">
 
-
         <View
             android:id="@+id/VwArticulos"
             android:layout_width="800dp"
@@ -24,44 +23,45 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/tvListArticulos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/crimson_text_bold"
             android:gravity="center"
             android:text="Artículos Creados"
-            android:layout_marginTop="30dp"
             android:textSize="30sp"
-            android:fontFamily="@font/crimson_text_bold"
             app:layout_constraintBottom_toTopOf="@+id/rvArticulos"
             app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
             app:layout_constraintStart_toStartOf="@+id/VwArticulos"
-            app:layout_constraintTop_toTopOf="@+id/VwArticulos" />
-
+            app:layout_constraintTop_toTopOf="@+id/VwArticulos"
+            app:layout_constraintVertical_bias="0.0" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvArticulos"
             android:layout_width="700dp"
-            android:layout_height="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
             app:layout_constraintBottom_toBottomOf="@+id/VwArticulos"
             app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
             app:layout_constraintStart_toStartOf="@+id/VwArticulos"
-            app:layout_constraintTop_toTopOf="@+id/VwArticulos" />
+            app:layout_constraintTop_toTopOf="@+id/tvListArticulos"
+            app:layout_constraintVertical_bias="0.0" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnNuevoArticulo"
             android:layout_width="200dp"
             android:layout_height="0dp"
-            android:layout_marginStart="400dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="40dp"
-            android:fontFamily="@font/crimson_text_regular"
             android:background="@drawable/btn_shape"
             android:contentDescription="Add"
+            android:fontFamily="@font/crimson_text_regular"
             android:text="Nuevo Artículo"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
             app:layout_constraintStart_toStartOf="@+id/VwArticulos"
             app:layout_constraintTop_toBottomOf="@+id/rvArticulos" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
