@@ -55,22 +55,15 @@
         android:label="Pago en Tarjeta"
         tools:layout="@layout/fragment_total_tarjeta" />
     <fragment
-        android:id="@+id/nav_historialVentas"
+        android:id="@+id/historialVentas"
         android:name="com.example.appfavas.ui.Ventas.HistorialVentasFragment"
         android:label="Historial de Ventas"
         tools:layout="@layout/fragment_historial_ventas" />
     <fragment
-        android:id="@+id/nav_articulos"
-        android:name="com.example.appfavas.modelos.Informes.InformeVentasFragment"
-        android:label="Historial de Artículos"
-        tools:layout="@layout/fragment_informe_articulos">
-        <action
-            android:id="@+id/action_totalArticulosVentasFragment_to_crearArticuloVentasFragment"
-            app:destination="@id/crearArticuloVentasFragment" />
-        <action
-            android:id="@+id/action_totalArticulosVentasFragment_to_editar_EliminarArticulosVentasFragment"
-            app:destination="@id/editar_EliminarArticulosVentasFragment" />
-    </fragment>
+        android:id="@+id/InformeArticulos"
+        android:name="com.example.appfavas.ui.Informes.InformeArticulosFragment"
+        android:label="Informe de Artículos"
+        tools:layout="@layout/fragment_informe_articulos"/>
     <fragment
         android:id="@+id/nav_categorias"
         android:name="com.example.appfavas.ui.Categoria.ListaCategoriasFragment"
@@ -143,7 +136,7 @@
             app:destination="@id/registroUsuarioFragment" />
     </fragment>
     <fragment
-        android:id="@+id/nav_historialPagos"
+        android:id="@+id/historialPagos"
         android:name="com.example.appfavas.ui.pagos.ListaPagosFragment"
         android:label="Historial de Pagos"
         tools:layout="@layout/fragment_lista_pagos" >
@@ -152,7 +145,7 @@
             app:destination="@id/PantallaEliminarPago" />
     </fragment>
     <fragment
-        android:id="@+id/nav_historialArticulos"
+        android:id="@+id/nav_articulos"
         android:name="com.example.appfavas.ui.articulo.ListaArticulosFragment"
         android:label="Articulos en Inventario"
         tools:layout="@layout/fragment_lista_articulos"/>
@@ -161,6 +154,16 @@
         android:name="com.example.appfavas.ui.pagos.Eliminar_pago"
         android:label="Eliminar Pago"
         tools:layout="@layout/fragment_eliminar_pago" />
+    <fragment
+        android:id="@+id/nav_historiales"
+        android:name="com.example.appfavas.ui.historiales.historialesFragment"
+        android:label="Historiales"
+        tools:layout="@layout/fragment_historiales" />
+    <fragment
+        android:id="@+id/nav_informes"
+        android:name="com.example.appfavas.ui.Informes.informesFragment"
+        android:label="Informes"
+        tools:layout="@layout/fragment_informes" />
 
 
 </navigation>

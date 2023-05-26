@@ -101,5 +101,15 @@
     <string name="rol">Rol</string>
     <string name="iniciar_sesion">Iniciar Sesión</string>
     <string name="has_olvidado_tu_contraseña">¿Has olvidado tu contraseña?</string>
+    <string name="historial_ventas">Historial Ventas</string>
+    <string name="historial_pagos">Historial Pagos</string>
+    <string name="historial_inventario">Historial Inventario</string>
+    <string name="historiales">Historiales</string>
+    <string name="informes">Informes</string>
+    <string name="informe_inventario">Informe Inventario</string>
+    <string name="informe_pagos">Informe Pagos</string>
+    <string name="informe_ventas">Informe Ventas</string>
+    <string name="usuarios">Usuarios</string>
+    <string name="categor_as">Categorías</string>
     <!--Spinner Roles-->
 </resources>

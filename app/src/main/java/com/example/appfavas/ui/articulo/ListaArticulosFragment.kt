@@ -24,6 +24,7 @@ class ListaArticulosFragment : Fragment() {
     val artList = arrayListOf<Articulo>()
     var recyclerView: RecyclerView? = null
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

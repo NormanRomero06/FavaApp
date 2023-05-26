@@ -1,11 +1,10 @@
-package com.example.appfavas.modelos.Informes
+package com.example.appfavas.ui.Informes
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -16,12 +15,10 @@ import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentInformeArticulosBinding
 
 import com.example.appfavas.decoration.SpaceItemDecoration
-import com.example.appfavas.modelos.Articulo.Articulo
-import com.example.appfavas.modelos.Articulo.ArticuloAdapter
 import com.example.appfavas.modelos.Articulo.ArticuloInforme
 import com.example.appfavas.modelos.Articulo.ArticuloInformeAdapter
 
-class InformeVentasFragment : Fragment() {
+class InformeArticulosFragment : Fragment() {
     private lateinit var binding: FragmentInformeArticulosBinding
     val artList = arrayListOf<ArticuloInforme>()
     var recyclerView: RecyclerView? = null

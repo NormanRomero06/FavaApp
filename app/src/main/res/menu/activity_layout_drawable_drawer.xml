@@ -9,48 +9,38 @@
             android:icon="@drawable/home"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_historialArticulos"
-            android:icon="@drawable/list"
-            android:title="@string/articulos"/>
-        <item
-            android:id="@+id/nav_articulos"
-            android:icon="@drawable/articulos"
-            android:title="Informes" />
-        <item
             android:id="@+id/nav_categorias"
             android:icon="@drawable/category"
-            android:title="Categorías" />
+            android:title="@string/categor_as" />
         <item
-            android:id="@+id/nav_historialVentas"
-            android:icon="@drawable/ventas"
-            android:title="Historial de Ventas"/>
+            android:id="@+id/nav_articulos"
+            android:icon="@drawable/list"
+            android:title="@string/articulos"/>
+        <!--
         <item
-            android:id="@+id/nav_recibos"
-            android:icon="@drawable/factura"
-            android:title="@string/recibos" />
-        <item
-            android:id="@+id/nav_cierre"
-            android:icon="@drawable/cierre"
-            android:title="@string/cierre"/>
+            android:id="@+id/nav_inventario"
+            android:icon="@drawable/list"
+            android:title="Inventario"/>
+            -->
         <item
             android:id="@+id/nav_pagos"
             android:icon="@drawable/pago"
             android:title="@string/pagos"/>
         <item
-            android:id="@+id/nav_historialPagos"
-            android:icon="@drawable/payments"
-            android:title="Historial de Pagos"/>
+            android:id="@+id/nav_cierre"
+            android:icon="@drawable/cierre"
+            android:title="@string/cierre"/>
+        <item
+            android:id="@+id/nav_historiales"
+            android:icon="@drawable/ventas"
+            android:title="@string/historiales"/>
+        <item
+            android:id="@+id/nav_informes"
+            android:icon="@drawable/articulos"
+            android:title="@string/informes" />
         <item
             android:id="@+id/nav_usuarios"
             android:icon="@drawable/user_24"
-            android:title="Usuarios"
-            />
-        <!--
-        <item
-            android:id="@+id/nav_configuraciones"
-            android:icon="@drawable/configuraciones"
-            android:title="@string/configuraciones"
-            />
-            -->
+            android:title="@string/usuarios" />
     </group>
 </menu>
