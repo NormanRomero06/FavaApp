@@ -132,5 +132,6 @@
     <string name="usuarios_existentes">Usuarios existentes</string>
     <string name="comentarios">Comentarios</string>
     <string name="fecha_de_pago">Fecha De Pago</string>
+    <string name="cerrar_sesion">Cerrar Sesión</string>
     <!--Spinner Roles-->
 </resources>

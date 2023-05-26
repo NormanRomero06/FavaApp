@@ -1,8 +1,10 @@
 package com.example.appfavas
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import com.google.android.material.snackbar.Snackbar
+import android.view.MenuItem
+import android.widget.Toast
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -58,5 +60,14 @@ class LayoutDrawableActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_layout_drawable)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.logOut->{
+                Toast.makeText(this, "Se ha cerrado sesión", Toast.LENGTH_LONG).show()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }
