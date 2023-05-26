@@ -130,11 +130,7 @@
     <fragment
         android:id="@+id/nav_usuarios"
         android:name="com.example.appfavas.ui.usuario.UsuariosFragment"
-        tools:layout="@layout/fragment_usuarios">
-        <action
-            android:id="@+id/UsuariosToRegistroUsuario"
-            app:destination="@id/registroUsuarioFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_usuarios"/>
     <fragment
         android:id="@+id/historialPagos"
         android:name="com.example.appfavas.ui.pagos.ListaPagosFragment"

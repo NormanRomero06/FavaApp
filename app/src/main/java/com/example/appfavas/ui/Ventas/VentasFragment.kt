@@ -16,15 +16,18 @@ import com.android.volley.toolbox.Volley
 import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentVentasHomeBinding
 import com.example.appfavas.modelos.Articulo.Articulo
-import com.example.appfavas.modelos.Categoria.Categoria
-import com.example.appfavas.modelos.Categoria.CategoriaAdapter
+import com.example.appfavas.modelos.Articulo.ArticuloVentas
+import com.example.appfavas.modelos.Articulo.ArticuloVentasAdapter
+import com.example.appfavas.modelos.Categoria.CategoriaVentas
+import com.example.appfavas.modelos.Categoria.CategoriaVentasAdapter
 
 class VentasFragment : Fragment() {
 
     private lateinit var binding: FragmentVentasHomeBinding
     var recyclerView: RecyclerView? = null
-    val catList = arrayListOf<Categoria>()
-    val artList = arrayListOf<Articulo>()
+    var recyclerVie: RecyclerView? = null
+    val catList = arrayListOf<CategoriaVentas>()
+    val artList = arrayListOf<ArticuloVentas>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,26 +37,28 @@ class VentasFragment : Fragment() {
         binding = FragmentVentasHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
         navigation()
+        cargarProductos()
         cargarCategoria()
-        //cargarProductos()
 
         return root
     }
 
-    fun cargarCategoria(){
+
+
+   private fun cargarCategoria(){
 
         val uri ="http://localfavas.online/Categoria/ReadCategoria.php"
 
-        recyclerView = binding.rvCategoria
-        val reqQueue: RequestQueue = Volley.newRequestQueue(getActivity())
-        val request = JsonObjectRequest(Request.Method.GET, uri, null, { res ->
+        recyclerVie = binding.rvCategoria
+        val reqQueuee: RequestQueue = Volley.newRequestQueue(getActivity())
+        val requeste = JsonObjectRequest(Request.Method.GET, uri, null, { res ->
             val jsonArray = res.getJSONArray("data")
 
             //Limpia la lista para evitar items duplicados
             catList.clear()
             for (i in 0 until jsonArray.length()){
                 val jsonObj = jsonArray.getJSONObject(i)
-                val user = Categoria(
+                val user = CategoriaVentas(
                     jsonObj.getInt("idCategoria"),
                     jsonObj.getString("nombre"),
                 )
@@ -61,8 +66,40 @@ class VentasFragment : Fragment() {
             }
             println(catList.toString())
 
+            recyclerVie?.layoutManager = LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false)
+            recyclerVie?.adapter = CategoriaVentasAdapter(catList)
+
+        },{err ->
+            Log.d("Volley fail", err.message.toString())
+        })
+
+        reqQueuee.add(requeste)
+    }
+
+    private fun cargarProductos() {
+
+        val url ="http://localfavas.online/Producto/ReadProducto.php"
+
+        recyclerView = binding.rcvProductos
+        val reqQueue: RequestQueue = Volley.newRequestQueue(getActivity())
+        val request = JsonObjectRequest(Request.Method.GET, url, null, { res ->
+            val jsonArray = res.getJSONArray("data")
+
+            //Limpia la lista para evitar items duplicados
+            artList.clear()
+            for (i in 0 until jsonArray.length()){
+                val jsonObj = jsonArray.getJSONObject(i)
+                val users = ArticuloVentas(
+                    jsonObj.getInt("idProducto"),
+                    jsonObj.getString("nombre"),
+                    jsonObj.getDouble("precio").toFloat(),
+                )
+                artList.add(users)
+            }
+            println(artList.toString())
+
             recyclerView?.layoutManager = LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false)
-            recyclerView?.adapter = CategoriaAdapter(catList)
+            recyclerView?.adapter = ArticuloVentasAdapter(artList)
 
         },{err ->
             Log.d("Volley fail", err.message.toString())
@@ -75,7 +112,7 @@ class VentasFragment : Fragment() {
     fun navigation()
     {
         binding.btnComprar.setOnClickListener {
-            Navigation.findNavController(binding.root).navigate(R.id.historialPagos)
+            Navigation.findNavController(binding.root).navigate(R.id.cobroFragment)
         }
     }
 

@@ -35,7 +35,7 @@ class UsuariosFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentUsuariosBinding.inflate(inflater, container, false)
-        navigation()
+
         return binding.root
     }
 
@@ -81,11 +81,7 @@ class UsuariosFragment : Fragment() {
     }*/
 
 
-        fun navigation() {
-            binding.fabNuevoUsuario.setOnClickListener {
-                Navigation.findNavController(binding.root).navigate(R.id.registroUsuarioFragment)
-            }
-        }
+
 
         override fun onDestroyView() {
             super.onDestroyView()
