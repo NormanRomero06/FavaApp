@@ -7,7 +7,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/back"
         tools:context=".ui.Categoria.ListaCategoriasFragment">
 
@@ -29,7 +29,7 @@
             android:layout_marginTop="30dp"
             android:fontFamily="@font/crimson_text_bold"
             android:gravity="center"
-            android:text="Categorías existentes"
+            android:text="@string/categorias_existentes"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="@+id/VwCategoria"
             app:layout_constraintStart_toStartOf="@+id/VwCategoria"
@@ -45,19 +45,19 @@
             app:layout_constraintTop_toBottomOf="@id/tv_Categoria"
             app:layout_constraintVertical_bias="0.5" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnNuevaCategoria"
-            android:layout_width="200dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/btn_shape"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabNuevaCategoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="140dp"
+            android:layout_marginBottom="80dp"
+            android:backgroundTint="@color/color_Primary"
+            android:clickable="true"
             android:contentDescription="@string/categoria"
-            android:fontFamily="@font/crimson_text_regular"
-            android:text="Nueva Categoría"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="@+id/VwCategoria"
-            app:layout_constraintStart_toStartOf="@+id/VwCategoria"
-            app:layout_constraintTop_toBottomOf="@+id/rvCategoria" />
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/add_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -82,7 +82,7 @@ class UsuariosFragment : Fragment() {
 
 
         fun navigation() {
-            binding.btnNuevoUsuario.setOnClickListener {
+            binding.fabNuevoUsuario.setOnClickListener {
                 Navigation.findNavController(binding.root).navigate(R.id.registroUsuarioFragment)
             }
         }

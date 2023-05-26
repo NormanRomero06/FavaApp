@@ -33,7 +33,7 @@ class TotalTarjetaFragment : Fragment() {
 
     fun navigation()
     {
-        binding.btnNuevaVenta.setOnClickListener {
+        binding.fabNuevaVenta.setOnClickListener {
             Navigation.findNavController(binding.root).navigate(R.id.nav_ventas)
         }
     }

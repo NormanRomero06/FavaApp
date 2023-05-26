@@ -79,10 +79,10 @@ class ListaCategoriasFragment : Fragment() {
     }
 
     fun navigation() {
-        binding.btnNuevaCategoria.setOnClickListener {
-            Navigation.findNavController(binding.root).navigate(R.id.crearCategoriaFragment)
+            binding.fabNuevaCategoria.setOnClickListener {
+                Navigation.findNavController(binding.root).navigate(R.id.crearCategoriaFragment)
+            }
         }
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -7,8 +7,6 @@
     android:background="@color/back"
     tools:context=".ui.pagos.Eliminar_pago">
 
-
-
     <View
         android:id="@+id/vwPagos"
         android:layout_width="520dp"
@@ -17,15 +15,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tvPagos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="@string/pagos"
         android:fontFamily="@font/crimson_text_bold"
+        android:text="@string/pagos"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="@id/vwPagos"
         app:layout_constraintStart_toStartOf="@id/vwPagos"
@@ -36,8 +34,8 @@
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/crimson_text_bold"
-        android:text="Id"
+        android:fontFamily="@font/crimson_text_regular"
+        android:text="@string/id"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@id/vwPagos"
@@ -49,9 +47,9 @@
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/crimson_text_regular"
         android:text="@string/descripcion_egresos"
         android:textColor="@color/black"
-        android:fontFamily="@font/crimson_text_regular"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@id/vwPagos"
         app:layout_constraintStart_toStartOf="@id/vwPagos"
@@ -62,10 +60,10 @@
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/cantidad"
         android:fontFamily="@font/crimson_text_regular"
-        android:textSize="16sp"
+        android:text="@string/cantidad"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@id/vwPagos"
         app:layout_constraintStart_toStartOf="@id/vwPagos"
         app:layout_constraintTop_toBottomOf="@+id/tvDescripcion" />
@@ -75,10 +73,10 @@
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Fecha De Pago"
-        android:textSize="16sp"
         android:fontFamily="@font/crimson_text_regular"
+        android:text="@string/fecha_de_pago"
         android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@id/vwPagos"
         app:layout_constraintStart_toStartOf="@id/vwPagos"
         app:layout_constraintTop_toBottomOf="@+id/tvCantidad" />
@@ -89,8 +87,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:background="@drawable/btn_shape"
-        android:fontFamily="@font/crimson_text_regular"
         android:drawableEnd="@drawable/eliminar"
+        android:fontFamily="@font/crimson_text_regular"
         android:text="@string/eliminar_pago"
         android:textColor="@color/boton"
         app:layout_constraintEnd_toEndOf="@id/vwPagos"

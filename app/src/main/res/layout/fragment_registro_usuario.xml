@@ -7,7 +7,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/back"
         tools:context=".ui.usuario.RegistroUsuarioFragment">
 
@@ -15,6 +15,7 @@
             android:id="@+id/imgLogo"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:contentDescription="@string/app_name"
             android:src="@drawable/favaslogo"
             app:layout_constraintBottom_toTopOf="@+id/VwRegister"
             app:layout_constraintEnd_toEndOf="parent"
@@ -38,26 +39,25 @@
             android:layout_width="320dp"
             android:layout_height="0dp"
             android:layout_marginTop="20dp"
-            android:text="Registro de usuarios"
-            android:textAlignment="center"
             android:fontFamily="@font/crimson_text_bold"
+            android:text="@string/registro_de_usuarios"
+            android:textAlignment="center"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="@id/VwRegister"
             app:layout_constraintStart_toStartOf="@id/VwRegister"
-            app:layout_constraintTop_toTopOf="@id/VwRegister"
-            />
+            app:layout_constraintTop_toTopOf="@id/VwRegister" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/txtNombres"
             android:layout_width="400dp"
             android:layout_height="0dp"
             android:layout_marginTop="20dp"
+            android:hint="@string/nombres"
             android:textAlignment="center"
             android:textColorHint="@color/black"
-            android:hint="Nombres"
-            app:helperText="*Required"
             app:counterEnabled="true"
             app:counterMaxLength="20"
+            app:helperText="*Required"
             app:layout_constraintEnd_toEndOf="@+id/VwRegister"
             app:layout_constraintStart_toStartOf="@+id/VwRegister"
             app:layout_constraintTop_toBottomOf="@+id/TvLogin">
@@ -67,12 +67,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_shape_inputs"
-                android:inputType="text"
-                android:minHeight="48sp"
                 android:fontFamily="@font/crimson_text_regular"
-                />
-
-
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:minHeight="48sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -80,9 +78,9 @@
             android:layout_width="400dp"
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
+            android:hint="@string/apellidos"
             android:textAlignment="center"
             android:textColorHint="@color/black"
-            android:hint="Apellidos"
             app:counterEnabled="true"
             app:counterMaxLength="20"
             app:layout_constraintEnd_toEndOf="@+id/VwRegister"
@@ -94,12 +92,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_shape_inputs"
-                android:inputType="text"
-                android:minHeight="48sp"
                 android:fontFamily="@font/crimson_text_regular"
-                />
-
-
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:minHeight="48sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -107,9 +103,9 @@
             android:layout_width="400dp"
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
+            android:hint="@string/correo"
             android:textAlignment="center"
             android:textColorHint="@color/black"
-            android:hint="Correo"
             app:helperText="*Required"
             app:layout_constraintEnd_toEndOf="@id/VwRegister"
             app:layout_constraintStart_toStartOf="@id/VwRegister"
@@ -120,12 +116,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_shape_inputs"
-                android:inputType="textEmailAddress"
-                android:minHeight="48sp"
                 android:fontFamily="@font/crimson_text_regular"
-                />
-
-
+                android:imeOptions="actionDone"
+                android:inputType="textEmailAddress"
+                android:minHeight="48sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -133,9 +127,9 @@
             android:layout_width="400dp"
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
+            android:hint="@string/usuario"
             android:textAlignment="center"
             android:textColorHint="@color/black"
-            android:hint="Usuario"
             app:helperText="*Required"
             app:layout_constraintEnd_toEndOf="@id/VwRegister"
             app:layout_constraintStart_toStartOf="@id/VwRegister"
@@ -146,10 +140,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_shape_inputs"
-                android:inputType="text"
-                android:minHeight="48sp"
                 android:fontFamily="@font/crimson_text_regular"
-                />
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:minHeight="48sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -157,23 +151,23 @@
             android:layout_width="400dp"
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
+            android:hint="@string/contraseña"
             android:textAlignment="center"
             android:textColorHint="@color/black"
-            android:hint="Contraseña"
             app:endIconMode="password_toggle"
             app:layout_constraintEnd_toEndOf="@id/VwRegister"
             app:layout_constraintStart_toStartOf="@id/VwRegister"
-            app:layout_constraintTop_toBottomOf="@id/txtUsuario" >
+            app:layout_constraintTop_toBottomOf="@id/txtUsuario">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etContraseña"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_shape_inputs"
-                android:inputType="textPassword"
                 android:fontFamily="@font/crimson_text_regular"
-                android:minHeight="48sp"
-                />
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:minHeight="48sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Spinner
@@ -181,9 +175,9 @@
             android:layout_width="400dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
+            android:background="@drawable/ic_shape_inputs"
             android:entries="@array/roles"
             android:prompt="@string/prompt"
-            android:background="@drawable/ic_shape_inputs"
             app:layout_constraintEnd_toEndOf="@+id/VwRegister"
             app:layout_constraintStart_toStartOf="@+id/VwRegister"
             app:layout_constraintTop_toBottomOf="@+id/txtContraseña" />
@@ -195,15 +189,13 @@
             android:layout_height="0dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/btn_shape"
-            android:text="Registrarse"
             android:fontFamily="@font/crimson_text_regular"
+            android:text="@string/registro"
             android:textColor="@color/boton"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/VwRegister"
             app:layout_constraintStart_toStartOf="@id/VwRegister"
             app:layout_constraintTop_toBottomOf="@+id/sRoles" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

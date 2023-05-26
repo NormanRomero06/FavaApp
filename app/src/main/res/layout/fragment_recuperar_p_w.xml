@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.usuario.RecuperarPWFragment"
-    android:background="@color/back">
+    android:background="@color/back"
+    tools:context=".ui.usuario.RecuperarPWFragment">
 
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:contentDescription="@string/app_name"
         android:src="@drawable/favaslogo"
         app:layout_constraintBottom_toTopOf="@+id/VwRegister"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,26 +34,25 @@
         android:layout_width="320dp"
         android:layout_height="0dp"
         android:layout_marginTop="100dp"
-        android:text="Recuperar Contraseña"
-        android:textAlignment="center"
         android:fontFamily="@font/crimson_text_bold"
+        android:text="@string/recuperar_constraseña"
+        android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="@id/VwRegister"
         app:layout_constraintStart_toStartOf="@id/VwRegister"
-        app:layout_constraintTop_toTopOf="@id/VwRegister"
-        />
+        app:layout_constraintTop_toTopOf="@id/VwRegister" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtNombres"
         android:layout_width="400dp"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
+        android:hint="@string/nombres"
         android:textAlignment="center"
         android:textColorHint="@color/black"
-        android:hint="Nombres"
-        app:helperText="*Required"
         app:counterEnabled="true"
         app:counterMaxLength="20"
+        app:helperText="*Required"
         app:layout_constraintEnd_toEndOf="@+id/VwRegister"
         app:layout_constraintStart_toStartOf="@+id/VwRegister"
         app:layout_constraintTop_toBottomOf="@+id/TvLogin">
@@ -62,12 +62,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_shape_inputs"
-            android:inputType="text"
             android:fontFamily="@font/crimson_text_regular"
-            android:minHeight="48sp"
-            />
-
-
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:minHeight="48sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -75,12 +73,12 @@
         android:layout_width="400dp"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
+        android:hint="@string/apellidos"
         android:textAlignment="center"
         android:textColorHint="@color/black"
-        app:helperText="*Required"
-        android:hint="Apellidos"
         app:counterEnabled="true"
         app:counterMaxLength="20"
+        app:helperText="*Required"
         app:layout_constraintEnd_toEndOf="@+id/VwRegister"
         app:layout_constraintStart_toStartOf="@+id/VwRegister"
         app:layout_constraintTop_toBottomOf="@+id/txtNombres">
@@ -90,12 +88,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_shape_inputs"
-            android:inputType="text"
-            android:minHeight="48sp"
             android:fontFamily="@font/crimson_text_regular"
-            />
-
-
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:minHeight="48sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -103,9 +99,9 @@
         android:layout_width="400dp"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
+        android:hint="@string/correo"
         android:textAlignment="center"
         android:textColorHint="@color/black"
-        android:hint="Correo"
         app:helperText="*Required"
         app:layout_constraintEnd_toEndOf="@id/VwRegister"
         app:layout_constraintStart_toStartOf="@id/VwRegister"
@@ -116,12 +112,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_shape_inputs"
-            android:inputType="textEmailAddress"
-            android:minHeight="48sp"
             android:fontFamily="@font/crimson_text_regular"
-            />
-
-
+            android:imeOptions="actionDone"
+            android:inputType="textEmailAddress"
+            android:minHeight="48sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -130,23 +124,23 @@
         android:layout_width="400dp"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
+        android:hint="@string/nueva_contraseña"
         android:textAlignment="center"
         android:textColorHint="@color/black"
-        android:hint="Nueva Contraseña"
         app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="@id/VwRegister"
         app:layout_constraintStart_toStartOf="@id/VwRegister"
-        app:layout_constraintTop_toBottomOf="@id/txtCorreo" >
+        app:layout_constraintTop_toBottomOf="@id/txtCorreo">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etNuevaContraseña"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_shape_inputs"
-            android:inputType="textPassword"
             android:fontFamily="@font/crimson_text_regular"
-            android:minHeight="48sp"
-            />
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:minHeight="48sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -155,15 +149,12 @@
         android:layout_height="0dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/btn_shape"
-        android:text="Cambiar Contraseña"
-        android:textColor="@color/boton"
         android:fontFamily="@font/crimson_text_regular"
+        android:text="@string/cambiar_contraseña"
+        android:textColor="@color/boton"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/VwRegister"
         app:layout_constraintStart_toStartOf="@id/VwRegister"
-        app:layout_constraintTop_toBottomOf="@id/txtNuevaContraseña"
-        />
-
-
+        app:layout_constraintTop_toBottomOf="@id/txtNuevaContraseña" />
 </androidx.constraintlayout.widget.ConstraintLayout>

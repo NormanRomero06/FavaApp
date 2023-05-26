@@ -84,7 +84,10 @@ class ListaArticulosFragment : Fragment() {
 
     fun navigation()
     {
-        binding.btnNuevoArticulo.setOnClickListener {
+    //    binding.btnNuevoArticulo.setOnClickListener {
+         //   Navigation.findNavController(binding.root).navigate(R.id.crearArticuloVentasFragment)
+      //  }
+        binding.fabNuevoArticulo.setOnClickListener {
             Navigation.findNavController(binding.root).navigate(R.id.crearArticuloVentasFragment)
         }
 

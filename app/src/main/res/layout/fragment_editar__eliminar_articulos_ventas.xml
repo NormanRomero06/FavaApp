@@ -31,9 +31,9 @@
             android:text="@string/editar_articulo"
             android:textAlignment="center"
             android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="@id/VwArticulos"
+            app:layout_constraintStart_toStartOf="@id/VwArticulos"
+            app:layout_constraintTop_toTopOf="@id/VwArticulos" />
 
         <EditText
             android:id="@+id/etId"
@@ -43,10 +43,13 @@
             android:backgroundTint="@color/black"
             android:fontFamily="@font/crimson_text_regular"
             android:hint="@string/categoria"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:autofillHints=""
             android:textColorHint="@color/black"
             android:visibility="invisible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/VwArticulos"
+            app:layout_constraintStart_toStartOf="@id/VwArticulos"
             app:layout_constraintTop_toBottomOf="@id/tv_Categoria" />
 
         <EditText
@@ -58,6 +61,7 @@
             android:backgroundTint="@color/gray"
             android:fontFamily="@font/crimson_text_regular"
             android:hint="@string/nombre"
+            android:imeOptions="actionDone"
             android:inputType="text"
             android:minHeight="48sp"
             android:textColorHint="@color/gray"
@@ -74,6 +78,7 @@
             android:backgroundTint="@color/gray"
             android:fontFamily="@font/crimson_text_regular"
             android:hint="@string/precio"
+            android:imeOptions="actionDone"
             android:inputType="number"
             android:minHeight="48sp"
             android:textColorHint="@color/gray"
@@ -90,6 +95,7 @@
             android:backgroundTint="@color/gray"
             android:fontFamily="@font/crimson_text_regular"
             android:hint="@string/descripcion_egresos"
+            android:imeOptions="actionDone"
             android:inputType="textMultiLine"
             android:lines="3"
             android:minHeight="48sp"
@@ -117,7 +123,7 @@
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:contentDescription="@string/categoria"
+            android:contentDescription="@string/articulos"
             app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
             app:layout_constraintStart_toStartOf="@+id/VwArticulos"
             app:layout_constraintTop_toBottomOf="@+id/tvCategoria" />
@@ -159,6 +165,7 @@
             android:backgroundTint="@color/gray"
             android:fontFamily="@font/crimson_text_regular"
             android:hint="@string/_0"
+            android:imeOptions="actionDone"
             android:inputType="number"
             android:minHeight="48sp"
             android:textColorHint="@color/gray"
@@ -194,43 +201,43 @@
             android:id="@+id/btnLimpiarArt"
             android:layout_width="130dp"
             android:layout_height="0dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/btn_shape"
             android:drawableEnd="@drawable/limpieza"
             android:fontFamily="@font/crimson_text_regular"
             android:text="@string/limpiar"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/VwArticulos"
             app:layout_constraintTop_toBottomOf="@id/ivArticulo" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnEditarArt"
             android:layout_width="130dp"
             android:layout_height="0dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/btn_shape"
             android:drawableEnd="@drawable/agregar"
             android:fontFamily="@font/crimson_text_regular"
             android:text="@string/editar"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnLimpiarArt" />
+            app:layout_constraintEnd_toStartOf="@id/btnEliminarArt"
+            app:layout_constraintStart_toEndOf="@id/btnLimpiarArt"
+            app:layout_constraintTop_toBottomOf="@id/ivArticulo" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnEliminarArt"
             android:layout_width="130dp"
             android:layout_height="0dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/btn_shape"
             android:drawableEnd="@drawable/eliminar"
             android:fontFamily="@font/crimson_text_regular"
             android:text="@string/eliminar"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnEditarArt" />
+            app:layout_constraintEnd_toEndOf="@id/VwArticulos"
+            app:layout_constraintStart_toEndOf="@id/btnEditarArt"
+            app:layout_constraintTop_toBottomOf="@id/ivArticulo" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

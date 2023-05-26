@@ -115,5 +115,22 @@
     <string name="totala">Total:</string>
     <string name="informe_articulos">Informe Articulos</string>
     <string name="nombre_producto">Nombre Producto</string>
+    <string name="crear_categoria">Crear Categoría</string>
+    <string name="guardar_categoria">Guardar Categoría</string>
+    <string name="total_pago">TOTAL PAGO</string>
+    <string name="efectivo_recibido">Efectivo recibido</string>
+    <string name="por_tarjeta">Por tarjeta</string>
+    <string name="cobrar">Cobrar</string>
+    <string name="articulos_creados">Artículos Creados</string>
+    <string name="categorias_existentes">Categorías existentes</string>
+    <string name="cantidad_total_a_pagar">Cantidad Total A Pagar</string>
+    <string name="efectivo">Efectivo</string>
+    <string name="tarjeta">Tarjeta</string>
+    <string name="dolares">Dólares</string>
+    <string name="dividir_pago">Dividir Pago</string>
+    <string name="tarjeta_referencia">Tarjeta (Referencia)</string>
+    <string name="usuarios_existentes">Usuarios existentes</string>
+    <string name="comentarios">Comentarios</string>
+    <string name="fecha_de_pago">Fecha De Pago</string>
     <!--Spinner Roles-->
 </resources>

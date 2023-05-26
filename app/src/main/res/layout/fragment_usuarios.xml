@@ -7,7 +7,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/back"
         tools:context=".ui.usuario.UsuariosFragment">
 
@@ -25,10 +25,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Usuarios existentes"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/crimson_text_bold"
+            android:gravity="center"
+            android:text="@string/usuarios_existentes"
             android:textSize="30sp"
             app:layout_constraintBottom_toTopOf="@+id/rvUsuarios"
             app:layout_constraintEnd_toEndOf="@+id/VwUsuarios"
@@ -45,21 +45,18 @@
             app:layout_constraintStart_toStartOf="@+id/VwUsuarios"
             app:layout_constraintTop_toTopOf="@+id/VwUsuarios" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnNuevoUsuario"
-            android:layout_width="200dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/btn_shape"
-            android:fontFamily="@font/crimson_text_regular"
-            android:contentDescription="Add"
-            android:text="Nuevo Usuario"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="@+id/VwUsuarios"
-            app:layout_constraintStart_toStartOf="@+id/VwUsuarios"
-            app:layout_constraintTop_toBottomOf="@+id/rvUsuarios" />
-
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabNuevoUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="140dp"
+            android:layout_marginBottom="50dp"
+            android:contentDescription="@string/registro_de_usuarios"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/add_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </ScrollView>

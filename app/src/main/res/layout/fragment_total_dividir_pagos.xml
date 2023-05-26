@@ -127,19 +127,18 @@
         app:layout_constraintStart_toStartOf="@id/VwTarjeta"
         app:layout_constraintTop_toBottomOf="@id/tv_totalTarj" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_venta"
-        android:layout_width="250dp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabNuevaVenta"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:background="@drawable/btn_shape"
-        android:fontFamily="@font/crimson_text_regular"
-        android:text="@string/nueva_venta"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@id/VwPago"
-        app:layout_constraintStart_toStartOf="@id/VwPago"
-        app:layout_constraintTop_toBottomOf="@id/VwTarjeta" />
-
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="@string/dividir_pago"
+        android:src="@drawable/add_24"
+        android:layout_marginEnd="270dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
