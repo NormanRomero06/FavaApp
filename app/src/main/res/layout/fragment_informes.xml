@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back"
+    tools:context=".ui.Informes.informesFragment">
+
+    <View
+        android:id="@+id/VwInformes"
+        android:layout_width="700dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_shape_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvInformes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/crimson_text_bold"
+        android:text="@string/informes"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="@id/VwInformes"
+        app:layout_constraintStart_toStartOf="@id/VwInformes"
+        app:layout_constraintTop_toTopOf="@id/VwInformes" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnIArticulos"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_shape"
+        android:fontFamily="@font/crimson_text_regular"
+        android:text="@string/informe_inventario"
+        android:textColor="@color/boton"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/VwInformes"
+        app:layout_constraintStart_toStartOf="@id/VwInformes"
+        app:layout_constraintTop_toBottomOf="@id/tvInformes" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnIPagos"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_shape"
+        android:fontFamily="@font/crimson_text_regular"
+        android:text="@string/informe_pagos"
+        android:textColor="@color/boton"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/VwInformes"
+        app:layout_constraintStart_toStartOf="@id/VwInformes"
+        app:layout_constraintTop_toBottomOf="@id/btnIArticulos" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnIVentas"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_shape"
+        android:fontFamily="@font/crimson_text_regular"
+        android:text="@string/informe_ventas"
+        android:textColor="@color/boton"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/VwInformes"
+        app:layout_constraintStart_toStartOf="@id/VwInformes"
+        app:layout_constraintTop_toBottomOf="@id/btnIPagos" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
