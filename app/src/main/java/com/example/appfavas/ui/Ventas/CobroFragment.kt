@@ -5,31 +5,45 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
+import android.widget.LinearLayout
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentCobroBinding
+import com.example.appfavas.modelos.Ventas.PreSelect
+import com.example.appfavas.modelos.Ventas.PreSelectAdapter
 
 
 class CobroFragment : Fragment() {
+   private lateinit var binding: FragmentCobroBinding
 
-
-    private var _binding: FragmentCobroBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    val LisPreVenta = arrayListOf<PreSelect>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentCobroBinding.inflate(inflater, container, false)
-
+        binding = FragmentCobroBinding.inflate(inflater, container, false)
         val root: View = binding.root
         navigation()
-
+        llenarAdapter()
         return root
+    }
+
+    private fun llenarAdapter() {
+
+        val user = PreSelect(
+            1 , "coca", 20, 25f,36f
+        )
+        LisPreVenta.add(user)
+      binding.rcvProductos.layoutManager = LinearLayoutManager(context)
+        binding.rcvProductos.adapter = PreSelectAdapter(LisPreVenta)
+
+
+
     }
 
     fun navigation()
@@ -41,6 +55,6 @@ class CobroFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+        binding
     }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="300dp"
     android:layout_height="120dp"
     android:orientation="vertical">
@@ -32,6 +33,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/PrecioTotal"
                 android:layout_width="70dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="210dp"
@@ -55,6 +57,7 @@
                 android:textSize="25sp" />
 
             <ImageView
+                android:id="@+id/IvMenos"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginStart="120dp"
@@ -62,11 +65,30 @@
                 android:src="@drawable/ic_menos" />
 
             <ImageView
+                android:id="@+id/IvMas"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginStart="185dp"
                 android:layout_marginTop="50dp"
                 android:src="@drawable/ic_mas" />
+
+            <ImageView
+                android:id="@+id/IvEnlazar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="250dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/cart_24"
+            />
+            <TextView
+                android:id="@+id/idProVenta"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:text="@string/id"
+                android:layout_marginTop="75dp"
+                android:layout_marginStart="255dp"
+                android:visibility="invisible"/>
+
 
         </RelativeLayout>
 
