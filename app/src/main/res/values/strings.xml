@@ -43,6 +43,7 @@
     <string name="realizar_pago">Realizar Pago</string>
     <string name="editar_pago">Editar Pago</string>
     <string name="eliminar_pago">Eliminar Pago</string>
+    <string name="agregar_inventario">Agregar Inventario</string>
 
     <string name="reembolsar">Reembolsar</string>
     <string name="totaln">Total</string>
