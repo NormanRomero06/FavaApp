@@ -1,13 +1,45 @@
 package com.example.appfavas.modelos.Usuario
 
 import android.annotation.SuppressLint
+import android.service.autofill.UserData
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appfavas.databinding.ItemUsuariosBinding
 
 
-class UsuarioAdapter(private val onItemClick: (Usuario) -> Unit) :
+class UsuarioAdapter(private val userList: ArrayList<Usuario>) :
+    RecyclerView.Adapter<UsuarioAdapter.ViewHolder>() {
+
+    class ViewHolder(private val binding: ItemUsuariosBinding) : RecyclerView.ViewHolder(binding.root) {
+
+        @SuppressLint("SetTextI18n")
+        fun load(item: Usuario) {
+            with(binding) {
+                //tvidC.text = item.idUsuario.toString()
+                tvNombres.text = "${item.nombres} ${item.apellidos}"
+                tvEmail.text = item.correo
+                tvRol.text = item.rol
+
+            }
+
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val userItem = ItemUsuariosBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(userItem)
+    }
+
+    override fun getItemCount(): Int {
+        return userList.size
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.load(this.userList[position])
+    }
+}
+/*class UsuarioAdapter(private val onItemClick: (Usuario) -> Unit) :
     RecyclerView.Adapter<UsuarioAdapter.UsuarioViewHolder>() {
 
     private var usuarios = listOf<Usuario>()
@@ -40,4 +72,4 @@ class UsuarioAdapter(private val onItemClick: (Usuario) -> Unit) :
             binding.root.setOnClickListener { onItemClick(usuario) }
         }
     }
-}
+}*/

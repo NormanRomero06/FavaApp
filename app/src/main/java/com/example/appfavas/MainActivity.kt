@@ -1,6 +1,7 @@
 package com.example.appfavas
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -33,25 +34,35 @@ class MainActivity : AppCompatActivity() {
 
     private fun login() {
         binding.btnLogin.setOnClickListener {
-            var usuario = binding.txtUsuario.editText?.text.toString()
-            var contraseña = binding.txtContraseA.editText?.text.toString()
+            val usuario = binding.txtUsuario.editText?.text.toString()
+            val contraseña = binding.txtContraseA.editText?.text.toString()
 
             val uri = "http://localfavas.online/Usuario/LoginValidation.php"
             val stringRequest = object : StringRequest(Request.Method.POST, uri,
                 Response.Listener<String> { response ->
-                    if (response == "Validado") {
-                        // El usuario y contraseña son válidos
+                    val parts = response.split("|")
+                    if (parts.size == 2 && parts[0] == "Validado") {
+                        val idUsuario = parts[1].toInt()
+
+                        // Almacenar el idUsuario en SharedPreferences
+                        val sharedPreferences = getSharedPreferences("MiPref", Context.MODE_PRIVATE)
+                        val editor = sharedPreferences.edit()
+                        editor.putInt("idUsuario", idUsuario)
+                        editor.apply()
+
+                        // Resto del código para el login exitoso
                         Log.d("TAG", "Login exitoso")
                         val iniciar = Intent(this, LayoutDrawableActivity::class.java)
                         startActivity(iniciar)
                     } else {
                         // El usuario y/o contraseña son inválidos
                         Log.d("TAG", "Login fallido")
-                        Toast.makeText(this,"Error en los datos", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Error en los datos", Toast.LENGTH_SHORT).show()
                     }
                 },
                 Response.ErrorListener { error ->
                     Log.e("TAG", "Error en la solicitud: ${error.message}")
+                    Toast.makeText(this, "Error en la solicitud: ${error.message}", Toast.LENGTH_SHORT).show()
                 }) {
                 override fun getParams(): Map<String, String> {
                     val params = HashMap<String, String>()
@@ -63,9 +74,10 @@ class MainActivity : AppCompatActivity() {
 
             // Agrega la solicitud a la cola de solicitudes
             Volley.newRequestQueue(this).add(stringRequest)
-
         }
     }
+
+
 
 
 
