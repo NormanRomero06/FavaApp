@@ -1,17 +1,21 @@
 package com.example.appfavas.modelos.Usuario
 
 import android.annotation.SuppressLint
+import android.os.Bundle
 import android.service.autofill.UserData
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.example.appfavas.R
 import com.example.appfavas.databinding.ItemUsuariosBinding
 
 
 class UsuarioAdapter(private val userList: ArrayList<Usuario>) :
     RecyclerView.Adapter<UsuarioAdapter.ViewHolder>() {
 
-    class ViewHolder(private val binding: ItemUsuariosBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: ItemUsuariosBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         @SuppressLint("SetTextI18n")
         fun load(item: Usuario) {
@@ -20,14 +24,29 @@ class UsuarioAdapter(private val userList: ArrayList<Usuario>) :
                 tvNombres.text = "${item.nombres} ${item.apellidos}"
                 tvEmail.text = item.correo
                 tvRol.text = item.rol
+                cvUsuarios.setOnClickListener {
+                    val bundle = Bundle()
+                    bundle.putString("idProducto", item.idUsuario.toString())
+                    bundle.putString("nombres", item.nombres)
+                    bundle.putString("apellidos", item.apellidos)
+                    bundle.putString("correo", item.correo)
+                    bundle.putString("usuario", item.usuario)
+                    bundle.putString("contraseña", item.contraseña)
+                    bundle.putString("rol", item.rol)
+                    //bundle.putString("Categoria_Nombre", item.Categoria_Nombre)
+                    Navigation.findNavController(binding.root).navigate(R.id.editarUsuarioFragment, bundle)
 
+
+
+                }
             }
 
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val userItem = ItemUsuariosBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val userItem =
+            ItemUsuariosBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(userItem)
     }
 

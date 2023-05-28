@@ -160,6 +160,12 @@
         android:name="com.example.appfavas.ui.Informes.informesFragment"
         android:label="Informes"
         tools:layout="@layout/fragment_informes" />
+    <fragment
+        android:id="@+id/editarUsuarioFragment"
+        android:name="com.example.appfavas.ui.usuario.EditarUsuarioFragment"
+        android:label="Editar Usuario"
+        tools:layout="@layout/fragment_editar_usuario" />
+
 
 
 </navigation>
