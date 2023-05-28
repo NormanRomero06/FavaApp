@@ -204,7 +204,7 @@
             android:layout_height="0dp"
             android:backgroundTint="@color/black"
             android:fontFamily="@font/crimson_text_regular"
-            android:visibility="invisible"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="@id/VwRegister"
             app:layout_constraintStart_toStartOf="@id/VwRegister"
             app:layout_constraintTop_toBottomOf="@+id/btnEditar" />

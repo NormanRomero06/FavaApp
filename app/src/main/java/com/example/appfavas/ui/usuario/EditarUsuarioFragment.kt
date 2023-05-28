@@ -1,6 +1,7 @@
 package com.example.appfavas.ui.usuario
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -53,7 +54,6 @@ class EditarUsuarioFragment : Fragment() {
         with(binding) {
             btnEditar.setOnClickListener {
                 try {
-
                     val url = "http://localfavas.online/Usuario/UpdateUsuario.php"
                     val queue = Volley.newRequestQueue(activity)
                     val resultadoPost = object : StringRequest(
@@ -70,13 +70,13 @@ class EditarUsuarioFragment : Fragment() {
                         }) {
                         override fun getParams(): MutableMap<String, String> {
                             val parametros = HashMap<String, String>()
-                            parametros.put("idUsuario", binding.etId.text.toString())
-                            parametros.put("nombres", binding.etNombres.text.toString())
-                            parametros.put("apellidos", binding.etApellidos.text.toString())
-                            parametros.put("correo", binding.etCorreo.text.toString())
-                            parametros.put("usuario", binding.etUsuario.text.toString())
-                            parametros.put("contraseña", binding.etContraseA.toString())
-                            parametros.put("rol", binding.sRoles.selectedItem.toString())
+                            parametros.put("idUsuario", etId.text.toString())
+                            parametros.put("nombres", etNombres.text.toString())
+                            parametros.put("apellidos", etApellidos.text.toString())
+                            parametros.put("correo", etCorreo.text.toString())
+                            parametros.put("usuario", etUsuario.text.toString())
+                            parametros.put("contraseña", etContraseA.text.toString())
+                            parametros.put("rol", sRoles.selectedItem.toString())
                             return parametros
                         }
                     }

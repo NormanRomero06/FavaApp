@@ -20,20 +20,19 @@ class UsuarioAdapter(private val userList: ArrayList<Usuario>) :
         @SuppressLint("SetTextI18n")
         fun load(item: Usuario) {
             with(binding) {
-                //tvidC.text = item.idUsuario.toString()
+                tvidC.text = item.idUsuario.toString()
                 tvNombres.text = "${item.nombres} ${item.apellidos}"
                 tvEmail.text = item.correo
                 tvRol.text = item.rol
                 cvUsuarios.setOnClickListener {
                     val bundle = Bundle()
-                    bundle.putString("idProducto", item.idUsuario.toString())
+                    bundle.putString("idUsuario", item.idUsuario.toString())
                     bundle.putString("nombres", item.nombres)
                     bundle.putString("apellidos", item.apellidos)
                     bundle.putString("correo", item.correo)
                     bundle.putString("usuario", item.usuario)
                     bundle.putString("contraseña", item.contraseña)
                     bundle.putString("rol", item.rol)
-                    //bundle.putString("Categoria_Nombre", item.Categoria_Nombre)
                     Navigation.findNavController(binding.root).navigate(R.id.editarUsuarioFragment, bundle)
 
 
