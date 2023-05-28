@@ -24,7 +24,7 @@ import com.example.appfavas.modelos.Articulo.ArticuloAdapter
 
 class ListaInventarioFragment : Fragment() {
 
-    private lateinit var binding:FragmentListaInventarioBinding
+    private lateinit var binding: FragmentListaInventarioBinding
     private val articuloList = arrayListOf<Articulo>()
     private val uri = "http://localfavas.online/Producto/ReadProducto.php"
     private var recyclerView: RecyclerView? = null
@@ -34,21 +34,18 @@ class ListaInventarioFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
         binding = FragmentListaInventarioBinding.inflate(inflater, container, false)
         val root: View = binding.root
         cargarDatosArticulos()
-        buscarArticulo()
+        setupSearch()
         return root
     }
-
 
     private fun cargarDatosArticulos() {
         val reqQueue: RequestQueue = Volley.newRequestQueue(requireContext())
         val request = JsonObjectRequest(Request.Method.GET, uri, null, { res ->
             val jsonArray = res.getJSONArray("data")
 
-            // Limpia la lista para evitar elementos duplicados
             articuloList.clear()
             for (i in 0 until jsonArray.length()) {
                 val jsonObj = jsonArray.getJSONObject(i)
@@ -63,47 +60,44 @@ class ListaInventarioFragment : Fragment() {
                 articuloList.add(articulo)
             }
 
-            recyclerView = binding.rvArticulo
-            Log.VERBOSE
-
-            val spanCount = 2 // Número de columnas en la cuadrícula
+            val spanCount = 2
             val spaceHorizontal = resources.getDimensionPixelSize(R.dimen.item_space_horizontal)
             val spaceVertical = resources.getDimensionPixelSize(R.dimen.item_space_vertical)
             val gridLayoutManager = GridLayoutManager(requireContext(), spanCount)
 
+            recyclerView = binding.rvArticulo
             recyclerView?.layoutManager = gridLayoutManager
             recyclerView?.addItemDecoration(SpaceItemDecoration(spaceHorizontal, spaceVertical))
 
             adapter = ArticuloAdapter(articuloList)
             recyclerView?.adapter = adapter
 
-            adapter?.notifyDataSetChanged()
-
         }, {
             // Manejar error de la solicitud HTTP si es necesario
         })
 
         reqQueue.add(request)
-
     }
 
-    fun buscarArticulo() {
+    private fun setupSearch() {
         binding.etBuscar.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                Log.i("Que esta pasandoooo",p0.toString())
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                // No se requiere implementación
             }
 
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                // No es necesario implementar esto
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // No se requiere implementación
             }
 
-            override fun afterTextChanged(p0: Editable?) {
-                val searchText = p0.toString()
-                adapter?.filter(searchText)
+            override fun afterTextChanged(s: Editable?) {
+                val searchText = s.toString().trim()
+                if (searchText.isEmpty()) {
+                    // Si el texto de búsqueda está vacío, cargar los datos completos del RecyclerView
+                    cargarDatosArticulos()
+                } else {
+                    adapter?.filter(searchText)
+                }
             }
         })
-
     }
-
-
 }

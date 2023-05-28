@@ -14,8 +14,6 @@ import com.example.appfavas.databinding.ItemTotalArticulosVentasBinding
 class ArticuloAdapter(private val artList: ArrayList<Articulo>) :
     RecyclerView.Adapter<ArticuloAdapter.ViewHolder>() {
 
-     private var filteredList: ArrayList<Articulo> = ArrayList()
-
     class ViewHolder(private val binding: ItemTotalArticulosVentasBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun load(item: Articulo) {
@@ -37,7 +35,6 @@ class ArticuloAdapter(private val artList: ArrayList<Articulo>) :
                     Navigation.findNavController(binding.root)
                         .navigate(R.id.editar_EliminarArticulosVentasFragment, bundle)
                 }
-                ivArticulo.setOnClickListener{}
             }
         }
     }
@@ -53,33 +50,34 @@ class ArticuloAdapter(private val artList: ArrayList<Articulo>) :
 
 
     override fun getItemCount(): Int {
-        artList.size
-        return filteredList.size
+        return artList.size
     }
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.load(artList[position])
-        holder.load(filteredList[position])
     }
-
 
     fun filter(text: String) {
-        filteredList.clear()
-        if (text.isEmpty()) {
-            filteredList.addAll(artList)
-            Log.d(TAG,"Aqui ya cargo sin flitro")
+        val searchText = text.toLowerCase()
+        val filteredList = if (searchText.isEmpty()) {
+            artList // Mostrar todos los elementos si no hay texto de búsqueda
         } else {
-            val searchQuery = text.toLowerCase()
-            for (item in artList) {
-                // Realiza la lógica de comparación para determinar si el elemento coincide con la búsqueda
-                if (item.nombre.toLowerCase().contains(searchQuery)) {
-                    filteredList.add(item)
+            val tempList = ArrayList<Articulo>()
+            for (articulo in artList) {
+                if (articulo.nombre.toLowerCase().contains(searchText)) {
+                    tempList.add(articulo)
                 }
             }
+            tempList // Mostrar solo los elementos que coinciden con el texto de búsqueda
         }
-        notifyDataSetChanged()
+        updateList(filteredList)
     }
 
+    private fun updateList(list: List<Articulo>) {
+        artList.clear()
+        artList.addAll(list)
+        notifyDataSetChanged()
+    }
 
 }
