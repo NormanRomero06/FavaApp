@@ -54,6 +54,7 @@ class EditarUsuarioFragment : Fragment() {
         with(binding) {
             btnEditar.setOnClickListener {
                 try {
+                    if (validarCampos()){
                     val url = "http://localfavas.online/Usuario/UpdateUsuario.php"
                     val queue = Volley.newRequestQueue(activity)
                     val resultadoPost = object : StringRequest(
@@ -65,6 +66,7 @@ class EditarUsuarioFragment : Fragment() {
                                 Toast.LENGTH_LONG
                             ).show()
                             limpiarCampos()
+
                         }, Response.ErrorListener { error ->
                             Toast.makeText(context, "Error: $error", Toast.LENGTH_LONG).show()
                         }) {
@@ -81,7 +83,7 @@ class EditarUsuarioFragment : Fragment() {
                         }
                     }
                     queue.add(resultadoPost)
-
+                    }
                 } catch (ex: Exception) {
                     Toast.makeText(
                         requireContext(),
@@ -94,6 +96,38 @@ class EditarUsuarioFragment : Fragment() {
 
         }
 
+    }
+
+    fun validarCampos():Boolean {
+        var valido = true
+        val nombres = binding.etNombres.text.toString()
+        val apellidos = binding.etApellidos.text.toString()
+        val correo = binding.etCorreo.text.toString()
+        val usuario = binding.etUsuario.text.toString()
+        val contraseña = binding.etContraseA.text.toString()
+
+        // Validar que los campos no estén vacíos
+        if(nombres.isNullOrEmpty()){
+            binding.etNombres.setError("Por favor inserte un nombre")
+            valido= false
+        }
+        if (apellidos.isNullOrEmpty()){
+            binding.etApellidos.setError("Por favor inserte un apellido")
+            valido= false
+        }
+        if (correo.isNullOrEmpty()){
+            binding.etCorreo.setError("Por favor agregue un correo")
+            valido= false
+        }
+        if (usuario.isNullOrEmpty()){
+            binding.etUsuario.setError("Por favor indique nombre de usuario")
+            valido= false
+        }
+        if (contraseña.isNullOrEmpty()){
+            binding.etContraseA.setError("Por favor rellene este campo")
+            valido= false
+        }
+        return valido
     }
 
     /*fun btnLimpiar() {

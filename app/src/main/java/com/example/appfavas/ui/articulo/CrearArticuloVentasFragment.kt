@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.core.view.get
 import androidx.navigation.Navigation
 import com.android.volley.Request
 import com.android.volley.Response
@@ -43,6 +44,7 @@ class CrearArticuloVentasFragment : Fragment() {
     fun crearArticulo(){
         binding.btnCrearArt.setOnClickListener {
             try {
+                if (validarCampos()){
                 val nombre = binding.etNombreArticulo.text.toString()
                 val descripcion = binding.etDescripcion.text.toString()
                 val precio = binding.etPrecioArticulo.text.toString()
@@ -79,6 +81,7 @@ class CrearArticuloVentasFragment : Fragment() {
                     }
                 }
                 queue.add(resultadoPost)
+                }
             } catch (ex: Exception){
                 Toast.makeText(requireContext(), "Error al insertar: ${ex.toString()}", Toast.LENGTH_LONG).show()
             }
@@ -94,6 +97,32 @@ class CrearArticuloVentasFragment : Fragment() {
             sCategorA.setSelection(0)
 
         }
+    }
+
+    private fun validarCampos():Boolean{
+        var valido = true
+        val nombre = binding.etNombreArticulo.text.toString()
+        val descripcion = binding.etDescripcion.text.toString()
+        val precio = binding.etPrecioArticulo.text.toString()
+        val cantidad = binding.etStockArticulo.text.toString()
+
+        if(nombre.isNullOrEmpty()){
+            binding.etNombreArticulo.setError("Por favor rellene este campo")
+            valido= false
+        }
+        if (descripcion.isNullOrEmpty()){
+            binding.etDescripcion.setError("Por favor ponga una descripcion")
+            valido= false
+        }
+        if (precio.isNullOrEmpty()){
+            binding.etPrecioArticulo.setError("Por favor agregue un precio")
+            valido= false
+        }
+        if (cantidad.isNullOrEmpty()){
+            binding.etStockArticulo.setError("Por favor indique la cantidad existente")
+            valido= false
+        }
+        return valido
     }
 
     private fun obtenerDatosSpinner() {
@@ -140,4 +169,6 @@ class CrearArticuloVentasFragment : Fragment() {
         super.onDestroyView()
         binding
     }
+
+
 }

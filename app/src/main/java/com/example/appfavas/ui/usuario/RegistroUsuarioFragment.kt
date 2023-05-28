@@ -49,6 +49,8 @@ class RegistroUsuarioFragment : Fragment() {
         // Configurar el botón de registro
         binding.btnRegister.setOnClickListener {
             try {
+                //Validar los datos
+                //if (validarCampos()){
                 // Obtener los valores de los campos de entrada y el spinner
                 val nombres = binding.etNombres.text.toString()
                 val apellidos = binding.etApellidos.text.toString()
@@ -59,6 +61,7 @@ class RegistroUsuarioFragment : Fragment() {
 
                 // Validar los campos
                 validarCampos()
+
 
                 // Crear objeto Usuario
                 val user = Usuario(
@@ -83,6 +86,7 @@ class RegistroUsuarioFragment : Fragment() {
                     Response.Listener<String> { response ->
                         // La solicitud se completó correctamente
                         Toast.makeText(getActivity(),"Usuario ha sido insertado existosamente",Toast.LENGTH_LONG).show()
+                        limpiarCampos()
                     }, Response.ErrorListener { error ->
                         // Se produjo un error en la solicitud
                         Toast.makeText(getActivity(), "Error: $error", Toast.LENGTH_LONG).show()
@@ -99,7 +103,7 @@ class RegistroUsuarioFragment : Fragment() {
                     }
                 }
                 queue.add(resultadoPost)
-
+               // }
             } catch (ex: Exception) {
                 // Se produjo un error al insertar el usuario
                 Toast.makeText(

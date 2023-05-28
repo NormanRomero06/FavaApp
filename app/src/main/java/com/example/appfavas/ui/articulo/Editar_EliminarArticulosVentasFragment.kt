@@ -56,6 +56,7 @@ class Editar_EliminarArticulosVentasFragment : Fragment() {
         with(binding) {
             btnEditarArt.setOnClickListener {
                 try {
+                    if (validarCampos()){
                     val cantMin = 1
                     val selectedCategoryIndex = binding.sCategorA.selectedItemPosition
                     val selectedCategory = categorias[selectedCategoryIndex]
@@ -88,7 +89,7 @@ class Editar_EliminarArticulosVentasFragment : Fragment() {
                         }
                     }
                     queue.add(resultadoPost)
-
+                    }
                 } catch (ex: Exception) {
                     Toast.makeText(
                         requireContext(),
@@ -188,6 +189,32 @@ class Editar_EliminarArticulosVentasFragment : Fragment() {
         binding.btnLimpiarArt.setOnClickListener {
             limpiarCampos()
         }
+    }
+
+    private fun validarCampos():Boolean{
+        var valido = true
+        val nombre = binding.etNombreArticulo.text.toString()
+        val descripcion = binding.etDescripcion.text.toString()
+        val precio = binding.etPrecioArticulo.text.toString()
+        val cantidad = binding.etStockArticulo.text.toString()
+
+        if(nombre.isNullOrEmpty()){
+            binding.etNombreArticulo.setError("Por favor rellene este campo")
+            valido= false
+        }
+        if (descripcion.isNullOrEmpty()){
+            binding.etDescripcion.setError("Por favor ponga una descripcion")
+            valido= false
+        }
+        if (precio.isNullOrEmpty()){
+            binding.etPrecioArticulo.setError("Por favor agregue un precio")
+            valido= false
+        }
+        if (cantidad.isNullOrEmpty()){
+            binding.etStockArticulo.setError("Por favor indique la cantidad existente")
+            valido= false
+        }
+        return valido
     }
 
     private fun limpiarCampos() {
