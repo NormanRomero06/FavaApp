@@ -7,8 +7,10 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appfavas.R
 import com.example.appfavas.databinding.ItemCategoriaBinding
+import com.example.appfavas.modelos.Pago.Pago
 
-class CategoriaAdapter(private val catList: ArrayList<Categoria>): RecyclerView.Adapter<CategoriaAdapter.ViewHolder>() {
+class CategoriaAdapter(private var catList: ArrayList<Categoria>): RecyclerView.Adapter<CategoriaAdapter.ViewHolder>() {
+
 
     class ViewHolder(private val binding: ItemCategoriaBinding): RecyclerView.ViewHolder(binding.root){
         fun load(item: Categoria){
@@ -25,7 +27,6 @@ class CategoriaAdapter(private val catList: ArrayList<Categoria>): RecyclerView.
                     val navController = Navigation.findNavController(binding.root)
                     navController.navigate(R.id.editarCategoriaFragment, bundle)
                 }
-
             }
         }
     }
@@ -42,5 +43,27 @@ class CategoriaAdapter(private val catList: ArrayList<Categoria>): RecyclerView.
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.load(this.catList[position])
+    }
+
+    fun filter(text: String) {
+        val searchText = text.toLowerCase()
+        val filteredList = if (searchText.isEmpty()) {
+            catList // Mostrar todos los elementos si no hay texto de búsqueda
+        } else {
+            val tempList = ArrayList<Categoria>()
+            for (categoria in catList) {
+                if (categoria.nombre.toLowerCase().contains(searchText)) {
+                    tempList.add(categoria)
+                }
+            }
+            tempList // Mostrar solo los elementos que coinciden con el texto de búsqueda
+        }
+        updateList(filteredList)
+    }
+
+    private fun updateList(list: List<Categoria>) {
+        catList.clear()
+        catList.addAll(list)
+        notifyDataSetChanged()
     }
 }

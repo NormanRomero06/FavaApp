@@ -1,6 +1,8 @@
 package com.example.appfavas.ui.articulo
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +25,7 @@ class ListaArticulosFragment : Fragment() {
     private lateinit var binding: FragmentListaArticulosBinding
     val artList = arrayListOf<Articulo>()
     var recyclerView: RecyclerView? = null
-
+    private var adapter: ArticuloAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,6 +36,7 @@ class ListaArticulosFragment : Fragment() {
 
         val root: View = binding.root
         navigation()
+        setupSearch()
         cargarProductos()
         return root
     }
@@ -42,7 +45,6 @@ class ListaArticulosFragment : Fragment() {
 
         val uri = "http://localfavas.online/Producto/ReadProducto.php"
 
-        recyclerView = binding.rvArticulos
         val reqQueue: RequestQueue = Volley.newRequestQueue(getActivity())
         val request = JsonObjectRequest(Request.Method.GET, uri, null, { res ->
             val jsonArray = res.getJSONArray("data")
@@ -70,9 +72,12 @@ class ListaArticulosFragment : Fragment() {
             val gridLayoutManager = GridLayoutManager(requireContext(), spanCount)
             val space =
                 resources.getDimensionPixelSize(R.dimen.item_space) // Define el tamaño del espacio
-            recyclerView?.addItemDecoration(SpaceItemDecoration(spaceHorizontal, spaceVertical))
+            recyclerView = binding.rvArticulos
             recyclerView?.layoutManager = gridLayoutManager
-            recyclerView?.adapter = ArticuloAdapter(artList)
+            recyclerView?.addItemDecoration(SpaceItemDecoration(spaceHorizontal, spaceVertical))
+
+            adapter = ArticuloAdapter(artList)
+            recyclerView?.adapter = adapter
 
 
         }, {
@@ -88,6 +93,28 @@ class ListaArticulosFragment : Fragment() {
             Navigation.findNavController(binding.root).navigate(R.id.crearArticuloVentasFragment)
         }
 
+    }
+
+    private fun setupSearch() {
+        binding.etBuscar.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                // No se requiere implementación
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // No se requiere implementación
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                val searchText = s.toString().trim()
+                if (searchText.isEmpty()) {
+                    // Si el texto de búsqueda está vacío, cargar los datos completos del RecyclerView
+                    cargarProductos()
+                } else {
+                    adapter?.filter(searchText)
+                }
+            }
+        })
     }
 
 
