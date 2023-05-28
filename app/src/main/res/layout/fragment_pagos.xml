@@ -99,4 +99,18 @@
         app:layout_constraintStart_toStartOf="@id/VwPagos"
         app:layout_constraintTop_toBottomOf="@id/etCantidad" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnVerLista"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_shape"
+        android:fontFamily="@font/crimson_text_regular"
+        android:text="Ver lista"
+        android:textColor="@color/boton"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/btnRealizarPago"
+        app:layout_constraintStart_toStartOf="@id/btnRealizarPago"
+        app:layout_constraintTop_toBottomOf="@id/btnRealizarPago" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

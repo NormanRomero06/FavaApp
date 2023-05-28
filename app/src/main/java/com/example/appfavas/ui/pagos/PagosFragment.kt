@@ -6,10 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentPagosBinding
 
 class PagosFragment : Fragment() {
@@ -26,6 +28,7 @@ class PagosFragment : Fragment() {
         binding = FragmentPagosBinding.inflate(inflater, container, false)
         val root: View = binding.root
         realizarPago()
+        mostrarLista()
 
         return root
     }
@@ -101,6 +104,12 @@ class PagosFragment : Fragment() {
             valido = false
         }
         return valido
+    }
+
+    fun mostrarLista(){
+        binding.btnVerLista.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.historialPagos)
+        }
     }
 
     override fun onDestroyView() {
