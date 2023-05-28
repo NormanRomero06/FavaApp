@@ -32,7 +32,9 @@ class CrearCategoriaFragment : Fragment() {
     fun crearCategoria() {
         binding.btnGuardarCategoria.setOnClickListener {
             try {
+                if (validarCampos()){
                 val nombre = binding.etNombreCategoria.text.toString()
+
                 val url = "http://localfavas.online/Categoria/InsertCategoria.php"
                 val queue = Volley.newRequestQueue(activity)
                 val resultadoPost = object : StringRequest(
@@ -54,7 +56,8 @@ class CrearCategoriaFragment : Fragment() {
                     }
                 }
                 queue.add(resultadoPost)
-            } catch (ex: Exception) {
+            }
+            }catch (ex: Exception) {
                 Toast.makeText(
                     requireContext(),
                     "Error al insertar: ${ex.toString()}",
@@ -70,6 +73,17 @@ class CrearCategoriaFragment : Fragment() {
                 etNombreCategoria.setText("")
 
         }
+    }
+
+    private fun validarCampos():Boolean{
+        var valido = true
+        val nombre = binding.etNombreCategoria.text.toString()
+
+        if(nombre.isEmpty()){
+            binding.etNombreCategoria.setError("Por favor rellene este campo")
+            valido= false
+        }
+        return valido
     }
 
     override fun onDestroyView() {
