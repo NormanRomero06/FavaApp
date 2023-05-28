@@ -63,14 +63,14 @@
             android:id="@+id/TvEfectivo"
             android:layout_width="160dp"
             android:layout_height="0dp"
-            android:layout_marginStart="336dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="50dp"
             android:fontFamily="@font/crimson_text_regular"
             android:text="@string/efectivo_recibido"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@id/EtEfectivoR"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/VwPagos"
             app:layout_constraintTop_toBottomOf="@id/VwCantidad" />
 
         <EditText

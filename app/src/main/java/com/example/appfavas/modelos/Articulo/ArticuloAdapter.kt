@@ -1,6 +1,9 @@
 package com.example.appfavas.modelos.Articulo
 
+import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
@@ -10,6 +13,8 @@ import com.example.appfavas.databinding.ItemTotalArticulosVentasBinding
 
 class ArticuloAdapter(private val artList: ArrayList<Articulo>) :
     RecyclerView.Adapter<ArticuloAdapter.ViewHolder>() {
+
+     private var filteredList: ArrayList<Articulo> = ArrayList()
 
     class ViewHolder(private val binding: ItemTotalArticulosVentasBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -32,6 +37,7 @@ class ArticuloAdapter(private val artList: ArrayList<Articulo>) :
                     Navigation.findNavController(binding.root)
                         .navigate(R.id.editar_EliminarArticulosVentasFragment, bundle)
                 }
+                ivArticulo.setOnClickListener{}
             }
         }
     }
@@ -45,11 +51,35 @@ class ArticuloAdapter(private val artList: ArrayList<Articulo>) :
         return ViewHolder(artiItem)
     }
 
+
     override fun getItemCount(): Int {
-        return artList.size
+        artList.size
+        return filteredList.size
     }
 
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.load(this.artList[position])
+        holder.load(artList[position])
+        holder.load(filteredList[position])
     }
+
+
+    fun filter(text: String) {
+        filteredList.clear()
+        if (text.isEmpty()) {
+            filteredList.addAll(artList)
+            Log.d(TAG,"Aqui ya cargo sin flitro")
+        } else {
+            val searchQuery = text.toLowerCase()
+            for (item in artList) {
+                // Realiza la lógica de comparación para determinar si el elemento coincide con la búsqueda
+                if (item.nombre.toLowerCase().contains(searchQuery)) {
+                    filteredList.add(item)
+                }
+            }
+        }
+        notifyDataSetChanged()
+    }
+
+
 }

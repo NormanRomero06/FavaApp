@@ -39,36 +39,37 @@ class EditarCategoriaFragment : Fragment() {
         val nombre = arguments?.getString("nombre")
         binding.etId.setText(idCategoria)
         binding.etNombreCategoria.setText(nombre)
+
         with(binding) {
             btnEditarCategoria.setOnClickListener {
                 try {
-                    val url = "http://localfavas.online/Categoria/UpdateCategoria.php"
-                    val queue = Volley.newRequestQueue(activity)
-                    val resultadoPost = object : StringRequest(
-                        Request.Method.POST, url,
-                        Response.Listener<String> { response ->
-                            Toast.makeText(
-                                context,
-                                "Modificado existosamente",
-                                Toast.LENGTH_LONG
-                            ).show()
-                            limpiar()
-                        }, Response.ErrorListener { error ->
-                            Toast.makeText(context, "Error: $error", Toast.LENGTH_LONG).show()
-                        }) {
-                        override fun getParams(): MutableMap<String, String>? {
-                            val parametros = HashMap<String, String>()
-                            parametros.put("idCategoria", binding.etId.text.toString())
-                            parametros.put("nombre", binding.etNombreCategoria.text.toString())
-                            parametros.put("imagen", "")
-                            Log.d("Prueba4", "Parametros:$parametros")//Prueba
-                            return parametros
+                    if (validarCampos()) {
+                        val url = "http://localfavas.online/Categoria/UpdateCategoria.php"
+                        val queue = Volley.newRequestQueue(activity)
+                        val resultadoPost = object : StringRequest(
+                            Request.Method.POST, url,
+                            Response.Listener<String> { response ->
+                                Toast.makeText(
+                                    context,
+                                    "Modificado existosamente",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                                limpiar()
+                            }, Response.ErrorListener { error ->
+                                Toast.makeText(context, "Error: $error", Toast.LENGTH_LONG).show()
+                            }) {
+                            override fun getParams(): MutableMap<String, String>? {
+                                val parametros = HashMap<String, String>()
+                                parametros.put("idCategoria", binding.etId.text.toString())
+                                parametros.put("nombre", binding.etNombreCategoria.text.toString())
+                                parametros.put("imagen", "")
+                                Log.d("Prueba4", "Parametros:$parametros")//Prueba
+                                return parametros
+                            }
                         }
+
+                        queue.add(resultadoPost)
                     }
-
-                    queue.add(resultadoPost)
-
-
                 } catch (ex: Exception) {
                     Toast.makeText(
                         requireContext(),
@@ -78,9 +79,7 @@ class EditarCategoriaFragment : Fragment() {
                 }
 
             }
-
         }
-
     }
 
     fun btnLimpiar() {
@@ -94,6 +93,17 @@ class EditarCategoriaFragment : Fragment() {
             etId.setText("")
             etNombreCategoria.setText("")
         }
+    }
+
+    private fun validarCampos(): Boolean {
+        var valido = true
+        val nombre = binding.etNombreCategoria.text.toString()
+
+        if (nombre.isNullOrEmpty()) {
+            binding.etNombreCategoria.setError("Por favor rellene este campo")
+            valido = false
+        }
+        return valido
     }
 
     fun eliminarCategoria() {
@@ -144,5 +154,4 @@ class EditarCategoriaFragment : Fragment() {
         _binding = null
     }
 
-    // ...
 }

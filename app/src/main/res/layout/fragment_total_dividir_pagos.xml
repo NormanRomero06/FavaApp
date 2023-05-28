@@ -13,11 +13,12 @@
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/ic_shape_login"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-       />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <View
         android:id="@+id/VwCantidad"
@@ -25,9 +26,9 @@
         android:layout_height="120dp"
         android:layout_marginTop="80dp"
         android:background="@drawable/ic_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@id/VwPago"
+        app:layout_constraintStart_toStartOf="@id/VwPago"
+        app:layout_constraintTop_toTopOf="@id/VwPago"/>
 
     <TextView
         android:id="@+id/TvTotal"
@@ -62,8 +63,8 @@
         android:layout_height="120dp"
         android:layout_marginTop="80dp"
         android:background="@drawable/ic_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/VwPago"
+        app:layout_constraintStart_toStartOf="@id/VwPago"
         app:layout_constraintTop_toBottomOf="@id/VwCantidad" />
     <TextView
         android:id="@+id/tv_cambio"
@@ -97,8 +98,8 @@
         android:layout_height="120dp"
         android:layout_marginTop="80dp"
         android:background="@drawable/ic_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/VwPago"
+        app:layout_constraintStart_toStartOf="@id/VwPago"
         app:layout_constraintTop_toBottomOf="@id/VwCambio" />
     <TextView
         android:id="@+id/tv_totalTarj"
@@ -133,12 +134,12 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
+        android:backgroundTint="@color/color_Primary"
         android:contentDescription="@string/dividir_pago"
         android:src="@drawable/add_24"
         android:layout_marginEnd="270dp"
         android:layout_marginBottom="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
