@@ -21,16 +21,16 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvProductos"
         android:layout_width="620dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="88dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="400dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvTotal"
+        app:layout_constraintEnd_toEndOf="@id/VwPagos"
+        app:layout_constraintStart_toStartOf="@id/VwPagos"
+        app:layout_constraintTop_toTopOf="@id/VwPagos" />
 
     <TextView
         android:id="@+id/tvTotal"
         android:layout_width="100dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="250dp"
         android:text="@string/totala"
         android:fontFamily="@font/crimson_text_regular"
@@ -44,7 +44,7 @@
     <TextView
         android:id="@+id/tvMonto"
         android:layout_width="150dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="250dp"
         android:text="@string/cs_0_00"
