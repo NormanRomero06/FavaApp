@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/back"
-        tools:context=".ui.Informes.InformeArticulosFragment">
+        tools:context=".ui.informes.InformeArticulosFragment">
 
         <View
             android:id="@+id/VwArticulos"

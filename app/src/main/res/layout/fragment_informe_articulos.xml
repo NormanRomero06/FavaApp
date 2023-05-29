@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/back"
-        tools:context=".ui.Informes.InformeArticulosFragment">
+        tools:context=".ui.informes.InformeArticulosFragment">
 
         <View
             android:id="@+id/VwArticulos"
@@ -44,6 +44,18 @@
             app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
             app:layout_constraintStart_toStartOf="@+id/VwArticulos"
             app:layout_constraintTop_toTopOf="@+id/VwArticulos" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnGenerarPDF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/btn_shape"
+            android:text="Generar PDF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/VwArticulos"
+            tools:ignore="TextSizeCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
