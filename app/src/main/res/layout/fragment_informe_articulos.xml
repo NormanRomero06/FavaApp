@@ -13,7 +13,7 @@
 
         <View
             android:id="@+id/VwArticulos"
-            android:layout_width="800dp"
+            android:layout_width="850dp"
             android:layout_height="0dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/ic_shape_login"
@@ -37,7 +37,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvArticulos"
-            android:layout_width="700dp"
+            android:layout_width="750dp"
             android:layout_height="600dp"
             android:layout_marginTop="50dp"
             app:layout_constraintBottom_toBottomOf="@+id/VwArticulos"
