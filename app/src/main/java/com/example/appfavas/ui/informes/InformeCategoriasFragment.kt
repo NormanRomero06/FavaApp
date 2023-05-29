@@ -1,22 +1,27 @@
 package com.example.appfavas.ui.informes
 
+import android.os.Bundle
 import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import com.example.appfavas.R
 
-class InformeCategoriaFragment:Fragment() {
+class InformeCategoriasFragment : Fragment() {
     /* override fun onCreateView(
-       inflater: LayoutInflater,
-       container: ViewGroup?,
-       savedInstanceState: Bundle?
-   ): View {
-       //binding =
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        //binding =
 
-      val root: View = binding.root
+       val root: View = binding.root
 
-      binding.btnGenerarPDF.setOnClickListener {
-       generarPDF()
-       }
+       binding.btnGenerarPDF.setOnClickListener {
+        generarPDF()
+        }
 
- //  }*/
+  //  }*/
     /*    private fun generarPDF() {
         val filePath = getPDFfilePath()
         // Crear el documento PDF

@@ -137,5 +137,7 @@
     <string name="edici_n_de_usuarios">Edición de Usuarios</string>
     <string name="editar_datos">Editar datos</string>
     <string name="userimage">UserImage</string>
+    <string name="informe_categor_a">Informe Categoría</string>
+    <string name="generar_pdf">Generar PDF</string>
     <!--Spinner Roles-->
 </resources>
