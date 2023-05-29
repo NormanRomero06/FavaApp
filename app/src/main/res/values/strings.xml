@@ -25,9 +25,9 @@
     <string name="buscar">Buscar</string>
     <string name="fecha">Fecha</string>
     <string name="img_billete">img_billete</string>
-    <string name="importe_monto">Importe/Monto:</string>
-    <string name="hora">Hora:</string>
-    <string name="id">ID:</string>
+    <string name="importe_monto">Importe/Monto</string>
+    <string name="hora">Hora</string>
+    <string name="id">ID</string>
     <string name="img_tarjeta">img_tarjeta</string>
     <string name="agregar_fruta">Agregar Fruta</string>
     <string name="nombre">Nombre</string>
@@ -134,5 +134,8 @@
     <string name="comentarios">Comentarios</string>
     <string name="fecha_de_pago">Fecha De Pago</string>
     <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="edici_n_de_usuarios">Edición de Usuarios</string>
+    <string name="editar_datos">Editar datos</string>
+    <string name="userimage">UserImage</string>
     <!--Spinner Roles-->
 </resources>

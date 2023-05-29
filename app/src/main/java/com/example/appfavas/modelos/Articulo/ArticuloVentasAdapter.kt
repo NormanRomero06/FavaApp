@@ -1,8 +1,11 @@
 package com.example.appfavas.modelos.Articulo
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.example.appfavas.R
 import com.example.appfavas.databinding.ItemProductoBinding
 
 
@@ -26,6 +29,16 @@ class ArticuloVentasAdapter(private val ListArticulosVenta: ArrayList<ArticuloVe
                     cantidadTotal--
                     binding.tvCantProd.text = cantidadTotal.toString()
                 }
+            }
+
+
+            binding.cwPrducto.setOnClickListener {
+                val bundle = Bundle()
+                bundle.putString("idProducto",item.idProducto.toString())
+                bundle.putString("nombre",item.nombre)
+                bundle.putString("precio",item.precio.toString())
+                val navController = Navigation.findNavController(binding.root)
+                navController.navigate(R.id.cobroFragment,bundle)
             }
         }
         }

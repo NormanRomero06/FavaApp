@@ -1,6 +1,8 @@
 package com.example.appfavas.ui.pagos
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,11 +16,13 @@ import com.android.volley.toolbox.Volley
 import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentListaPagosBinding
 import com.example.appfavas.decoration.SpaceItemDecoration
+import com.example.appfavas.modelos.Articulo.ArticuloAdapter
 import com.example.appfavas.modelos.Pago.Pago
 import com.example.appfavas.modelos.Pago.PagoAdapter
 
 class ListaPagosFragment : Fragment() {
     private var _binding: FragmentListaPagosBinding? = null
+    private var adapter: PagoAdapter? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -33,18 +37,17 @@ class ListaPagosFragment : Fragment() {
     ): View {
         _binding = FragmentListaPagosBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        setupSearch()
+        cargarPagos()
         return root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        pagoList.clear()
-
-        recyclerView = binding.rvPagos
+    private fun cargarPagos(){
         val reqQueue: RequestQueue = Volley.newRequestQueue(context)
         val request = JsonObjectRequest(Request.Method.GET, uri, null, { res ->
             val jsonArray = res.getJSONArray("data")
+
+            pagoList.clear()
             for (i in 0 until jsonArray.length()) {
                 val jsonObj = jsonArray.getJSONObject(i)
                 val user = Pago(
@@ -63,15 +66,39 @@ class ListaPagosFragment : Fragment() {
             val gridLayoutManager = GridLayoutManager(requireContext(), spanCount)
             val space =
                 resources.getDimensionPixelSize(R.dimen.item_space) // Define el tamaño del espacio
-            recyclerView?.addItemDecoration(SpaceItemDecoration(spaceHorizontal, spaceVertical))
+            recyclerView = binding.rvPagos
             recyclerView?.layoutManager = gridLayoutManager
-            recyclerView?.adapter = PagoAdapter(pagoList)
+            recyclerView?.addItemDecoration(SpaceItemDecoration(spaceHorizontal, spaceVertical))
 
+            adapter = PagoAdapter(pagoList)
+            recyclerView?.adapter = adapter
 
         }, {
         })
         reqQueue.add(request)
 
+    }
+
+    private fun setupSearch() {
+        binding.etBuscar.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                // No se requiere implementación
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // No se requiere implementación
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                val searchText = s.toString().trim()
+                if (searchText.isEmpty()) {
+                    // Si el texto de búsqueda está vacío, cargar los datos completos del RecyclerView
+                    cargarPagos()
+                } else {
+                    adapter?.filter(searchText)
+                }
+            }
+        })
     }
 
 

@@ -6,10 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentPagosBinding
 
 class PagosFragment : Fragment() {
@@ -26,6 +28,7 @@ class PagosFragment : Fragment() {
         binding = FragmentPagosBinding.inflate(inflater, container, false)
         val root: View = binding.root
         realizarPago()
+        mostrarLista()
 
         return root
     }
@@ -35,34 +38,35 @@ class PagosFragment : Fragment() {
 
         binding.btnRealizarPago.setOnClickListener {
             try {
-                var descripcion = binding.etDescripcion.text.toString()
-                var cantidad = binding.etCantidad.text.toString()
+                if (validarCampos()) {
+                    var descripcion = binding.etDescripcion.text.toString()
+                    var cantidad = binding.etCantidad.text.toString()
+                    val url = "http://localfavas.online/Egresos/InsertEgresos.php"
+                    val queue = Volley.newRequestQueue(activity)
+                    val resultadoPost = object : StringRequest(Request.Method.POST,
+                        url,
+                        Response.Listener<String> { response ->
+                            Toast.makeText(activity, "Pago realizado", Toast.LENGTH_LONG).show()
+                        },
+                        Response.ErrorListener { error ->
+                            Toast.makeText(
+                                activity,
+                                "Error $error",
+                                Toast.LENGTH_LONG
+                            ).show()
+                            limpiar()
 
-                val url = "http://localfavas.online/Egresos/InsertEgresos.php"
-                val queue = Volley.newRequestQueue(activity)
-                val resultadoPost = object : StringRequest(Request.Method.POST,
-                    url,
-                    Response.Listener<String> { response ->
-                        Toast.makeText(activity, "Pagro realizado", Toast.LENGTH_LONG).show()
-                    },
-                    Response.ErrorListener { error ->
-                        Toast.makeText(
-                            activity,
-                            "Error $error",
-                            Toast.LENGTH_LONG
-                        ).show()
-                        limpiar()
+                        }) {
+                        override fun getParams(): MutableMap<String, String> {
+                            val parametros = HashMap<String, String>()
+                            parametros.put("descripcion", descripcion)
+                            parametros.put("monto", cantidad)
+                            return parametros
 
-                    }) {
-                    override fun getParams(): MutableMap<String, String> {
-                        val parametros = HashMap<String, String>()
-                        parametros.put("descripcion", descripcion)
-                        parametros.put("monto", cantidad)
-                        return parametros
-
+                        }
                     }
+                    queue.add(resultadoPost)
                 }
-                queue.add(resultadoPost)
             } catch (ex: Exception) {
                 Toast.makeText(
                     requireContext(),
@@ -83,6 +87,28 @@ class PagosFragment : Fragment() {
         with(binding) {
             etDescripcion.setText("")
             etCantidad.setText("")
+        }
+    }
+
+    private fun validarCampos(): Boolean {
+        var valido = true
+        var descripcion = binding.etDescripcion.text.toString()
+        var cantidad = binding.etCantidad.text.toString()
+
+        if (descripcion.isNullOrEmpty()) {
+            binding.etDescripcion.setError("Por favor rellene este campo")
+            valido = false
+        }
+        if (cantidad.isNullOrEmpty()) {
+            binding.etCantidad.setError("Por favor rellene este campo")
+            valido = false
+        }
+        return valido
+    }
+
+    fun mostrarLista(){
+        binding.btnVerLista.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.historialPagos)
         }
     }
 

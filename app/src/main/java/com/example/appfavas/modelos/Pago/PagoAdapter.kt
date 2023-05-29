@@ -7,6 +7,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appfavas.R
 import com.example.appfavas.databinding.ItemListaPagosBinding
+import com.example.appfavas.modelos.Articulo.Articulo
 
 class PagoAdapter(private val pagoList: ArrayList<Pago>): RecyclerView.Adapter<PagoAdapter.ViewHolder>(){
 
@@ -44,4 +45,25 @@ class PagoAdapter(private val pagoList: ArrayList<Pago>): RecyclerView.Adapter<P
         holder.load(this.pagoList[position])
     }
 
+    fun filter(text: String) {
+        val searchText = text.toLowerCase()
+        val filteredList = if (searchText.isEmpty()) {
+            pagoList // Mostrar todos los elementos si no hay texto de búsqueda
+        } else {
+            val tempList = ArrayList<Pago>()
+            for (pagos in pagoList) {
+                if (pagos.descripcion.toLowerCase().contains(searchText)) {
+                    tempList.add(pagos)
+                }
+            }
+            tempList // Mostrar solo los elementos que coinciden con el texto de búsqueda
+        }
+        updateList(filteredList)
+    }
+
+    private fun updateList(list: List<Pago>) {
+        pagoList.clear()
+        pagoList.addAll(list)
+        notifyDataSetChanged()
+    }
 }

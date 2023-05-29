@@ -35,8 +35,12 @@ class CobroFragment : Fragment() {
 
     private fun llenarAdapter() {
 
+        val idProducto = arguments?.getInt("idProducto")
+        val nombre = arguments?.getString("nombre")
+        val precio = arguments?.getFloat("precio")
+
         val user = PreSelect(
-            1 , "coca", 20, 25f,36f
+            idProducto!!.toInt() , nombre!!.toString(), 20, precio!!.toFloat(),36f
         )
         LisPreVenta.add(user)
       binding.rcvProductos.layoutManager = LinearLayoutManager(context)
@@ -49,7 +53,8 @@ class CobroFragment : Fragment() {
     fun navigation()
     {
         binding.btnCobrar.setOnClickListener {
-            Navigation.findNavController(binding.root).navigate(R.id.metodoDePagoFragment)
+            Navigation.findNavController(binding.root).navigate(R.id.nav_ventas)
+            //Navigation.findNavController(binding.root).navigate(R.id.metodoDePagoFragment)
         }
     }
 

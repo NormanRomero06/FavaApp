@@ -80,7 +80,11 @@ class UsuariosFragment : Fragment() {
 
 
     private fun cargarUsuariosOther() {
-        val url = "http://localfavas.online/Usuario/ReadOtherUser.php"
+        val sharedPreferences = requireContext().getSharedPreferences("MiPref", Context.MODE_PRIVATE)
+        val idUsuario = sharedPreferences.getInt("idUsuario", -1)
+        //val url = "http://localfavas.online/Usuario/ReadOtherUser.php"
+        val url = "http://localfavas.online/Usuario/ReadOtherUser.php?idUsuario=$idUsuario"
+
 
         val requestQueue = Volley.newRequestQueue(requireContext())
         val request = JsonObjectRequest(Request.Method.GET, url, null,
@@ -88,19 +92,23 @@ class UsuariosFragment : Fragment() {
                 val jsonArray = response.getJSONArray("data")
                 //val userList = arrayListOf<Usuario>()
 
+                //Limpia la lista para evitar items duplicados
+                userList.clear()
                 for (i in 0 until jsonArray.length()) {
                     val jsonObj = jsonArray.getJSONObject(i)
                     val idUsuario = jsonObj.getInt("idUsuario")
                     val nombres = jsonObj.getString("nombres")
                     val apellidos = jsonObj.getString("apellidos")
                     val correo = jsonObj.getString("correo")
+                    val usuario =  jsonObj.getString("usuario")
+                    val contraseña = jsonObj.getString("contraseña")
                     val rol = jsonObj.getString("rol")
 
                     // Verificar si el rol es "Cocina"
-                    if (rol == "Cocina") {
-                        val user = Usuario(idUsuario, nombres, apellidos, correo, "", "", rol)
+                    //if (rol == "Cocina") {
+                        val user = Usuario(idUsuario, nombres, apellidos, correo, usuario, contraseña, rol)
                         userList.add(user)
-                    }
+                    //}
                 }
 
                 // Actualizar el RecyclerView con la lista de usuarios de cocina
@@ -125,6 +133,8 @@ class UsuariosFragment : Fragment() {
         val request = JsonObjectRequest(Request.Method.GET, uri, null, { res ->
             val jsonArray = res.getJSONArray("data")
 
+            //Limpia la lista para evitar items duplicados
+            userList.clear()
             for (i in 0 until jsonArray.length()) {
                 val jsonObj = jsonArray.getJSONObject(i)
                 val user = Usuario(
