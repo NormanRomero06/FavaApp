@@ -169,7 +169,16 @@
         android:id="@+id/nav_inventario"
         android:name="com.example.appfavas.ui.inventario.ListaInventarioFragment"
         android:label="Inventario"
-        tools:layout="@layout/fragment_lista_inventario"/>
+        tools:layout="@layout/fragment_lista_inventario">
+        <action
+            android:id="@+id/action_nav_inventario_to_agregarInventarioFragment"
+            app:destination="@id/agregarInventarioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agregarInventarioFragment"
+        android:name="com.example.appfavas.ui.inventario.AgregarInventarioFragment"
+        android:label="fragment_agregar_inventario"
+        tools:layout="@layout/fragment_agregar_inventario" />
 
 
 </navigation>
