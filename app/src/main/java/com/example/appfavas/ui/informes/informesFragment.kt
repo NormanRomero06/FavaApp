@@ -1,4 +1,4 @@
-package com.example.appfavas.ui.informes
+package com.example.appfavas.ui.Informes
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
