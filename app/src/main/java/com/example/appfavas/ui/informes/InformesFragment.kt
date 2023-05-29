@@ -9,7 +9,7 @@ import androidx.navigation.Navigation
 import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentInformesBinding
 
-class informesFragment : Fragment() {
+class InformesFragment : Fragment() {
     private var _binding: FragmentInformesBinding? = null
 
     // This property is only valid between onCreateView and
