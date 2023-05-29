@@ -14,6 +14,7 @@ import com.android.volley.RequestQueue
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.appfavas.R
+import com.example.appfavas.dao.AppDatabase
 import com.example.appfavas.databinding.FragmentVentasHomeBinding
 import com.example.appfavas.modelos.Articulo.Articulo
 import com.example.appfavas.modelos.Articulo.ArticuloVentas
@@ -28,7 +29,6 @@ class VentasFragment : Fragment() {
     var recyclerVie: RecyclerView? = null
     val catList = arrayListOf<CategoriaVentas>()
     val artList = arrayListOf<ArticuloVentas>()
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
