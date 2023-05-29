@@ -170,6 +170,11 @@
         android:name="com.example.appfavas.ui.inventario.ListaInventarioFragment"
         android:label="Inventario"
         tools:layout="@layout/fragment_lista_inventario"/>
+    <fragment
+        android:id="@+id/checkProductoFragment"
+        android:name="com.example.appfavas.ui.usuario.CheckProductoFragment"
+        android:label="Revisión del Producto"
+        tools:layout="@layout/fragment_check_producto"/>
 
 
 </navigation>

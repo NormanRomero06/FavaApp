@@ -95,7 +95,7 @@
     <string name="registro_de_usuarios">Registro de usuarios</string>
     <string name="registro">Registrarse</string>
     <string name="nombre_del_producto">Nombre del Producto</string>
-    <string name="cs_0_00">CS$ 0.00</string>
+    <string name="cs_0_00">C$ 0.00</string>
     <string name="montoitem">Monto:</string>
     <string name="email">Email</string>
     <string name="rol">Rol</string>
