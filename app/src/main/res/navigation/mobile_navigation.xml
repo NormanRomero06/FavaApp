@@ -9,7 +9,7 @@
         android:id="@+id/nav_ventas"
         android:name="com.example.appfavas.ui.Ventas.VentasFragment"
         android:label="Inicio"
-        tools:layout="@layout/fragment_ventas_home" >
+        tools:layout="@layout/fragment_ventas_home">
         <action
             android:id="@+id/action_nav_ventas_to_cobroFragment"
             app:destination="@id/cobroFragment" />
@@ -18,7 +18,7 @@
         android:id="@+id/nav_recibos"
         android:name="com.example.appfavas.ui.recibos.RecibosFragment"
         android:label="Recibos"
-        tools:layout="@layout/fragment_recibos" >
+        tools:layout="@layout/fragment_recibos">
         <action
             android:id="@+id/action_nav_recibos_to_devolucionFragment"
             app:destination="@id/devolucionFragment" />
@@ -32,7 +32,7 @@
         android:id="@+id/cobroFragment"
         android:name="com.example.appfavas.ui.Ventas.CobroFragment"
         android:label="Cobro"
-        tools:layout="@layout/fragment_cobro" >
+        tools:layout="@layout/fragment_cobro">
         <action
             android:id="@+id/action_cobroFragment_to_metodoDePagoFragment"
             app:destination="@id/metodoDePagoFragment" />
@@ -41,7 +41,7 @@
         android:id="@+id/metodoDePagoFragment"
         android:name="com.example.appfavas.ui.Ventas.MetodoDePagoFragment"
         android:label="Método de pago"
-        tools:layout="@layout/fragment_metodo_de_pago" >
+        tools:layout="@layout/fragment_metodo_de_pago">
         <action
             android:id="@+id/action_metodoDePagoFragment_to_totalTarjetaFragment"
             app:destination="@id/totalTarjetaFragment" />
@@ -63,12 +63,12 @@
         android:id="@+id/InformeArticulos"
         android:name="com.example.appfavas.ui.Informes.InformeArticulosFragment"
         android:label="Informe de Artículos"
-        tools:layout="@layout/fragment_informe_articulos"/>
+        tools:layout="@layout/fragment_informe_articulos" />
     <fragment
         android:id="@+id/nav_categorias"
         android:name="com.example.appfavas.ui.Categoria.ListaCategoriasFragment"
         android:label="Categorías"
-        tools:layout="@layout/fragment_lista_categorias" >
+        tools:layout="@layout/fragment_lista_categorias">
         <action
             android:id="@+id/action_listaCategoriasFragment_to_crearCategoriaFragment"
             app:destination="@id/crearCategoriaFragment" />
@@ -117,7 +117,7 @@
     <fragment
         android:id="@+id/dividirPagoFragment"
         android:name="com.example.appfavas.ui.pagos.DividirPagoFragment"
-        tools:layout="@layout/fragment_dividir_pago" >
+        tools:layout="@layout/fragment_dividir_pago">
         <action
             android:id="@+id/action_dividirPagoFragment_to_totalDividirPagosFragment"
             app:destination="@id/totalDividirPagosFragment" />
@@ -130,12 +130,12 @@
     <fragment
         android:id="@+id/nav_usuarios"
         android:name="com.example.appfavas.ui.usuario.UsuariosFragment"
-        tools:layout="@layout/fragment_usuarios"/>
+        tools:layout="@layout/fragment_usuarios" />
     <fragment
         android:id="@+id/historialPagos"
         android:name="com.example.appfavas.ui.pagos.ListaPagosFragment"
         android:label="Historial de Pagos"
-        tools:layout="@layout/fragment_lista_pagos" >
+        tools:layout="@layout/fragment_lista_pagos">
         <action
             android:id="@+id/action_nav_historialPagos_to_eliminar_pago"
             app:destination="@id/PantallaEliminarPago" />
@@ -144,7 +144,7 @@
         android:id="@+id/nav_articulos"
         android:name="com.example.appfavas.ui.articulo.ListaArticulosFragment"
         android:label="Articulos en Inventario"
-        tools:layout="@layout/fragment_lista_articulos"/>
+        tools:layout="@layout/fragment_lista_articulos" />
     <fragment
         android:id="@+id/PantallaEliminarPago"
         android:name="com.example.appfavas.ui.pagos.Eliminar_pago"
@@ -169,12 +169,19 @@
         android:id="@+id/nav_inventario"
         android:name="com.example.appfavas.ui.inventario.ListaInventarioFragment"
         android:label="Inventario"
-        tools:layout="@layout/fragment_lista_inventario"/>
+        tools:layout="@layout/fragment_lista_inventario">
+        <action
+            android:id="@+id/action_nav_inventario_to_agregarInventarioFragment"
+            app:destination="@id/agregarInventarioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/agregarInventarioFragment"
+        android:name="com.example.appfavas.ui.inventario.AgregarInventarioFragment"
+        android:label="fragment_agregar_inventario"
+        tools:layout="@layout/fragment_agregar_inventario" />
     <fragment
         android:id="@+id/checkProductoFragment"
         android:name="com.example.appfavas.ui.usuario.CheckProductoFragment"
         android:label="Revisión del Producto"
-        tools:layout="@layout/fragment_check_producto"/>
-
-
+        tools:layout="@layout/fragment_check_producto" />
 </navigation>
