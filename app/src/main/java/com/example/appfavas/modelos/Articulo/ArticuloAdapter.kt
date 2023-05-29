@@ -25,15 +25,28 @@ class ArticuloAdapter(private val artList: ArrayList<Articulo>) :
                 tvExistencia.text = item.cantidad.toString()
                 tvCategoria.text = item.Categoria_idCategoria.toString()
                 cwArticulo.setOnClickListener {
-                    val bundle = Bundle()
-                    bundle.putString("idProducto", item.idProducto.toString())
-                    bundle.putString("nombre", item.nombre)
-                    bundle.putString("descripcion", item.descripcion)
-                    bundle.putString("precio", item.precio.toString())
-                    bundle.putString("cantidad", item.cantidad.toString())
-                    //bundle.putString("Categoria_Nombre", item.Categoria_Nombre)
-                    Navigation.findNavController(binding.root)
-                        .navigate(R.id.editar_EliminarArticulosVentasFragment, bundle)
+                    val navController = Navigation.findNavController(binding.root)
+                    val currentDestination = navController.currentDestination
+
+                    if (currentDestination?.id == R.id.nav_articulos) {
+                        val bundle = Bundle()
+                        bundle.putString("idProducto", item.idProducto.toString())
+                        bundle.putString("nombre", item.nombre)
+                        bundle.putString("descripcion", item.descripcion)
+                        bundle.putString("precio", item.precio.toString())
+                        bundle.putString("cantidad", item.cantidad.toString())
+                        //bundle.putString("Categoria_Nombre", item.Categoria_Nombre)
+                        Navigation.findNavController(binding.root)
+                            .navigate(R.id.editar_EliminarArticulosVentasFragment, bundle)
+                    }
+
+                    if(currentDestination?.id == R.id.nav_inventario){
+                        val bundle = Bundle()
+                        bundle.putString("idProducto", item.idProducto.toString())
+                        bundle.putString("nombre", item.nombre)
+                        Navigation.findNavController(binding.root)
+                            .navigate(R.id.agregarInventarioFragment, bundle)
+                    }
                 }
             }
         }
