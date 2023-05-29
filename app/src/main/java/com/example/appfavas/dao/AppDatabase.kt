@@ -4,13 +4,15 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.appfavas.modelos.InventarioTemp.InventarioTemp
 import com.example.appfavas.modelos.Usuario.Usuario
 
-@Database(entities = [Usuario::class], version = 1, exportSchema = false)
-abstract class AppDatabase: RoomDatabase(){
+@Database(entities = [Usuario::class, InventarioTemp::class], version = 1, exportSchema = false)
+abstract class AppDatabase : RoomDatabase() {
 
-    //Método abstracto que retorna un objeto estudianteDao que es utilizado por el viewModel
     abstract fun usuarioDao(): UsuarioDao
+
+    abstract fun inventarioTempDao(): InventarioTempDao
 
     companion object {
         @Volatile
