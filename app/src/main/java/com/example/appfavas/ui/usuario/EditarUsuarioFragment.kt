@@ -32,7 +32,6 @@ class EditarUsuarioFragment : Fragment() {
         val root: View = binding.root
         categorias = mutableListOf()
         editarUsuario()
-        //btnLimpiar()
         return root
     }
 
