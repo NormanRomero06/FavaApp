@@ -7,9 +7,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/back"
-        tools:context=".ui.informes.InformeArticulosFragment">
+        tools:context=".ui.informes.InformeVentasFragment">
+
 
         <View
             android:id="@+id/VwArticulos"
@@ -17,6 +18,7 @@
             android:layout_height="0dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/ic_shape_login"
+            android:fontFamily="@font/crimson_text_regular"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,17 +29,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/crimson_text_bold"
-            android:textColor="@color/black"
             android:gravity="center"
-            android:text="@string/informe_articulos"
+            android:text="@string/informe_ventas"
+            android:textColor="@color/black"
             android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/rvArticulos"
+            app:layout_constraintBottom_toTopOf="@+id/rvInformeVentas"
             app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
             app:layout_constraintStart_toStartOf="@+id/VwArticulos"
             app:layout_constraintTop_toTopOf="@+id/VwArticulos" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvArticulos"
+            android:id="@+id/rvInformeVentas"
             android:layout_width="750dp"
             android:layout_height="600dp"
             android:layout_marginTop="50dp"
@@ -52,12 +54,13 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="70dp"
-            android:fontFamily="@font/crimson_text_regular"
             android:background="@drawable/btn_shape"
-            android:text="Generar PDF"
+            android:fontFamily="@font/crimson_text_regular"
+            android:text="@string/generar_pdf"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/VwArticulos"
             tools:ignore="TextSizeCheck" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

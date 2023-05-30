@@ -77,4 +77,7 @@ dependencies {
 
     // Librería de Material Desing [Para que se vean bonito]
     implementation 'com.google.android.material:material:1.9.0'
+
+    //PDF
+    implementation 'com.itextpdf:itextg:5.5.10'
 }
