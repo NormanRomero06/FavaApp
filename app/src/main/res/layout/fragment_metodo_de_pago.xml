@@ -53,7 +53,7 @@
             android:fontFamily="@font/crimson_text_regular"
             android:text="@string/_0_00"
             android:textColor="@color/black"
-            android:textSize="28sp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@id/VwCantidad"
             app:layout_constraintEnd_toEndOf="@id/VwCantidad"
             app:layout_constraintStart_toStartOf="@id/VwCantidad"
