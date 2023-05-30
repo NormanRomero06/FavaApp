@@ -13,4 +13,7 @@ interface InventarioTempDao {
 
     @Query("SELECT * FROM InventarioTemp")
     fun getAll(): List<InventarioTemp>
+
+    @Query("DELETE FROM InventarioTemp")
+    fun deleteAll()
 }

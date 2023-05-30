@@ -1,34 +1,40 @@
 package com.example.appfavas.ui.Ventas
 
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentMetodoDePagoBinding
+import com.example.appfavas.modelos.InventarioTemp.InventarioTempAdapter
 
 class MetodoDePagoFragment : Fragment() {
-    private var _binding: FragmentMetodoDePagoBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-
+    private lateinit var binding: FragmentMetodoDePagoBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentMetodoDePagoBinding.inflate(inflater, container, false)
-
-        val root: View = binding.root
+        binding = FragmentMetodoDePagoBinding.inflate(inflater, container, false)
+        setupTextView()
         navigation()
-
-        return root
+        return binding.root
     }
+
+    private fun setupTextView() {
+        val montoTotal = getMontoTotalFromSharedPreferences()
+        binding.TvTotal.text = String.format("%.2f", montoTotal)
+    }
+
+    private fun getMontoTotalFromSharedPreferences(): Float {
+        val sharedPreferences = requireContext().getSharedPreferences("MiPref", Context.MODE_PRIVATE)
+        return sharedPreferences.getFloat("montoTotal", 0f)
+    }
+
 
     fun navigation()
     {
@@ -49,6 +55,6 @@ class MetodoDePagoFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+        binding
     }
 }

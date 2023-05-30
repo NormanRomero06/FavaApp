@@ -79,7 +79,6 @@ class CheckProductoFragment : Fragment() {
 
             withContext(Dispatchers.Main) {
                 Toast.makeText(requireContext(), "Producto guardado exitosamente", Toast.LENGTH_SHORT).show()
-                // Otras acciones o actualizaciones de la interfaz de usuario
             }
         }
     }

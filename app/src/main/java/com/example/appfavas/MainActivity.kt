@@ -78,9 +78,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-
-
     private fun registrarse() {
         binding.TvRegistrarse.setOnClickListener {
             val fragment = RegistroUsuarioFragment()
