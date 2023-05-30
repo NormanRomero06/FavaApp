@@ -8,19 +8,24 @@ import com.example.appfavas.databinding.ItemCobroBinding
 class InventarioTempAdapter : RecyclerView.Adapter<InventarioTempAdapter.InventarioTempViewHolder>() {
 
     private val data: MutableList<InventarioTemp> = mutableListOf()
-    private val productosSeleccionados: MutableList<InventarioTemp> = mutableListOf()
 
-    /*fun getProductosSeleccionados(): List<InventarioTemp> {
-        return productosSeleccionados
-    }*/
+    companion object {
+        private const val MONTO_TOTAL_KEY = "montoTotal"
+    }
+
+    // Método para obtener los datos de la lista de productos
+    fun getData(): List<InventarioTemp> {
+        return data
+    }
 
     var montoTotal: Float = 0.0f
 
-    fun calcularMontoTotal() {
+    fun calcularMontoTotal(): Float {
         montoTotal = 0f
         for (cobro in data) {
             montoTotal += cobro.precioTotal
         }
+        return montoTotal
     }
 
 
