@@ -45,7 +45,8 @@ class UsuariosFragment : Fragment() {
     }
 
     private fun obtenerRolUsuario() {
-        val sharedPreferences = requireContext().getSharedPreferences("MiPref", Context.MODE_PRIVATE)
+        val sharedPreferences =
+            requireContext().getSharedPreferences("MiPref", Context.MODE_PRIVATE)
         val idUsuario = sharedPreferences.getInt("idUsuario", -1)
 
         // Utiliza el idUsuario para hacer la solicitud a la API y obtener el rol
@@ -54,18 +55,15 @@ class UsuariosFragment : Fragment() {
         val request = JsonObjectRequest(Request.Method.GET, url, null,
             { response ->
                 Log.d("TAG", response.toString()) // Imprimir la respuesta completa
-                val rol = response.optString("rol") // Obtener el valor del campo "rol" como cadena vacía si no está presente
+                val rol =
+                    response.optString("rol") // Obtener el valor del campo "rol" como cadena vacía si no está presente
 
                 if (rol == "Administrador") {
                     // Lógica para el rol de Administrador
                     cargarUsuariosAdmin()
-                    println("Hola Admin")
-                    // ...
                 } else if (rol == "Cocina") {
                     // Lógica para el rol de Cocina
                     cargarUsuariosOther()
-                    println("Hola Cocina")
-                    // ...
                 }
             },
             { error ->
@@ -77,20 +75,17 @@ class UsuariosFragment : Fragment() {
         Volley.newRequestQueue(requireContext()).add(request)
     }
 
-
-
     private fun cargarUsuariosOther() {
-        val sharedPreferences = requireContext().getSharedPreferences("MiPref", Context.MODE_PRIVATE)
+        val sharedPreferences =
+            requireContext().getSharedPreferences("MiPref", Context.MODE_PRIVATE)
         val idUsuario = sharedPreferences.getInt("idUsuario", -1)
-        //val url = "http://localfavas.online/Usuario/ReadOtherUser.php"
-        val url = "http://localfavas.online/Usuario/ReadOtherUser.php?idUsuario=$idUsuario"
 
+        val url = "http://localfavas.online/Usuario/ReadOtherUser.php?idUsuario=$idUsuario"
 
         val requestQueue = Volley.newRequestQueue(requireContext())
         val request = JsonObjectRequest(Request.Method.GET, url, null,
             { response ->
                 val jsonArray = response.getJSONArray("data")
-                //val userList = arrayListOf<Usuario>()
 
                 //Limpia la lista para evitar items duplicados
                 userList.clear()
@@ -100,15 +95,13 @@ class UsuariosFragment : Fragment() {
                     val nombres = jsonObj.getString("nombres")
                     val apellidos = jsonObj.getString("apellidos")
                     val correo = jsonObj.getString("correo")
-                    val usuario =  jsonObj.getString("usuario")
+                    val usuario = jsonObj.getString("usuario")
                     val contraseña = jsonObj.getString("contraseña")
                     val rol = jsonObj.getString("rol")
 
-                    // Verificar si el rol es "Cocina"
-                    //if (rol == "Cocina") {
-                        val user = Usuario(idUsuario, nombres, apellidos, correo, usuario, contraseña, rol)
-                        userList.add(user)
-                    //}
+                    val user =
+                        Usuario(idUsuario, nombres, apellidos, correo, usuario, contraseña, rol)
+                    userList.add(user)
                 }
 
                 // Actualizar el RecyclerView con la lista de usuarios de cocina
@@ -159,7 +152,6 @@ class UsuariosFragment : Fragment() {
 
         reqQueue.add(request)
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

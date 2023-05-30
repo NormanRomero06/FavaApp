@@ -76,11 +76,7 @@ class PagosFragment : Fragment() {
             }
             // val navController = Navigation.findNavController(binding.root)
             //navController.navigate(R.id.listaPagosFragment)
-
-
         }
-
-
     }
 
     private fun limpiar() {

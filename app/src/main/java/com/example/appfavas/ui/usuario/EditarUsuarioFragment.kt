@@ -130,12 +130,6 @@ class EditarUsuarioFragment : Fragment() {
         return valido
     }
 
-    /*fun btnLimpiar() {
-        binding.btnLimpiarArt.setOnClickListener {
-            limpiarCampos()
-        }
-    }*/
-
     private fun limpiarCampos() {
         with(binding) {
             etNombres.text?.clear()
