@@ -40,40 +40,20 @@ class AgregarInventarioFragment : Fragment() {
         binding = FragmentAgregarInventarioBinding.inflate(inflater, container, false)
         val root: View = binding.root
         cargarSpinner()
-        seleccionarMovimiento()
+        entradaInventario()
         return root
     }
 
 
-    fun seleccionarMovimiento() {
-        binding.spEntSal.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                val selectedData: String = parent.getItemAtPosition(position).toString()
-
-                // Verificar el dato seleccionado y llamar al método correspondiente
-                if (selectedData == "Entrada") {
-                    entradaInventario()
-                } else if (selectedData == "Salida") {
-                    //salidaInventario()
-                }
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>) {
-                binding.btnActualizar.setOnClickListener {
-                    Toast.makeText(context, "Seleccione un movimiento", Toast.LENGTH_LONG).show()
-                }
-            }
-        }
-    }
-
     fun entradaInventario() {
         val idProducto = arguments?.getString("idProducto")
         val nombre = arguments?.getString("nombre")
+        val id = binding.tvIdProducto.text.toString()
+        val descripcion = arguments?.getString("descripcion")
+        val precio = arguments?.getString("precio")
+        val categoria = arguments?.getString("Categoria_Nombre")
+        Log.d(TAG, "Parametros del Item:$categoria")
+        var cantidadActual = arguments?.getString("cantidad")?.toInt()
         binding.tvIdProducto.setText(idProducto)
         binding.tvNombreArticulo.text = nombre
         binding.tvIdProducto.setText(idProducto)
@@ -117,7 +97,67 @@ class AgregarInventarioFragment : Fragment() {
                         Toast.LENGTH_LONG
                     ).show()
                 }
+
+                try {
+
+                    val cantidad = binding.etCantidad.text.toString().toInt()
+                    val cantMin = 1
+                    val link = "http://localfavas.online/Producto/UpdateProducto.php"
+                    var resultado: String
+                    val queue = Volley.newRequestQueue(activity)
+                    val resultadoPost = object : StringRequest(
+                        Request.Method.POST, link,
+                        Response.Listener<String> { response ->
+                            Toast.makeText(
+                                context,
+                                "Inventario Actualizado",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }, Response.ErrorListener { error ->
+                            Toast.makeText(context, "Error: $error", Toast.LENGTH_LONG).show()
+                        }) {
+                        override fun getParams(): MutableMap<String, String> {
+                            val parametros = HashMap<String, String>()
+                            parametros.put("idProducto", binding.tvIdProducto.text.toString())
+                            parametros.put("nombre", nombre.toString())
+                            parametros.put("descripcion", descripcion.toString())
+                            parametros.put("precio", precio.toString())
+                            parametros.put("Categoria_idCategoria", categoria.toString())
+                            parametros.put("cantidadMinima", cantMin.toString())
+                            if (binding.spEntSal.selectedItem == "Entrada") {
+                                resultado = (cantidadActual!! + cantidad).toString()
+                                Log.d(
+                                    TAG,
+                                    "SUMA de cantidad:$cantidadActual + $cantidad = $resultado"
+                                )
+                            } else if (binding.spEntSal.selectedItem == "Salida") {
+                                resultado = (cantidadActual!! - cantidad).toString()
+                                Log.d(
+                                    TAG,
+                                    "SUMA de cantidad:$cantidadActual - $cantidad = $resultado"
+                                )
+                            } else {
+                                resultado = ""
+
+                            }
+                            cantidadActual = resultado?.toInt()
+
+                            parametros.put("cantidad", resultado)
+                            Log.d(TAG, "Parametros:$parametros")
+                            return parametros
+                        }
+                    }
+                    queue.add(resultadoPost)
+                } catch (ex: Exception) {
+                    Toast.makeText(
+                        requireContext(),
+                        "Error al insertar: ${ex.toString()}",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+
             }
+
         }
     }
 
