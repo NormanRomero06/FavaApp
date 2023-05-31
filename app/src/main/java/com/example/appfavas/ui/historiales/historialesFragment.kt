@@ -33,7 +33,7 @@ class historialesFragment : Fragment() {
     fun navigation()
     {
         binding.btnHArticulos.setOnClickListener {
-            Navigation.findNavController(binding.root).navigate(R.id.nav_articulos)
+            Navigation.findNavController(binding.root).navigate(R.id.historialInventarioFragment)
         }
         binding.btnHPagos.setOnClickListener {
             Navigation.findNavController(binding.root).navigate(R.id.historialPagos)

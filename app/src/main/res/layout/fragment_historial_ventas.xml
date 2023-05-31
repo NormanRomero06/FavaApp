@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/back"
-        tools:context=".ui.Ventas.HistorialVentasFragment">
+        tools:context=".ui.historiales.HistorialVentasFragment">
 
         <View
             android:id="@+id/VwHVentas"
