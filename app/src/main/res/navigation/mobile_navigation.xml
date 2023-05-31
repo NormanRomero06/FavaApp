@@ -59,7 +59,7 @@
         tools:layout="@layout/fragment_total_tarjeta" />
     <fragment
         android:id="@+id/historialVentas"
-        android:name="com.example.appfavas.ui.Ventas.HistorialVentasFragment"
+        android:name="com.example.appfavas.ui.historiales.HistorialVentasFragment"
         android:label="Historial de Ventas"
         tools:layout="@layout/fragment_historial_ventas" />
     <fragment
@@ -180,7 +180,7 @@
     <fragment
         android:id="@+id/agregarInventarioFragment"
         android:name="com.example.appfavas.ui.inventario.AgregarInventarioFragment"
-        android:label="fragment_agregar_inventario"
+        android:label="Actualizar Inventario"
         tools:layout="@layout/fragment_agregar_inventario" />
     <fragment
         android:id="@+id/checkProductoFragment"
@@ -190,7 +190,7 @@
     <fragment
         android:id="@+id/totalCambioYNuevaVentaFragment"
         android:name="com.example.appfavas.ui.Ventas.TotalCambioYNuevaVentaFragment"
-        android:label="fragment_total_cambio_y_nueva_venta"
+        android:label="Cambio Total"
         tools:layout="@layout/fragment_total_cambio_y_nueva_venta" />
     <fragment
         android:id="@+id/historialInventarioFragment"
