@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import androidx.room.Room
+import com.example.appfavas.R
 import com.example.appfavas.dao.AppDatabase
 import com.example.appfavas.databinding.FragmentCheckProductoBinding
 import com.example.appfavas.modelos.InventarioTemp.InventarioTemp
@@ -81,12 +83,15 @@ class CheckProductoFragment : Fragment() {
                 Toast.makeText(requireContext(), "Producto guardado exitosamente", Toast.LENGTH_SHORT).show()
             }
         }
+        Navigation.findNavController(binding.root).navigate(R.id.nav_ventas)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         binding
     }
+    //Validacion de que no este vacio el efectivo recibido.
+    //Validacion que no se pueda comprar un producto que no este en stock
 }
 
 

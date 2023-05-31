@@ -48,6 +48,9 @@
         <action
             android:id="@+id/action_metodoDePagoFragment_to_dividirPagoFragment"
             app:destination="@id/dividirPagoFragment" />
+        <action
+            android:id="@+id/nav_TotalCambioNueva"
+            app:destination="@id/totalCambioYNuevaVentaFragment" />
     </fragment>
     <fragment
         android:id="@+id/totalTarjetaFragment"
@@ -56,7 +59,7 @@
         tools:layout="@layout/fragment_total_tarjeta" />
     <fragment
         android:id="@+id/historialVentas"
-        android:name="com.example.appfavas.ui.historiales.HistorialVentasFragment"
+        android:name="com.example.appfavas.ui.Ventas.HistorialVentasFragment"
         android:label="Historial de Ventas"
         tools:layout="@layout/fragment_historial_ventas" />
     <fragment
@@ -185,9 +188,8 @@
         android:label="Revisión del Producto"
         tools:layout="@layout/fragment_check_producto" />
     <fragment
-        android:id="@+id/historialInventarioFragment"
-        android:name="com.example.appfavas.ui.historiales.HistorialInventarioFragment"
-        android:label="Historial de Inventario"
-        tools:layout="@layout/fragment_historial_inventario" />
-
+        android:id="@+id/totalCambioYNuevaVentaFragment"
+        android:name="com.example.appfavas.ui.Ventas.TotalCambioYNuevaVentaFragment"
+        android:label="fragment_total_cambio_y_nueva_venta"
+        tools:layout="@layout/fragment_total_cambio_y_nueva_venta" />
 </navigation>

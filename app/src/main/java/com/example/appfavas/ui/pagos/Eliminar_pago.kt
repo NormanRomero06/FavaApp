@@ -90,8 +90,6 @@ class Eliminar_pago : Fragment() {
             tvDescripcion.setText("")
             tvCantidad.setText("")
             etFechaPago.setText("")
-
-
         }
     }
 
