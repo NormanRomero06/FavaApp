@@ -121,7 +121,6 @@ class AgregarInventarioFragment : Fragment() {
         }
     }
 
-
     fun cargarSpinner() {
         val spinner: Spinner = binding.spEntSal
         val datos: List<String> = listOf("Entrada", "Salida")
