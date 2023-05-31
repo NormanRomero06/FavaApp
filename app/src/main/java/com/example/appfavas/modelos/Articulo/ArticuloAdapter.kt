@@ -44,6 +44,11 @@ class ArticuloAdapter(private val artList: ArrayList<Articulo>) :
                         val bundle = Bundle()
                         bundle.putString("idProducto", item.idProducto.toString())
                         bundle.putString("nombre", item.nombre)
+                        bundle.putString("descripcion", item.descripcion)
+                        bundle.putString("precio", item.precio.toString())
+                        bundle.putString("cantidad", item.cantidad.toString())
+                        bundle.putString("Categoria_Nombre", item.Categoria_idCategoria.toString())
+                        Log.d(TAG, "Parametros:$bundle")
                         Navigation.findNavController(binding.root)
                             .navigate(R.id.agregarInventarioFragment, bundle)
                     }
