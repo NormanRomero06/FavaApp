@@ -192,4 +192,9 @@
         android:name="com.example.appfavas.ui.Ventas.TotalCambioYNuevaVentaFragment"
         android:label="fragment_total_cambio_y_nueva_venta"
         tools:layout="@layout/fragment_total_cambio_y_nueva_venta" />
+    <fragment
+        android:id="@+id/historialInventarioFragment"
+        android:name="com.example.appfavas.ui.historiales.HistorialInventarioFragment"
+        android:label="Historial de Inventario"
+        tools:layout="@layout/fragment_historial_inventario" />
 </navigation>
