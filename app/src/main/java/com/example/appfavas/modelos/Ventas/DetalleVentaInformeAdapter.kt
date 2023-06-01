@@ -5,7 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appfavas.databinding.ItemInformeDetalleVentaBinding
 
-class DetalleVentaInformeAdapter(val detalleventaList: List<DetalleVentaInforme>) :
+class DetalleVentaInformeAdapter(
+    val detalleventaList: List<DetalleVentaInforme>) :
     RecyclerView.Adapter<DetalleVentaInformeAdapter.DetalleVentaViewHolder>() {
 
 
