@@ -1,10 +1,10 @@
 package com.example.appfavas.ui.informes
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.appfavas.R
 import com.example.appfavas.databinding.FragmentInformesBinding
@@ -29,18 +29,23 @@ class InformesFragment : Fragment() {
         return root
     }
 
-    fun navigation()
-    {
+    fun navigation() {
         binding.btnIArticulos.setOnClickListener {
             Navigation.findNavController(binding.root).navigate(R.id.InformeArticulos)
         }
-        /*
+
         binding.btnIPagos.setOnClickListener {
             Navigation.findNavController(binding.root).navigate(R.id.InformePagos)
         }
-        binding.btnIVentas.setOnClickListener {
-            Navigation.findNavController(binding.root).navigate(R.id.InformeVentas)
-        }*/
+        binding.btnIInventario.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.InformeInventario)
+        }
+        binding.btnICierreCaja.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.InformeCierreCaja)
+        }
+        binding.btnIDetalleVenta.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.InformeDetalleVentas)
+        }
     }
 
     override fun onDestroyView() {
