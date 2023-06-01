@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -16,22 +17,15 @@ import com.android.volley.RequestQueue
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.appfavas.R
-import com.example.appfavas.dao.AppDatabase
 import com.example.appfavas.databinding.FragmentVentasHomeBinding
-import com.example.appfavas.modelos.Articulo.Articulo
 import com.example.appfavas.modelos.Articulo.ArticuloVentas
 import com.example.appfavas.modelos.Articulo.ArticuloVentasAdapter
 import com.example.appfavas.modelos.Categoria.CategoriaAdapter
-import com.example.appfavas.modelos.Categoria.CategoriaVentas
-import com.example.appfavas.modelos.Categoria.CategoriaVentasAdapter
-import com.example.appfavas.modelos.Inventario.InventarioAdapter
 
 class VentasFragment : Fragment() {
     private lateinit var binding: FragmentVentasHomeBinding
-    private var articuloAdapter: ArticuloVentasAdapter? = null
+    private var adapter: ArticuloVentasAdapter? = null
     var recyclerView: RecyclerView? = null
-    var recyclerVie: RecyclerView? = null
-    val catList = arrayListOf<CategoriaVentas>()
     val artList = arrayListOf<ArticuloVentas>()
 
     override fun onCreateView(
@@ -43,40 +37,8 @@ class VentasFragment : Fragment() {
         val root: View = binding.root
         navigation()
         setupSearch()
-        cargarCategoria()
+        cargarProductos()
         return root
-    }
-
-    private fun cargarCategoria() {
-
-        val uri = "http://localfavas.online/Categoria/ReadCategoria.php"
-
-        recyclerVie = binding.rvCategoria
-        val reqQueuee: RequestQueue = Volley.newRequestQueue(getActivity())
-        val requeste = JsonObjectRequest(Request.Method.GET, uri, null, { res ->
-            val jsonArray = res.getJSONArray("data")
-
-            //Limpia la lista para evitar items duplicados
-            catList.clear()
-            for (i in 0 until jsonArray.length()) {
-                val jsonObj = jsonArray.getJSONObject(i)
-                val user = CategoriaVentas(
-                    jsonObj.getInt("idCategoria"),
-                    jsonObj.getString("nombre"),
-                )
-                catList.add(user)
-            }
-            println(catList.toString())
-
-            recyclerVie?.layoutManager =
-                LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false)
-            recyclerVie?.adapter = CategoriaVentasAdapter(catList)
-
-        }, { err ->
-            Log.d("Volley fail", err.message.toString())
-        })
-
-        reqQueuee.add(requeste)
     }
 
     private fun cargarProductos() {
@@ -101,9 +63,9 @@ class VentasFragment : Fragment() {
             }
             println(artList.toString())
 
-            articuloAdapter = ArticuloVentasAdapter(artList)
-            recyclerView?.layoutManager = LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false)
-            recyclerView?.adapter = articuloAdapter
+            adapter = ArticuloVentasAdapter(artList)
+            recyclerView?.layoutManager = GridLayoutManager(getActivity(), 2) // Mostrar dos columnas
+            recyclerView?.adapter = adapter
 
         }, { err ->
             Log.d("Volley fail", err.message.toString())
@@ -113,8 +75,6 @@ class VentasFragment : Fragment() {
     }
 
     private fun setupSearch() {
-        // ...
-
         binding.etBuscar.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 // No se requiere implementación
@@ -127,14 +87,13 @@ class VentasFragment : Fragment() {
             override fun afterTextChanged(s: Editable?) {
                 val searchText = s.toString().trim()
                 if (searchText.isEmpty()) {
+                    // Si el texto de búsqueda está vacío, cargar los datos completos del RecyclerView
                     cargarProductos()
                 } else {
-                    articuloAdapter?.filter(searchText)
+                    adapter?.filter(searchText)
                 }
             }
         })
-
-        // ...
     }
 
 

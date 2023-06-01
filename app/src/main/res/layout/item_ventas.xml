@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="250dp"
+    android:layout_width="300dp"
     android:layout_height="110dp">
 
     <androidx.cardview.widget.CardView
@@ -23,62 +23,71 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
+                android:layout_marginStart="90dp"
                 android:layout_marginTop="20dp"
-                android:fontFamily="@font/crimson_text_regular"
-                android:text="@string/importe_monto"
+                android:fontFamily="@font/crimson_text_bold"
+                android:text="Código de la venta:"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/tvMonto"
+                android:id="@+id/tvIdVenta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="160dp"
+                android:layout_marginStart="200dp"
                 android:layout_marginTop="20dp"
-                android:fontFamily="@font/crimson_text_regular"
-                android:text="@string/importe_monto"
+                android:fontFamily="@font/crimson_text_bold"
+                android:text="ID"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/IvDelete"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="260dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/delete_24"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
+                android:layout_marginStart="90dp"
                 android:layout_marginTop="45dp"
-                android:fontFamily="@font/crimson_text_regular"
-                android:text="@string/hora"
+                android:fontFamily="@font/crimson_text_bold"
+                android:text="Total de la venta"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/tvHora"
+                android:id="@+id/tvVenta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="110dp"
+                android:layout_marginStart="200dp"
                 android:layout_marginTop="45dp"
-                android:fontFamily="@font/crimson_text_regular"
-                android:text="@string/hora"
+                android:fontFamily="@font/crimson_text_bold"
+                android:text="venta"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
+                android:layout_marginStart="90dp"
                 android:layout_marginTop="70dp"
-                android:fontFamily="@font/crimson_text_regular"
-                android:text="@string/id"
+                android:fontFamily="@font/crimson_text_bold"
+                android:text="Usuario"
                 android:textColor="@color/black" />
 
             <TextView
-                android:id="@+id/tvId"
+                android:id="@+id/tvUsuario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
+                android:layout_marginStart="200dp"
                 android:layout_marginTop="70dp"
-                android:fontFamily="@font/crimson_text_regular"
-                android:text="@string/id"
+                android:fontFamily="@font/crimson_text_bold"
+                android:text="usuario"
                 android:textColor="@color/black" />
 
         </RelativeLayout>

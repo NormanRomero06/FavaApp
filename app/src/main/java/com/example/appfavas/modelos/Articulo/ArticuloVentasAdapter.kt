@@ -63,19 +63,6 @@ class ArticuloVentasAdapter(private val ListArticulosVenta: ArrayList<ArticuloVe
         }
     }
 
-    fun filter(searchText: String) {
-        val filteredList = arrayListOf<ArticuloVentas>()
-
-        for (producto in ListArticulosVenta) {
-            if (producto.nombre.toLowerCase().contains(searchText.toLowerCase())) {
-                filteredList.add(producto)
-            }
-        }
-
-        ListArticulosVenta.clear()
-        ListArticulosVenta.addAll(filteredList)
-        notifyDataSetChanged()
-    }
 
 
 
@@ -93,6 +80,27 @@ class ArticuloVentasAdapter(private val ListArticulosVenta: ArrayList<ArticuloVe
         holder.load(this.ListArticulosVenta[position])
     }
 
+    fun filter(text: String) {
+        val searchText = text.toLowerCase()
+        val filteredList = if (searchText.isEmpty()) {
+            ListArticulosVenta // Mostrar todos los elementos si no hay texto de búsqueda
+        } else {
+            val tempList = ArrayList<ArticuloVentas>()
+            for (prod in ListArticulosVenta) {
+                if (prod.nombre.toLowerCase().contains(searchText)) {
+                    tempList.add(prod)
+                }
+            }
+            tempList // Mostrar solo los elementos que coinciden con el texto de búsqueda
+        }
+        updateList(filteredList)
+    }
+
+    private fun updateList(list: List<ArticuloVentas>) {
+        ListArticulosVenta.clear()
+        ListArticulosVenta.addAll(list)
+        notifyDataSetChanged()
+    }
 }
 
 

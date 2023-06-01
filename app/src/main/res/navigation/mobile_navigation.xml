@@ -16,9 +16,9 @@
     </fragment>
     <fragment
         android:id="@+id/nav_recibos"
-        android:name="com.example.appfavas.ui.recibos.RecibosFragment"
+        android:name="com.example.appfavas.ui.Ventas.VistaVentasFragment"
         android:label="Recibos"
-        tools:layout="@layout/fragment_recibos">
+        tools:layout="@layout/fragment_vistas_venta">
         <action
             android:id="@+id/action_nav_recibos_to_devolucionFragment"
             app:destination="@id/devolucionFragment" />
