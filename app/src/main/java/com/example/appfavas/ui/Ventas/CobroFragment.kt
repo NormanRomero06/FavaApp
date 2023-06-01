@@ -21,13 +21,14 @@ import com.android.volley.toolbox.Volley
 import com.example.appfavas.R
 import com.example.appfavas.dao.AppDatabase
 import com.example.appfavas.databinding.FragmentCobroBinding
+import com.example.appfavas.modelos.InventarioTemp.InventarioTemp
 import com.example.appfavas.modelos.InventarioTemp.InventarioTempAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
-class CobroFragment : Fragment() {
+class CobroFragment : Fragment(), InventarioTempAdapter.OnItemClickListener {
     private lateinit var binding: FragmentCobroBinding
     private lateinit var database: AppDatabase
     private lateinit var adapter: InventarioTempAdapter
@@ -47,6 +48,12 @@ class CobroFragment : Fragment() {
         }
 
         return binding.root
+    }
+    override fun onDeleteClicked(inventarioTemp: InventarioTemp) {
+        // Aquí debes eliminar el elemento de la base de datos usando el DAO correspondiente
+        lifecycleScope.launch(Dispatchers.IO) {
+            database.inventarioTempDao().delete(inventarioTemp)
+        }
     }
 
     private fun eliminarProductos() {
@@ -77,6 +84,7 @@ class CobroFragment : Fragment() {
             binding.tvMonto.text = String.format("%.2f", adapter.montoTotal)
             saveMontoTotalToSharedPreferences(adapter.montoTotal) // Almacenar el montoTotal en SharedPreferences
         }
+        adapter.setOnItemClickListener(this)
     }
 
     private fun saveMontoTotalToSharedPreferences(montoTotal: Float) {
@@ -117,7 +125,7 @@ class CobroFragment : Fragment() {
 
                             insertarDetallesVenta(cantidadVendida, precioUnitario, idProducto)
                         }
-
+                        eliminarProductos()
                         // Navegar a la siguiente pantalla después de realizar el cobro
                         findNavController().navigate(R.id.metodoDePagoFragment)
                     } else {
@@ -214,5 +222,4 @@ class CobroFragment : Fragment() {
         binding
     }
 }
-
 

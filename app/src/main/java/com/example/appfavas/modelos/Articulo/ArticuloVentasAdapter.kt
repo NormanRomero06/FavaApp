@@ -7,6 +7,8 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appfavas.R
 import com.example.appfavas.databinding.ItemProductoBinding
+import com.example.appfavas.modelos.Categoria.Categoria
+import com.example.appfavas.modelos.Inventario.Inventario
 
 
 class ArticuloVentasAdapter(private val ListArticulosVenta: ArrayList<ArticuloVentas>) :
@@ -61,6 +63,21 @@ class ArticuloVentasAdapter(private val ListArticulosVenta: ArrayList<ArticuloVe
         }
     }
 
+    fun filter(searchText: String) {
+        val filteredList = arrayListOf<ArticuloVentas>()
+
+        for (producto in ListArticulosVenta) {
+            if (producto.nombre.toLowerCase().contains(searchText.toLowerCase())) {
+                filteredList.add(producto)
+            }
+        }
+
+        ListArticulosVenta.clear()
+        ListArticulosVenta.addAll(filteredList)
+        notifyDataSetChanged()
+    }
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val userItem =
@@ -75,6 +92,7 @@ class ArticuloVentasAdapter(private val ListArticulosVenta: ArrayList<ArticuloVe
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.load(this.ListArticulosVenta[position])
     }
+
 }
 
 

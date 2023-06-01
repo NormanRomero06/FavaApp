@@ -1,9 +1,6 @@
 package com.example.appfavas.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.appfavas.modelos.InventarioTemp.InventarioTemp
 
 @Dao
@@ -16,4 +13,7 @@ interface InventarioTempDao {
 
     @Query("DELETE FROM InventarioTemp")
     fun deleteAll()
+
+    @Delete
+    fun delete(inventarioTemp: InventarioTemp)
 }
