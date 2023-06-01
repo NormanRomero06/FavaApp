@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_Primary">
+    android:background="@color/back">
 
     <!--Locales-->
-    
+
     <ImageView
-        android:layout_width="150sp"
-        android:layout_height="150sp"
-        android:src="@drawable/favaslogo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:elevation="0.1dp"
+        android:id="@+id/ivLogo"
+        android:layout_width="180sp"
+        android:layout_height="180sp"
         android:layout_marginTop="20sp"
-        android:id="@+id/ivLogo"/>
+        android:elevation="0.1dp"
+        android:src="@drawable/favaslogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/VwCheckProd"
@@ -35,13 +35,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginStart="80dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:text="ID Producto:"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/VwCheckProd"
-        app:layout_constraintHorizontal_bias="0.219"
         app:layout_constraintStart_toStartOf="@+id/VwCheckProd"
         app:layout_constraintTop_toBottomOf="@id/ivLogo" />
 
@@ -50,13 +48,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="80dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:text="Nombre del Producto:"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/VwCheckProd"
-        app:layout_constraintHorizontal_bias="0.209"
         app:layout_constraintStart_toStartOf="@+id/VwCheckProd"
         app:layout_constraintTop_toBottomOf="@id/tvidProducto" />
 
@@ -65,13 +61,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginStart="80dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:text="Precio por Unidad:"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/VwCheckProd"
-        app:layout_constraintHorizontal_bias="0.217"
         app:layout_constraintStart_toStartOf="@+id/VwCheckProd"
         app:layout_constraintTop_toBottomOf="@id/tvNombreInsert" />
 
@@ -80,26 +74,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="120dp"
+        android:layout_marginStart="80dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:text="Cantidad: "
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/VwCheckProd"
-        app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toStartOf="@+id/VwCheckProd"
         app:layout_constraintTop_toBottomOf="@id/tvPrecio" />
 
     <TextView
+        android:id="@+id/tvTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="290dp"
+        android:layout_marginStart="80dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:text="Precio Total:"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/VwCheckProd"
         app:layout_constraintStart_toStartOf="@+id/VwCheckProd"
         app:layout_constraintTop_toBottomOf="@id/tvCantidadVen" />
 
@@ -109,14 +101,12 @@
         android:id="@+id/tvidProductoInsert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
         android:layout_marginTop="50dp"
-        android:layout_marginStart="60dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:text="ID"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/VwCheckProd"
-        app:layout_constraintHorizontal_bias="0.219"
         app:layout_constraintStart_toEndOf="@+id/tvidProducto"
         app:layout_constraintTop_toBottomOf="@id/ivLogo" />
 
@@ -125,14 +115,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="30sp"
+        android:layout_marginStart="80dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:text="Nombre Producto"
         android:textColor="@color/black"
         android:textSize="30sp"
-        android:layout_marginStart="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/VwCheckProd"
-        app:layout_constraintHorizontal_bias="0.209"
         app:layout_constraintStart_toStartOf="@id/VwCheckProd"
         app:layout_constraintTop_toBottomOf="@id/tvNombre" />
 
@@ -140,14 +127,12 @@
         android:id="@+id/tvPrecioUnidadInsert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="10dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:text="0.0"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/VwCheckProd"
-        app:layout_constraintHorizontal_bias="0.217"
         app:layout_constraintStart_toEndOf="@+id/tvPrecio"
         app:layout_constraintTop_toBottomOf="@id/tvNombreInsert" />
 
@@ -155,14 +140,12 @@
         android:id="@+id/tvCantidadVenInsert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="141dp"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="80dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:text="0"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/VwCheckProd"
-        app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toEndOf="@+id/tvCantidadVen"
         app:layout_constraintTop_toBottomOf="@id/tvPrecioUnidadInsert" />
 
@@ -170,25 +153,24 @@
         android:id="@+id/tvPreciototalInsert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="78dp"
+        android:layout_marginStart="120dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/crimson_text_semibold"
         android:text="0.0"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/VwCheckProd"
-        app:layout_constraintStart_toStartOf="@+id/VwCheckProd"
+        app:layout_constraintStart_toEndOf="@+id/tvTotal"
         app:layout_constraintTop_toBottomOf="@id/tvCantidadVenInsert" />
 
     <View
         android:layout_width="500dp"
         android:layout_height="1dp"
+        android:layout_marginTop="6dp"
         android:background="#000000"
         android:elevation="100dp"
-        android:layout_marginTop="6dp"
-        app:layout_constraintTop_toBottomOf="@id/tvCantidadVen"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/tvCantidadVen" />
 
 
     <!-- Botón -->
@@ -197,16 +179,14 @@
         android:id="@+id/btnSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Aceptar"
-        android:layout_marginStart="300dp"
-        android:textColor="@color/white"
-        android:background="@drawable/btn_shape"
         android:layout_marginTop="50dp"
+        android:background="@drawable/btn_shape"
         android:drawableLeft="@drawable/baseline_shopping_cart_24"
-        app:layout_constraintTop_toBottomOf="@id/tvPreciototalInsert"
+        android:text="Aceptar"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/VwCheckProd"
         app:layout_constraintStart_toStartOf="@id/VwCheckProd"
-        app:layout_constraintEnd_toEndOf="@id/VwCheckProd"/>
-
+        app:layout_constraintTop_toBottomOf="@id/tvPreciototalInsert" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
