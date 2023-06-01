@@ -77,17 +77,16 @@
 
     <TextView
         android:id="@+id/tvNombreArticulo"
-        android:layout_width="100dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150sp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="100sp"
         android:fontFamily="@font/crimson_text_bold"
         android:textColor="@color/gray"
-        android:textSize="22sp"
+        android:textSize="42sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.275"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvIdProducto" />
+        app:layout_constraintTop_toBottomOf="@id/tvNombre" />
 
     <Spinner
         android:id="@+id/spEntSal"
@@ -97,7 +96,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.296"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvNombre"
+        app:layout_constraintTop_toBottomOf="@id/tvNombreArticulo"
 
         />
 
