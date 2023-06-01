@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/back"
-    tools:context=".ui.Ventas.TotalCambioYNuevaVentaFragment">
+    tools:context=".ui.cierreCaja.CierreCaja">
 
     <View
         android:id="@+id/VwPago"
@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/VwCantidad"
@@ -47,7 +47,7 @@
         android:id="@+id/TvTotalPago"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:text="@string/total_pagado"
+        android:text="Total Ingresos"
         android:fontFamily="@font/crimson_text_regular"
         android:textColor="@color/black"
         android:textSize="28sp"
@@ -60,11 +60,12 @@
         android:id="@+id/VwCambio"
         android:layout_width="350dp"
         android:layout_height="120dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/ic_view"
         app:layout_constraintEnd_toEndOf="@id/VwPago"
         app:layout_constraintStart_toStartOf="@id/VwPago"
         app:layout_constraintTop_toBottomOf="@id/VwCantidad" />
+
     <TextView
         android:id="@+id/tv_cambio"
         android:layout_width="280dp"
@@ -83,7 +84,7 @@
         android:id="@+id/tvCambio"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:text="@string/cambio"
+        android:text="Total Egresos"
         android:textColor="@color/black"
         android:textSize="28sp"
         android:fontFamily="@font/crimson_text_regular"
@@ -92,16 +93,31 @@
         app:layout_constraintStart_toStartOf="@id/VwCambio"
         app:layout_constraintTop_toBottomOf="@id/tv_cambio" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabNuevaVenta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        android:contentDescription="@string/ventas"
-        android:layout_marginBottom="140dp"
-        android:layout_marginEnd="280dp"
-        android:src="@drawable/add_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+    <EditText
+        android:id="@+id/EtDineroCaja"
+        android:layout_width="324dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="@+id/VwPago"
+        app:layout_constraintStart_toStartOf="@+id/VwPago"
+        app:layout_constraintTop_toBottomOf="@+id/VwCambio"
+        android:hint="Apertura Caja"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:fontFamily="@font/crimson_text_regular"
+        android:gravity="center" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnGenerar"
+        android:background="@drawable/btn_shape"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/crimson_text_regular"
+        android:textSize="20sp"
+        android:text="Generar"
+        app:layout_constraintEnd_toEndOf="@id/VwPago"
+        app:layout_constraintStart_toStartOf="@+id/VwPago"
+        app:layout_constraintTop_toBottomOf="@+id/EtDineroCaja" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

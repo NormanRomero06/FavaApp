@@ -90,8 +90,7 @@ class CheckProductoFragment : Fragment() {
         super.onDestroyView()
         binding
     }
-    //Validacion de que no este vacio el efectivo recibido.
-    //Validacion que no se pueda comprar un producto que no este en stock
+
 }
 
 

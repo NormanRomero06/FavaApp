@@ -223,25 +223,6 @@ class CrearArticuloVentasFragment : Fragment() {
         return sharedPreferences.getInt("idProducto", 0)
     }
 
-   /* private var maxId: Int = 0
-
-    fun obtenerMaximoId() {
-        val url = "http://localfavas.online/Producto/UltimoIdProducto.php"
-        val requestQueue = Volley.newRequestQueue(context)
-        val request = JsonObjectRequest(
-            Request.Method.GET, url, null,
-            { response ->
-                maxId = response.getInt("maxId")
-                // Aquí puedes utilizar el ID máximo en tu lógica
-
-            },
-            { error ->
-                // Manejar el error de la solicitud
-            }
-        )
-
-        requestQueue.add(request)
-    }*/
 
 
     override fun onDestroyView() {

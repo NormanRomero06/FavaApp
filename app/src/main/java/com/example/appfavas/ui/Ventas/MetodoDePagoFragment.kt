@@ -98,7 +98,7 @@ class MetodoDePagoFragment : Fragment() {
 
                 try {
                     val recibido = EtEfectivoR.text.toString()
-
+                    validacion()
                     val url = "http://localfavas.online/Caja/InsertCaja.php"
                     val queue = Volley.newRequestQueue(activity)
                     val resultadoPost = object : StringRequest(
@@ -145,6 +145,17 @@ class MetodoDePagoFragment : Fragment() {
         val editor = sharedPreferences.edit()
         editor.putString("cambio", Dinero)
         editor.apply()
+    }
+
+    fun validacion(){
+       val Efectivo = binding.EtEfectivoR.text.toString()
+        if (Efectivo.isEmpty()){
+            Toast.makeText(
+                requireContext(),
+                "Por favor Digite el dinero recibido",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 
 

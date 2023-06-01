@@ -217,4 +217,10 @@
         android:name="com.example.appfavas.ui.informes.InformeDetalleVentasFragment"
         android:label="Informe de Detalles Ventas"
         tools:layout="@layout/fragment_informe_detalle_ventas"/>
+
+    <fragment
+        android:id="@+id/nav_cierre"
+        android:name="com.example.appfavas.ui.cierreCaja.CierreCaja"
+        android:label="Cierre caja"
+        tools:layout="@layout/fragment_cierre_caja" />
 </navigation>
