@@ -27,6 +27,10 @@
             android:icon="@drawable/pago"
             android:title="@string/pagos"/>
         <item
+            android:id="@+id/nav_recibos"
+            android:icon="@drawable/payments"
+            android:title="Recibos"/>
+        <item
             android:id="@+id/nav_cierre"
             android:icon="@drawable/cierre"
             android:title="@string/cierre"/>

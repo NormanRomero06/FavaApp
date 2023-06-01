@@ -99,7 +99,8 @@
                 android:fontFamily="@font/crimson_text_regular"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:visibility="invisible"/>
 
             <ImageView
                 android:id="@+id/imvBorrar"
