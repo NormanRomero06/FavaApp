@@ -197,4 +197,24 @@
         android:name="com.example.appfavas.ui.historiales.HistorialInventarioFragment"
         android:label="Historial de Inventario"
         tools:layout="@layout/fragment_historial_inventario" />
+    <fragment
+        android:id="@+id/InformePagos"
+        android:name="com.example.appfavas.ui.informes.InformePagosFragment"
+        android:label="Informe Pagos"
+        tools:layout="@layout/fragment_informe_pagos"/>
+    <fragment
+        android:id="@+id/InformeCierreCaja"
+        android:name="com.example.appfavas.ui.informes.InformeCierreCajaFragment"
+        android:label="Informe de Cierre de Caja"
+        tools:layout="@layout/fragment_informe_cierre_caja" />
+    <fragment
+        android:id="@+id/InformeInventario"
+        android:name="com.example.appfavas.ui.informes.InformeInventarioFragment"
+        android:label="Informe de Inventario"
+        tools:layout="@layout/fragment_informe_inventario" />
+    <fragment
+        android:id="@+id/InformeDetalleVentas"
+        android:name="com.example.appfavas.ui.informes.InformeDetalleVentasFragment"
+        android:label="Informe de Detalles Ventas"
+        tools:layout="@layout/fragment_informe_detalle_ventas"/>
 </navigation>

@@ -30,7 +30,9 @@ class PagoAdapter(private val pagoList: ArrayList<Pago>): RecyclerView.Adapter<P
 
             }
         }
+
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val pagoItem = ItemListaPagosBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -42,7 +44,7 @@ class PagoAdapter(private val pagoList: ArrayList<Pago>): RecyclerView.Adapter<P
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.load(this.pagoList[position])
+        holder.load(pagoList[position])
     }
 
     fun filter(text: String) {

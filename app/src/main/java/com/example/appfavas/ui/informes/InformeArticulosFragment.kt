@@ -133,12 +133,12 @@ class InformeArticulosFragment : Fragment() {
                 Request.Method.GET, url, null,
                 { response ->
                     // Procesar la respuesta JSON
-                    val inventario = response.getJSONArray("data")
+                    val articulo= response.getJSONArray("data")
 
 
                     // Recorrer los resultados y agregarlos al PDF
-                    for (i in 0 until inventario.length()) {
-                        val inventario = inventario.getJSONObject(i)
+                    for (i in 0 until articulo.length()) {
+                        val inventario = articulo.getJSONObject(i)
                         // Agregar la imagen del logo
                         val logoBitmap = BitmapFactory.decodeResource(resources, R.drawable.favaslog)
                         val stream = ByteArrayOutputStream()

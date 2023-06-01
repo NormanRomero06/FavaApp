@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/back"
-        tools:context=".ui.informes.InformeCategoriasFragment">
+        tools:context=".ui.informes.InformeDetalleVentasFragment">
 
 
         <View
@@ -30,16 +30,16 @@
             android:layout_marginTop="30dp"
             android:fontFamily="@font/crimson_text_bold"
             android:gravity="center"
-            android:text="@string/informe_categor_a"
+            android:text="@string/informe_ventas"
             android:textColor="@color/black"
             android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/rvInformeCat"
+            app:layout_constraintBottom_toTopOf="@+id/rvInformeVentas"
             app:layout_constraintEnd_toEndOf="@+id/VwArticulos"
             app:layout_constraintStart_toStartOf="@+id/VwArticulos"
             app:layout_constraintTop_toTopOf="@+id/VwArticulos" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvInformeCat"
+            android:id="@+id/rvInformeVentas"
             android:layout_width="750dp"
             android:layout_height="600dp"
             android:layout_marginTop="50dp"

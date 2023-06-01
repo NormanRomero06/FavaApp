@@ -39,7 +39,7 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/btn_shape"
         android:fontFamily="@font/crimson_text_regular"
-        android:text="@string/informe_inventario"
+        android:text="@string/informe_articulos"
         android:textColor="@color/boton"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@id/VwInformes"
@@ -62,18 +62,45 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnIVentas"
+        android:id="@+id/btnIInventario"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/btn_shape"
         android:fontFamily="@font/crimson_text_regular"
-        android:text="@string/informe_ventas"
+        android:text="@string/informe_inventario"
         android:textColor="@color/boton"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@id/VwInformes"
         app:layout_constraintStart_toStartOf="@id/VwInformes"
         app:layout_constraintTop_toBottomOf="@id/btnIPagos" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnICierreCaja"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_shape"
+        android:fontFamily="@font/crimson_text_regular"
+        android:text="Informe cierre caja"
+        android:textColor="@color/boton"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/VwInformes"
+        app:layout_constraintStart_toStartOf="@id/VwInformes"
+        app:layout_constraintTop_toBottomOf="@id/btnIInventario" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnIDetalleVenta"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_shape"
+        android:fontFamily="@font/crimson_text_regular"
+        android:text="Informe Detalle Venta"
+        android:textColor="@color/boton"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/VwInformes"
+        app:layout_constraintStart_toStartOf="@id/VwInformes"
+        app:layout_constraintTop_toBottomOf="@id/btnICierreCaja" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
