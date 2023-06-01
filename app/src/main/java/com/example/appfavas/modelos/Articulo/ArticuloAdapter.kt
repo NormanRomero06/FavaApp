@@ -10,9 +10,12 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appfavas.R
 import com.example.appfavas.databinding.ItemTotalArticulosVentasBinding
+import com.example.appfavas.modelos.InventarioTemp.InventarioTemp
 
 class ArticuloAdapter(private val artList: ArrayList<Articulo>) :
     RecyclerView.Adapter<ArticuloAdapter.ViewHolder>() {
+
+    private val data: MutableList<Articulo> = mutableListOf()
 
     class ViewHolder(private val binding: ItemTotalArticulosVentasBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -64,6 +67,10 @@ class ArticuloAdapter(private val artList: ArrayList<Articulo>) :
             false
         )
         return ViewHolder(artiItem)
+    }
+
+    fun getData(): MutableList<Articulo> {
+        return data
     }
 
 

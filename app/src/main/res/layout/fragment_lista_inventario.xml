@@ -27,7 +27,7 @@
         <View
             android:id="@+id/VwInventario"
             android:layout_width="800dp"
-            android:layout_height="800dp"
+            android:layout_height="0dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/ic_shape_login"
             app:layout_constraintBottom_toBottomOf="parent"
