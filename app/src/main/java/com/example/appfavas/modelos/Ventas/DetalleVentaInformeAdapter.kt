@@ -42,4 +42,6 @@ class DetalleVentaInformeAdapter(val detalleventaList: List<DetalleVentaInforme>
         }
 
     }
+
+
 }
