@@ -124,6 +124,7 @@ class CobroFragment : Fragment(), InventarioTempAdapter.OnItemClickListener {
                             val idProducto = producto.idProducto
 
                             insertarDetallesVenta(cantidadVendida, precioUnitario, idProducto)
+                            insertarInventario(idProducto, cantidadVendida)
                         }
                         eliminarProductos()
                         // Navegar a la siguiente pantalla después de realizar el cobro
@@ -159,6 +160,34 @@ class CobroFragment : Fragment(), InventarioTempAdapter.OnItemClickListener {
                 Toast.LENGTH_LONG
             ).show()
         }
+    }
+
+    fun insertarInventario(idProducto: Any, cantidadVendida: Any){
+
+        val url = "http://localfavas.online/Inventario/ActualizarEntradas.php"
+        val queue = Volley.newRequestQueue(activity)
+        val resultadoPost = object : StringRequest(
+            Request.Method.POST, url,
+            Response.Listener<String> { response ->
+                Toast.makeText(
+                    context,
+                    "Insertado exitosamente",
+                    Toast.LENGTH_LONG
+                ).show()
+            }, Response.ErrorListener { error ->
+                Toast.makeText(context, "Error: $error", Toast.LENGTH_LONG).show()
+            }) {
+            override fun getParams(): MutableMap<String, String> {
+                val parametros = HashMap<String, String>()
+                parametros.put("Producto_idProducto", idProducto.toString())
+                parametros.put("tipoMovimiento", "Salida")
+                parametros.put("cantidad", cantidadVendida.toString())
+                Log.d("Prueba1", "Parametros:$parametros")//Prueba
+                return parametros
+
+            }
+        }
+        queue.add(resultadoPost)
     }
 
     private fun insertarDetallesVenta(cantidadVendida: Any, precioUnitario: Any, idProducto: Any) {

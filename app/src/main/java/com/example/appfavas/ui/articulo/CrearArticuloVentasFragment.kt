@@ -28,7 +28,6 @@ import org.json.JSONException
 class CrearArticuloVentasFragment : Fragment() {
     private lateinit var binding: FragmentCrearArticuloVentasBinding
     private lateinit var categorias: MutableList<Categoria>
-    private lateinit var adapter: ArticuloAdapter
 
 
 
