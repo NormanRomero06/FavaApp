@@ -51,6 +51,19 @@ android:layout_height="match_parent">
 
     </RelativeLayout>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnGenerarPDF"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="70dp"
+        android:fontFamily="@font/crimson_text_regular"
+        android:background="@drawable/btn_shape"
+        android:text="@string/generar_pdf"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/VwCierre"
+        tools:ignore="TextSizeCheck" />
+
 
 
 
